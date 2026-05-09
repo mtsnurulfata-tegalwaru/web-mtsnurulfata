@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PPDB 2026/2027 — MTs Nurul Fata Tegalwaru</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --hijau-tua:    #0d4f2a;
+  --hijau:        #1a6b3c;
+  --hijau-muda:   #2d9156;
+  --hijau-terang: #3db870;
+  --emas-tua:     #a07830;
+  --emas:         #c8a84b;
+  --emas-muda:    #e0c068;
+  --krem:         #faf7f0;
+  --krem-gelap:   #f0ebe0;
+  --putih:        #ffffff;
+  --gelap:        #0d1f14;
+  --teks:         #1e3528;
+  --abu:          #5a6e61;
+  --abu-muda:     #8fa396;
+  --border:       rgba(26,107,60,0.12);
+  --shadow-sm:    0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md:    0 8px 32px rgba(0,0,0,0.1);
+  --shadow-lg:    0 20px 60px rgba(0,0,0,0.15);
+  --radius:       14px;
+  --transition:   all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+[data-theme="dark"] {
+  --hijau-tua:    #0a3d20;
+  --hijau:        #1d7a45;
+  --hijau-muda:   #3aaa68;
+  --hijau-terang: #4dcc80;
+  --emas-tua:     #b8943a;
+  --emas:         #d4b050;
+  --emas-muda:    #e8cc70;
+  --krem:         #111c15;
+  --krem-gelap:   #172010;
+  --putih:        #0e1a12;
+  --gelap:        #060e09;
+  --teks:         #d4e8da;
+  --abu:          #7aaa88;
+  --abu-muda:     #4d7a5a;
+  --border:       rgba(61,184,112,0.14);
+  --shadow-sm:    0 2px 8px rgba(0,0,0,0.3);
+  --shadow-md:    0 8px 32px rgba(0,0,0,0.4);
+  --shadow-lg:    0 20px 60px rgba(0,0,0,0.5);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--krem);
+  color: var(--teks);
+  min-height: 100vh;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ── TOP BAR ── */
+.topbar {
+  background: var(--hijau-tua);
+  padding: 8px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 12px; color: rgba(255,255,255,0.75);
+}
+.topbar a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  display: flex; align-items: center; gap: 6px;
+  transition: color 0.2s;
+}
+.topbar a:hover { color: var(--emas-muda); }
+.topbar-right { display: flex; align-items: center; gap: 16px; }
+
+/* ── HEADER ── */
+header {
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+  padding: 0 24px;
+}
+[data-theme="dark"] header { background: rgba(14,26,18,0.97); }
+.header-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--hijau-tua), var(--hijau-muda));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.logo-text { line-height: 1.2; }
+.logo-text strong { font-size: 14px; font-weight: 800; color: var(--teks); display: block; }
+.logo-text span { font-size: 11px; color: var(--abu); }
+.header-right { display: flex; align-items: center; gap: 10px; }
+.btn-back {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 16px; border-radius: 9px;
+  font-size: 13px; font-weight: 600; color: var(--abu);
+  background: transparent; border: 1.5px solid var(--border);
+  cursor: pointer; text-decoration: none; transition: var(--transition);
+}
+.btn-back:hover { color: var(--hijau); border-color: var(--hijau-muda); background: rgba(26,107,60,0.06); }
+#darkToggle {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: transparent; color: var(--teks);
+  font-size: 16px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transition);
+}
+#darkToggle:hover { background: rgba(26,107,60,0.08); border-color: var(--hijau-muda); transform: rotate(20deg); }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(160deg, var(--hijau-tua) 0%, var(--hijau) 50%, var(--hijau-muda) 100%);
+  padding: 64px 24px 80px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(200,168,75,0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 40%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -1px; left: 0; right: 0; height: 40px;
+  background: var(--krem);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+.hero-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(8px);
+  padding: 6px 16px; border-radius: 100px;
+  font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.9);
+  letter-spacing: 0.5px; text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 800; color: white;
+  line-height: 1.15; margin-bottom: 14px;
+}
+.hero h1 span {
+  color: var(--emas-muda);
+  font-family: 'Amiri', serif; font-style: italic;
+}
+.hero p {
+  font-size: 15px; color: rgba(255,255,255,0.75);
+  line-height: 1.75; margin-bottom: 28px;
+}
+.hero-meta {
+  display: flex; align-items: center; justify-content: center; gap: 24px;
+  flex-wrap: wrap;
+}
+.hero-meta-item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; color: rgba(255,255,255,0.7); font-weight: 500;
+}
+.hero-meta-item strong { color: var(--emas-muda); }
+
+/* ── MAIN ── */
+.main { max-width: 1100px; margin: 0 auto; padding: 56px 24px 80px; }
+
+/* ── TOGGLE BILLING ── */
+.billing-toggle {
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px; margin-bottom: 48px;
+}
+.billing-label { font-size: 14px; font-weight: 600; color: var(--abu); }
+.billing-label.active { color: var(--teks); }
+.toggle-switch {
+  width: 48px; height: 26px; border-radius: 100px;
+  background: var(--hijau-muda);
+  position: relative; cursor: pointer;
+  transition: var(--transition); border: none;
+}
+.toggle-switch::after {
+  content: ''; position: absolute;
+  top: 3px; left: 3px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: white;
+  transition: transform 0.3s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+.toggle-switch.yearly::after { transform: translateX(22px); }
+.billing-badge {
+  background: linear-gradient(135deg, var(--emas-tua), var(--emas));
+  color: white; font-size: 10px; font-weight: 800;
+  padding: 2px 8px; border-radius: 100px; letter-spacing: 0.3px;
+}
+
+/* ── SECTION LABEL ── */
+.section-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--hijau-muda);
+  margin-bottom: 6px;
+}
+.section-title { font-size: clamp(22px, 3vw, 30px); font-weight: 800; color: var(--teks); margin-bottom: 8px; line-height: 1.2; }
+.section-title span { color: var(--hijau); }
+.section-desc { font-size: 14px; color: var(--abu); line-height: 1.7; }
+.divider {
+  width: 48px; height: 3px; border-radius: 2px; margin: 16px auto;
+  background: linear-gradient(90deg, var(--hijau), var(--emas));
+}
+
+/* ── PRICING HEADER ── */
+.pricing-header { text-align: center; margin-bottom: 40px; }
+
+/* ── CARDS GRID ── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* ── PRICING CARD ── */
+.price-card {
+  background: var(--putih);
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: var(--transition);
+  position: relative;
+}
+.price-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+[data-theme="dark"] .price-card { background: #0e1a12; }
+
+/* Featured card — Boarding */
+.price-card.featured {
+  border-color: var(--hijau-muda);
+  box-shadow: 0 0 0 4px rgba(45,145,86,0.1), var(--shadow-md);
+  transform: translateY(-8px);
+}
+.price-card.featured:hover { transform: translateY(-14px); }
+
+.card-ribbon {
+  position: absolute; top: 18px; right: -8px;
+  background: linear-gradient(135deg, var(--emas-tua), var(--emas));
+  color: white; font-size: 10px; font-weight: 800;
+  padding: 4px 14px 4px 10px;
+  border-radius: 4px 0 0 4px;
+  letter-spacing: 0.4px; text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(160,120,48,0.35);
+}
+.card-ribbon::after {
+  content: '';
+  position: absolute; right: 0; bottom: -6px;
+  border-top: 6px solid var(--emas-tua);
+  border-right: 8px solid transparent;
+}
+
+/* Card top accent */
+.card-accent {
+  height: 4px;
+  background: linear-gradient(90deg, var(--hijau-tua), var(--hijau-muda));
+}
+.price-card.featured .card-accent {
+  background: linear-gradient(90deg, var(--emas-tua), var(--emas-muda), var(--emas-tua));
+}
+.price-card.pesantren .card-accent {
+  background: linear-gradient(90deg, var(--hijau-muda), var(--hijau-terang));
+}
+
+/* Card header */
+.card-header { padding: 28px 28px 20px; }
+.card-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; margin-bottom: 16px;
+  background: linear-gradient(135deg, rgba(26,107,60,0.1), rgba(45,145,86,0.06));
+  border: 1px solid rgba(26,107,60,0.1);
+}
+.price-card.featured .card-icon {
+  background: linear-gradient(135deg, rgba(200,168,75,0.15), rgba(224,192,104,0.08));
+  border-color: rgba(200,168,75,0.2);
+}
+.card-name { font-size: 20px; font-weight: 800; color: var(--teks); margin-bottom: 4px; }
+.card-tagline { font-size: 13px; color: var(--abu); line-height: 1.5; }
+
+/* Price display */
+.card-price-wrap { padding: 0 28px 24px; border-bottom: 1px solid var(--border); }
+
+.billing-options { display: flex; gap: 10px; margin-bottom: 20px; }
+.bill-opt {
+  flex: 1; border: 1.5px solid var(--border);
+  border-radius: 10px; padding: 12px 10px;
+  cursor: pointer; background: transparent;
+  text-align: left; transition: var(--transition);
+  position: relative; font-family: inherit;
+}
+.bill-opt:hover { border-color: var(--hijau-muda); background: rgba(45,145,86,0.04); }
+.bill-opt.selected {
+  border-color: var(--hijau-muda);
+  background: rgba(45,145,86,0.08);
+}
+.price-card.featured .bill-opt.selected {
+  border-color: var(--emas);
+  background: rgba(200,168,75,0.08);
+}
+.bill-opt-radio {
+  width: 16px; height: 16px; border-radius: 50%;
+  border: 2px solid var(--border); background: transparent;
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-bottom: 8px; transition: var(--transition);
+  flex-shrink: 0;
+}
+.bill-opt.selected .bill-opt-radio {
+  border-color: var(--hijau-muda);
+  background: var(--hijau-muda);
+  box-shadow: 0 0 0 3px rgba(45,145,86,0.2);
+}
+.price-card.featured .bill-opt.selected .bill-opt-radio {
+  border-color: var(--emas); background: var(--emas);
+  box-shadow: 0 0 0 3px rgba(200,168,75,0.2);
+}
+.bill-opt-radio::after {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: white; opacity: 0;
+  transition: opacity 0.2s;
+}
+.bill-opt.selected .bill-opt-radio::after { opacity: 1; }
+.bill-opt-amount {
+  font-size: 16px; font-weight: 800; color: var(--teks);
+  display: block; line-height: 1.2; margin-bottom: 2px;
+}
+.bill-opt-period { font-size: 10px; color: var(--abu); display: block; }
+.bill-opt-save {
+  position: absolute; top: 8px; right: 8px;
+  background: linear-gradient(135deg, var(--hijau-tua), var(--hijau-muda));
+  color: white; font-size: 9px; font-weight: 800;
+  padding: 2px 6px; border-radius: 100px;
+}
+
+.card-cta {
+  width: 100%; padding: 14px;
+  border-radius: 10px; border: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px; font-weight: 700;
+  cursor: pointer; transition: var(--transition);
+  background: linear-gradient(135deg, var(--hijau-tua), var(--hijau-muda));
+  color: white;
+  box-shadow: 0 4px 16px rgba(26,107,60,0.3);
+}
+.card-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(26,107,60,0.4); }
+.price-card.featured .card-cta {
+  background: linear-gradient(135deg, var(--emas-tua), var(--emas-muda));
+  box-shadow: 0 4px 16px rgba(160,120,48,0.35);
+}
+.price-card.featured .card-cta:hover { box-shadow: 0 6px 24px rgba(160,120,48,0.5); }
+
+/* Card features */
+.card-features { padding: 24px 28px 28px; }
+.features-label {
+  font-size: 11px; font-weight: 700; color: var(--abu-muda);
+  text-transform: uppercase; letter-spacing: 0.8px;
+  margin-bottom: 14px;
+}
+.feature-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.feature-item {
+  display: flex; gap: 10px; align-items: flex-start;
+  font-size: 13px; color: var(--abu); line-height: 1.5;
+}
+.feature-check {
+  width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(45,145,86,0.12); color: var(--hijau-muda);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 800; margin-top: 1px;
+}
+.price-card.featured .feature-check {
+  background: rgba(200,168,75,0.12); color: var(--emas-tua);
+}
+
+.feature-divider {
+  height: 1px; background: var(--border); margin: 14px 0;
+}
+.feature-note {
+  display: flex; gap: 8px; align-items: flex-start;
+  font-size: 12px; color: var(--abu-muda); line-height: 1.5;
+  padding: 10px 12px; background: rgba(26,107,60,0.04);
+  border-radius: 8px; border-left: 2px solid var(--hijau-muda);
+}
+.price-card.featured .feature-note {
+  background: rgba(200,168,75,0.05);
+  border-left-color: var(--emas);
+}
+
+/* ── BIAYA LAIN-LAIN ── */
+.other-fees {
+  margin-top: 64px;
+  background: var(--putih);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px;
+}
+[data-theme="dark"] .other-fees { background: #0e1a12; }
+.other-fees-header { text-align: center; margin-bottom: 32px; }
+.fees-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.fee-item {
+  padding: 20px; border: 1px solid var(--border);
+  border-radius: 12px; background: var(--krem);
+  transition: var(--transition);
+}
+[data-theme="dark"] .fee-item { background: var(--krem-gelap); }
+.fee-item:hover { border-color: var(--hijau-muda); transform: translateY(-2px); }
+.fee-item-label { font-size: 11px; font-weight: 700; color: var(--abu-muda); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 6px; }
+.fee-item-amount { font-size: 18px; font-weight: 800; color: var(--teks); margin-bottom: 4px; }
+.fee-item-desc { font-size: 12px; color: var(--abu); line-height: 1.5; }
+
+/* ── CATATAN ── */
+.notes-section {
+  margin-top: 40px;
+  padding: 28px 32px;
+  background: linear-gradient(135deg, rgba(26,107,60,0.06), rgba(45,145,86,0.03));
+  border: 1px solid rgba(26,107,60,0.15);
+  border-radius: 16px;
+}
+.notes-title { font-size: 13px; font-weight: 700; color: var(--teks); margin-bottom: 12px; }
+.notes-list { display: flex; flex-direction: column; gap: 8px; }
+.notes-list li {
+  display: flex; gap: 8px; font-size: 13px; color: var(--abu); line-height: 1.6;
+  list-style: none;
+}
+.notes-list li::before { content: '*'; color: var(--emas); font-weight: 800; flex-shrink: 0; }
+
+/* ── CTA BOTTOM ── */
+.cta-bottom {
+  margin-top: 64px; text-align: center;
+  padding: 56px 32px;
+  background: linear-gradient(160deg, var(--hijau-tua), var(--hijau));
+  border-radius: 24px;
+  position: relative; overflow: hidden;
+}
+.cta-bottom::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 80% 50%, rgba(200,168,75,0.15), transparent 60%);
+}
+.cta-bottom-inner { position: relative; z-index: 1; }
+.cta-bottom h2 { font-size: clamp(22px, 3vw, 32px); font-weight: 800; color: white; margin-bottom: 10px; }
+.cta-bottom p { font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 28px; line-height: 1.7; }
+.cta-bottom-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  padding: 14px 28px; border-radius: 10px; border: none;
+  background: linear-gradient(135deg, var(--emas-tua), var(--emas-muda));
+  color: white; font-size: 14px; font-weight: 700;
+  cursor: pointer; transition: var(--transition); font-family: inherit;
+  box-shadow: 0 4px 16px rgba(160,120,48,0.4);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(160,120,48,0.55); }
+.btn-secondary {
+  padding: 14px 28px; border-radius: 10px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.1); backdrop-filter: blur(8px);
+  color: white; font-size: 14px; font-weight: 600;
+  cursor: pointer; transition: var(--transition); font-family: inherit;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.55); transform: translateY(-2px); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--gelap); color: rgba(255,255,255,0.55);
+  text-align: center; padding: 24px;
+  font-size: 12px; margin-top: 80px;
+}
+footer a { color: var(--emas-muda); text-decoration: none; }
+
+/* ── FADE IN ANIMATION ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.cards-grid { animation: fadeUp 0.6s ease both; }
+.price-card:nth-child(1) { animation: fadeUp 0.5s 0.1s ease both; }
+.price-card:nth-child(2) { animation: fadeUp 0.5s 0.2s ease both; }
+.price-card:nth-child(3) { animation: fadeUp 0.5s 0.3s ease both; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .cards-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  .price-card.featured { transform: none; }
+  .price-card.featured:hover { transform: translateY(-6px); }
+  .fees-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .hero { padding: 48px 16px 72px; }
+  .main { padding: 40px 16px 60px; }
+  .other-fees { padding: 28px 20px; }
+  .fees-grid { grid-template-columns: 1fr; }
+  .cta-bottom { padding: 40px 20px; }
+  .topbar { display: none; }
+  .billing-options { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span>📅 PPDB Tahun Ajaran 2026/2027 — Pendaftaran: 15 Juli – 31 Agustus 2026</span>
+  <div class="topbar-right">
+    <span>📞 0812-3456-7890</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="">
+        <img src="Logo-nf.png" width="40">
+      </div>
+      <div class="logo-text">
+        <strong>MTs Nurul Fata</strong>
+        <span>Tegalwaru, Purwakarta</span>
+      </div>
+    </a>
+    <div class="header-right">
+      <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+      <button id="darkToggle" onclick="toggleDark()" title="Ganti tema">🌙</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">✨ Penerimaan Peserta Didik Baru</div>
+    <h1>Pilih Jalur <span>Pendidikanmu</span></h1>
+    <p>MTs Nurul Fata menyediakan tiga jalur pendidikan yang dapat disesuaikan dengan kebutuhan dan harapan keluarga. Temukan yang paling sesuai untukmu.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">📅 Dibuka <strong>15 Juli 2026</strong></div>
+      <div class="hero-meta-item">👥 Kuota <strong>Terbatas</strong></div>
+      <div class="hero-meta-item">📋 Akreditasi <strong>B — BAN-S/M</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- PRICING HEADER -->
+  <div class="pricing-header">
+    <div class="section-label">Jalur Pendidikan</div>
+    <h2 class="section-title">3 Opsi <span>Jalur Masuk</span></h2>
+    <p class="section-desc">Setiap jalur dirancang untuk memenuhi kebutuhan yang berbeda.<br>Semua jalur menggunakan kurikulum nasional terintegrasi nilai-nilai Islam.</p>
+    <div class="divider"></div>
+  </div>
+
+  <!-- CARDS -->
+  <div class="cards-grid">
+
+    <!-- CARD 1: Sekolah Reguler -->
+    <div class="price-card" id="card-reguler">
+      <div class="card-accent"></div>
+      <div class="card-header">
+        <div class="card-icon">🏫</div>
+        <div class="card-name">Sekolah Reguler</div>
+        <div class="card-tagline">Pendidikan madrasah formal dengan nilai-nilai Islam yang kuat</div>
+      </div>
+      <div class="card-price-wrap">
+        <div class="billing-options">
+          <button class="bill-opt selected" onclick="selectBill('reguler','spp')" id="reguler-spp">
+            <div class="bill-opt-radio"></div>
+            <span class="bill-opt-amount">Rp 150.000</span>
+            <span class="bill-opt-period">SPP / bulan</span>
+          </button>
+          <button class="bill-opt" onclick="selectBill('reguler','daftar')" id="reguler-daftar">
+            <div class="bill-opt-radio"></div>
+            <span class="bill-opt-amount">Rp 500.000</span>
+            <span class="bill-opt-period">Biaya pendaftaran</span>
+            <span class="bill-opt-save">Sekali</span>
+          </button>
+        </div>
+        <button class="card-cta" onclick="daftar('Sekolah Reguler')">Daftar Jalur Reguler</button>
+      </div>
+      <div class="card-features">
+        <div class="features-label">Sudah termasuk</div>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Kegiatan belajar mengajar full-day (07.00–15.30)</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Seluruh mata pelajaran nasional & keagamaan</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Program Tahfidz Qur'an (minimal 2 juz)</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Akses perpustakaan & laboratorium komputer</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Kegiatan ekstrakurikuler pilihan</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Bimbingan konseling (BK)</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Rapor & evaluasi akademik per semester</span>
+          </li>
+        </ul>
+        <div class="feature-divider"></div>
+        <div class="feature-note">
+          <span>ℹ️</span>
+          <span>Siswa pulang setiap hari. Cocok untuk keluarga yang ingin pendidikan Islam berkualitas dengan biaya terjangkau.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2: Boarding School (FEATURED) -->
+    <div class="price-card featured" id="card-boarding">
+      <div class="card-accent"></div>
+      <div class="card-ribbon">Paling Diminati</div>
+      <div class="card-header">
+        <div class="card-icon">🏠</div>
+        <div class="card-name">Boarding School</div>
+        <div class="card-tagline">Madrasah + asrama terpadu untuk pembentukan karakter menyeluruh</div>
+      </div>
+      <div class="card-price-wrap">
+        <div class="billing-options">
+          <button class="bill-opt selected" onclick="selectBill('boarding','bulan')" id="boarding-bulan">
+            <div class="bill-opt-radio"></div>
+            <span class="bill-opt-amount">Rp 750.000</span>
+            <span class="bill-opt-period">SPP + asrama / bln</span>
+          </button>
+          <button class="bill-opt" onclick="selectBill('boarding','daftar')" id="boarding-daftar">
+            <div class="bill-opt-radio"></div>
+            <span class="bill-opt-amount">Rp 1.500.000</span>
+            <span class="bill-opt-period">Biaya pendaftaran</span>
+            <span class="bill-opt-save">Sekali</span>
+          </button>
+        </div>
+        <button class="card-cta" onclick="daftar('Boarding School')">Daftar Boarding School</button>
+      </div>
+      <div class="card-features">
+        <div class="features-label">Semua yang ada di Reguler, ditambah:</div>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Tempat tinggal asrama putra/putri terpisah</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>3x makan sehari (sarapan, siang, malam)</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Program tahajud & shalat berjamaah terjadwal</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Kajian kitab kuning dasar tiap malam</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Pembina asrama 24 jam</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Target hafal 5 juz selama 3 tahun</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Fasilitas laundry & kebersihan asrama</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Laporan perkembangan bulanan ke orang tua</span>
+          </li>
+        </ul>
+        <div class="feature-divider"></div>
+        <div class="feature-note">
+          <span>⭐</span>
+          <span>Pulang setiap 2 minggu (sabtu-minggu). Program terpadu antara sekolah formal & kehidupan pesantren modern.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3: Pesantren Saja -->
+    <div class="price-card pesantren" id="card-pesantren">
+      <div class="card-accent"></div>
+      <div class="card-header">
+        <div class="card-icon">🕌</div>
+        <div class="card-name">Pesantren Saja</div>
+        <div class="card-tagline">Fokus pendalaman ilmu agama & hafalan Al-Qur'an penuh waktu</div>
+      </div>
+      <div class="card-price-wrap">
+        <div class="billing-options">
+          <button class="bill-opt selected" onclick="selectBill('pesantren','bulan')" id="pesantren-bulan">
+            <div class="bill-opt-radio"></div>
+            <span class="bill-opt-amount">Rp 500.000</span>
+            <span class="bill-opt-period">Syahriyah / bulan</span>
+          </button>
+          <button class="bill-opt" onclick="selectBill('pesantren','daftar')" id="pesantren-daftar">
+            <div class="bill-opt-radio"></div>
+            <span class="bill-opt-amount">Rp 800.000</span>
+            <span class="bill-opt-period">Biaya pendaftaran</span>
+            <span class="bill-opt-save">Sekali</span>
+          </button>
+        </div>
+        <button class="card-cta" onclick="daftar('Pesantren')">Daftar Jalur Pesantren</button>
+      </div>
+      <div class="card-features">
+        <div class="features-label">Sudah termasuk</div>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Tempat tinggal di lingkungan pondok pesantren</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>3x makan sehari + kudapan</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Program Tahfidz intensif (target 10–15 juz)</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Kajian kitab kuning & fiqih muamalah</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Bahasa Arab percakapan sehari-hari</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Shalat berjamaah 5 waktu + sunnah rawatib</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Pengajaran akidah, tasawuf & sirah nabawiyah</span>
+          </li>
+        </ul>
+        <div class="feature-divider"></div>
+        <div class="feature-note">
+          <span>📝</span>
+          <span>Ijazah kelulusan pesantren (bukan ijazah nasional). Cocok untuk yang ingin fokus penuh pada ilmu agama & hafalan.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BIAYA LAIN-LAIN -->
+  <div class="other-fees">
+    <div class="other-fees-header">
+      <div class="section-label">Biaya Tambahan</div>
+      <h3 class="section-title" style="font-size:22px;">Rincian <span>Biaya Lainnya</span></h3>
+      <p class="section-desc">Biaya di bawah dikenakan sesuai kebutuhan dan dibayarkan terpisah</p>
+    </div>
+    <div class="fees-grid">
+      <div class="fee-item">
+        <div class="fee-item-label">Seragam Lengkap</div>
+        <div class="fee-item-amount">Rp 350.000</div>
+        <div class="fee-item-desc">3 stel seragam (putih-biru, pramuka, olahraga). Dibeli saat MOS.</div>
+      </div>
+      <div class="fee-item">
+        <div class="fee-item-label">Buku & LKS</div>
+        <div class="fee-item-amount">Rp 200.000</div>
+        <div class="fee-item-desc">Paket buku pelajaran & lembar kerja siswa per semester.</div>
+      </div>
+      <div class="fee-item">
+        <div class="fee-item-label">Kegiatan MOS</div>
+        <div class="fee-item-amount">Rp 100.000</div>
+        <div class="fee-item-desc">Masa Orientasi Siswa selama 3 hari di awal tahun ajaran.</div>
+      </div>
+      <div class="fee-item">
+        <div class="fee-item-label">Study Tour</div>
+        <div class="fee-item-amount">Menyesuaikan</div>
+        <div class="fee-item-desc">Kegiatan studi wisata tahunan, bersifat opsional.</div>
+      </div>
+      <div class="fee-item">
+        <div class="fee-item-label">Ekstrakurikuler</div>
+        <div class="fee-item-amount">Rp 50.000/bln</div>
+        <div class="fee-item-desc">Biaya ekskul pilihan (pramuka, hadroh, futsal, dll).</div>
+      </div>
+      <div class="fee-item">
+        <div class="fee-item-label">Ujian & Wisuda</div>
+        <div class="fee-item-amount">Rp 300.000</div>
+        <div class="fee-item-desc">Biaya pelaksanaan ujian akhir & prosesi wisuda kelas IX.</div>
+      </div>
+    </div>
+
+    <div class="notes-section" style="margin-top:28px;">
+      <div class="notes-title">📌 Catatan Penting</div>
+      <ul class="notes-list">
+        <li>Semua harga bersifat estimasi dan dapat berubah. Konfirmasi resmi diberikan saat sesi wawancara pendaftaran.</li>
+        <li>Tersedia keringanan biaya SPP bagi siswa dari keluarga kurang mampu dengan membawa surat keterangan.</li>
+        <li>Biaya pendaftaran tidak dapat dikembalikan setelah proses seleksi dimulai.</li>
+        <li>Pembayaran SPP dapat dilakukan via transfer bank atau langsung ke bendahara madrasah setiap tanggal 1–10.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CTA BOTTOM -->
+  <div class="cta-bottom">
+    <div class="cta-bottom-inner">
+      <h2>Masih Ada Pertanyaan?</h2>
+      <p>Tim kami siap membantu kamu memilih jalur yang paling tepat.<br>Hubungi kami atau datang langsung ke madrasah.</p>
+      <div class="cta-bottom-btns">
+        <button class="btn-primary" onclick="window.open('https://wa.me/6281234567890?text=Assalamualaikum%2C%20saya%20ingin%20bertanya%20tentang%20PPDB%20MTs%20Nurul%20Fata','_blank')">
+          💬 Chat via WhatsApp
+        </button>
+        <a href="kontak.html" class="btn-secondary">
+          📍 Lihat Lokasi & Kontak
+        </a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 MTs Nurul Fata Tegalwaru — Informasi PPDB Tahun Ajaran 2026/2027 &nbsp;|&nbsp; <a href="index.html">Kembali ke Beranda</a></p>
+</footer>
+
+<script>
+/* ── DARK MODE ── */
+function toggleDark() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  document.getElementById('darkToggle').textContent = isDark ? '🌙' : '☀️';
+  localStorage.setItem('nf-theme', isDark ? 'light' : 'dark');
+}
+(function() {
+  const saved = localStorage.getItem('nf-theme');
+  if (saved === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.getElementById('darkToggle').textContent = '☀️';
+  }
+})();
+
+/* ── BILLING OPTION TOGGLE ── */
+function selectBill(card, opt) {
+  // Deselect all in this card
+  document.querySelectorAll(`#card-${card} .bill-opt`).forEach(el => el.classList.remove('selected'));
+  // Select clicked
+  document.getElementById(`${card}-${opt}`).classList.add('selected');
+}
+
+/* ── DAFTAR BUTTON ── */
+function daftar(jalur) {
+  const msg = encodeURIComponent(`Assalamu'alaikum, saya ingin mendaftar PPDB MTs Nurul Fata Tegalwaru melalui jalur *${jalur}*. Mohon informasi selanjutnya. Terima kasih.`);
+  window.open(`https://wa.me/6281234567890?text=${msg}`, '_blank');
+}
+</script>
+</body>
+</html>
