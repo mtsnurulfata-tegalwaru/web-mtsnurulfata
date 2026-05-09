@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Website Resmi MTs Nurul Fata Tegalwaru - Madrasah Tsanawiyah Swasta, Tegalwaru, Purwakarta, Jawa Barat. Beriman, Berilmu, Berakhlak Mulia."/>
+<meta name="keywords" content="MTs Nurul Fata, Tegalwaru, Purwakarta, Madrasah, PPDB, Sekolah Islam"/>
+<meta property="og:title" content="MTs Nurul Fata Tegalwaru"/>
+<meta property="og:description" content="Madrasah Tsanawiyah yang berkomitmen mencetak generasi Muslim yang beriman, berilmu, dan berakhlak mulia."/>
+<title>MTs Nurul Fata Tegalwaru — Madrasah Tsanawiyah Swasta</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<!-- ══ LOADER ══ -->
+<div id="loader">
+  <div class="loader-logo">
+    <img src="Logo-nf-loading.png">
+  </div>
+  <div class="loader-text">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+
+<!-- ══ BACK TO TOP ══ -->
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Kembali ke atas">↑</button>
+
+<!-- ══ WHATSAPP FLOATING ══ -->
+<a id="waFloat" href="https://wa.me/6281234567890?text=Assalamu'alaikum%2C%20saya%20ingin%20bertanya%20tentang%20MTs%20Nurul%20Fata%20Tegalwaru" target="_blank" title="Chat WhatsApp">
+  <img src="WhatsApp2.png" width="50">
+</a>
+
+<!-- ══ LIGHTBOX ══ -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-content" onclick="event.stopPropagation()">
+    <div class="lightbox-icon" id="lbIcon">📸</div>
+    <div class="lightbox-title" id="lbTitle"></div>
+    <div class="lightbox-sub" id="lbSub">Foto asli akan ditampilkan di sini</div>
+  </div>
+</div>
+
+<!-- ══ MOBILE NAV ══ -->
+<div class="mobile-nav" id="mobileNav" onclick="closeMobileNav()">
+  <div class="mobile-nav-panel" onclick="event.stopPropagation()">
+    <a href="#beranda" onclick="closeMobileNav()">🏠 Beranda</a>
+    <a href="#profil" onclick="closeMobileNav()">🏫 Profil Sekolah</a>
+    <a href="#fasilitas" onclick="closeMobileNav()">🏗️ Fasilitas</a>
+    <a href="#ekskul" onclick="closeMobileNav()">⚽ Ekstrakurikuler</a>
+    <a href="#guru" onclick="closeMobileNav()">👨‍🏫 Guru & Staf</a>
+    <a href="#ppdb" onclick="closeMobileNav()">📝 PPDB</a>
+    <a href="#berita" onclick="closeMobileNav()">📰 Berita</a>
+    <a href="#galeri" onclick="closeMobileNav()">📸 Galeri</a>
+    <a href="#kontak" onclick="closeMobileNav()">📞 Kontak</a>
+    <a href="#ppdb" class="mobile-ppdb" onclick="closeMobileNav()">Daftar PPDB 2026/2027</a>
+    <button onclick="toggleDark()" style="margin-top:16px;width:100%;padding:12px;border-radius:9px;border:1.5px solid var(--border);background:transparent;font-family:inherit;font-size:14px;font-weight:600;color:var(--teks);cursor:pointer;" id="darkToggleMobile">🌙 Ganti Tema Gelap/Terang</button>
+  </div>
+</div>
+
+<!-- ══ TOP BAR ══ -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <div class="topbar-item"><img src="google-maps.png" width="10"> Tegalwaru, Purwakarta, Jawa Barat</div>
+      <div class="topbar-item">📞 (0232) 123-4567</div>
+      <div class="topbar-item">✉️ info@mtsnurulfatategalwaru.sch.id</div>
+    </div>
+    <div class="topbar-right">
+      <a href="#">Portal Siswa</a>
+      <div class="topbar-divider"></div>
+      <a href="#">e-Learning</a>
+      <div class="topbar-divider"></div>
+      <a href="#kontak">Kontak</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ HEADER ══ -->
+<header id="mainHeader">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-emblem">
+        <img src="Logo-nf.png">
+      </div>
+      <div class="logo-text">
+        <div class="nama">MTs Nurul Fata Tegalwaru</div>
+        <div class="sub">Madrasah Tsanawiyah Swasta — Purwakarta, Jawa Barat</div>
+        <div class="nss">NSM: 212320804028 &nbsp;|&nbsp; NPSN: 20279187</div>
+      </div>
+    </div>
+    <nav id="desktopNav">
+      <a href="#beranda" class="active"><span>Beranda</span></a>
+      <div class="nav-dropdown">
+        <a href="#profil"><span>Profil ▾</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="#profil">Visi & Misi</a>
+          <a href="#profil">Identitas Sekolah</a>
+          <a href="#profil">Sejarah Singkat</a>
+          <a href="#guru">Guru & Staf</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="#fasilitas"><span>Akademik ▾</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="#fasilitas">Fasilitas</a>
+          <a href="#ekskul">Ekstrakurikuler</a>
+          <a href="#galeri">Galeri</a>
+        </div>
+      </div>
+      <a href="#ppdb"><span>PPDB</span></a>
+      <a href="#berita"><span>Berita</span></a>
+      <a href="#kontak"><span>Kontak</span></a>
+      <a href="#ppdb" class="btn-ppdb-nav">Daftar Sekarang</a>
+      <button id="darkToggle" onclick="toggleDark()" title="Ganti tema gelap/terang">🌙</button>
+    </nav>
+    </nav>
+    <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="beranda">
+  <div class="hero-pattern"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-akreditasi reveal">🏅 Akreditasi A — BAN-SM/XII/2018</div>
+      <div class="hero-arabic reveal">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+      <h1 class="reveal">MTs <span>Nurul Fata</span><br>Tegalwaru</h1>
+      <div class="hero-lokasi reveal">
+      <img src="google-maps.png" width="15"> Jl. Warung Jeruk Desa Sukahaji, Tegalwaru, Purwakarta 41165</div>
+      <p class="hero-desc reveal">
+        Madrasah Tsanawiyah yang berkomitmen membentuk generasi Muslim
+        yang beriman, berilmu, dan berakhlak mulia. Berdiri sejak 2004,
+        kami terus tumbuh bersama masyarakat Tegalwaru dan sekitarnya.
+      </p>
+      <div class="hero-cta reveal">
+        <a href="#ppdb" class="btn-primary">Daftar PPDB 2026/2027</a>
+        <a href="#profil" class="btn-secondary">Profil Sekolah →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS ══ -->
+<div class="hero-stats">
+  <div class="hero-stats-inner">
+    <div class="stat-item reveal">
+      <div class="stat-num" data-target="1998" data-mode="+">1998</div>
+      <div class="stat-label">Tahun Berdiri</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-num" data-target="400" data-suffix="+">0</div>
+      <div class="stat-label">Siswa Aktif</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-num" data-target="40">0</div>
+      <div class="stat-label">Tenaga Pendidik</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-num" data-target="98" data-suffix="%">0</div>
+      <div class="stat-label">Tingkat Kelulusan</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TICKER ══ -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <div class="ticker-label">📢 Pengumuman</div>
+    <div class="ticker-track">
+      <div class="ticker-content">
+        <span class="ticker-item">🎓 PPDB Tahun Ajaran 2026/2027 dibuka mulai 15 Juli – 31 Agustus 2026</span>
+        <span class="ticker-item">📅 Masa Orientasi Siswa (MOS) dilaksanakan 12–14 Agustus 2026</span>
+        <span class="ticker-item">🏆 MTs Nurul Fata raih Juara II Lomba MTQ Tingkat Kabupaten Purwakarta 2025</span>
+        <span class="ticker-item">📋 Pengambilan rapor semester genap mulai 8 Juli 2026 di wali kelas masing-masing</span>
+        <span class="ticker-item">🌙 Selamat datang di website resmi MTs Nurul Fata Tegalwaru</span>
+        <span class="ticker-item">🎓 PPDB Tahun Ajaran 2026/2027 dibuka mulai 15 Juli – 31 Agustus 2026</span>
+        <span class="ticker-item">📅 Masa Orientasi Siswa (MOS) dilaksanakan 12–14 Agustus 2026</span>
+        <span class="ticker-item">🏆 MTs Nurul Fata raih Juara II Lomba MTQ Tingkat Kabupaten Purwakarta 2025</span>
+        <span class="ticker-item">📋 Pengambilan rapor semester genap mulai 8 Juli 2026 di wali kelas masing-masing</span>
+        <span class="ticker-item">🌙 Selamat datang di website resmi MTs Nurul Fata Tegalwaru</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BERITA + SIDEBAR ══ -->
+<section class="section" id="berita">
+  <div class="section-inner">
+    <div class="beranda-grid">
+      <div class="reveal-left">
+        <div class="section-header">
+          <div class="section-label">Informasi Terkini</div>
+          <h2 class="section-title">Berita & <span>Kegiatan</span></h2>
+          <div class="divider"></div>
+        </div>
+        <div class="berita-utama">
+          <div class="berita-utama-foto">
+            <div class="icon">📸</div>
+            <div class="label">Foto Kegiatan MTQ / Wisuda Siswa</div>
+            <div class="sub">Ganti dengan foto acara terbaru sekolah</div>
+          </div>
+          <div class="berita-utama-body">
+            <span class="berita-tag">🏆 Prestasi</span>
+            <h3>MTs Nurul Fata Tegalwaru Raih Juara II MTQ Tingkat Kabupaten Purwakarta Tahun 2025</h3>
+            <p>Siswa-siswi MTs Nurul Fata Tegalwaru kembali mengharumkan nama sekolah dengan berhasil meraih Juara II pada Musabaqoh Tilawatil Quran (MTQ) tingkat Kabupaten Purwakarta yang diselenggarakan di Pendopo Kabupaten Purwakarta pada bulan Juni 2025.</p>
+            <div class="berita-meta">
+              <span>📅 20 Juni 2025</span>
+              <span>✍️ Tim Humas MTs Nurul Fata</span>
+            </div>
+            <a href="#" class="btn-baca">Baca Selengkapnya →</a>
+          </div>
+        </div>
+        <div class="berita-list">
+          <div class="berita-item">
+            <div class="berita-item-foto">🎓</div>
+            <div class="berita-item-body">
+              <h4>Pelepasan dan Wisuda Kelas IX Tahun Pelajaran 2024/2025</h4>
+              <div class="meta">📅 15 Juni 2025 · Kegiatan Sekolah</div>
+            </div>
+          </div>
+          <div class="berita-item">
+            <div class="berita-item-foto">🌙</div>
+            <div class="berita-item-body">
+              <h4>Kegiatan Pesantren Kilat Ramadhan 1446 H: Memperkuat Iman dan Ilmu</h4>
+              <div class="meta">📅 14 Maret 2025 · Keagamaan</div>
+            </div>
+          </div>
+          <div class="berita-item">
+            <div class="berita-item-foto">🧑‍🏫</div>
+            <div class="berita-item-body">
+              <h4>Peringatan Hari Guru Nasional: Apresiasi untuk Para Pendidik MTs Nurul Fata</h4>
+              <div class="meta">📅 25 November 2024 · Kegiatan Sekolah</div>
+            </div>
+          </div>
+          <div class="berita-item">
+            <div class="berita-item-foto">🚩</div>
+            <div class="berita-item-body">
+              <h4>Tim Paskibra MTs Nurul Fata Tampil Pada Upacara HUT RI ke-79 Tingkat Kecamatan</h4>
+              <div class="meta">📅 17 Agustus 2024 · Ekstrakurikuler</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="sidebar reveal-right">
+        <div class="sidebar-widget">
+          <div class="widget-header">📢 Pengumuman Resmi</div>
+          <div class="widget-body">
+            <div class="pengumuman-item">
+              <div class="pengumuman-date"><div class="day">15</div><div class="mon">Jul</div></div>
+              <div><h4>Pembukaan PPDB TA 2026/2027</h4><div class="cat">🔴 Penting · PPDB</div></div>
+            </div>
+            <div class="pengumuman-item">
+              <div class="pengumuman-date"><div class="day">08</div><div class="mon">Jul</div></div>
+              <div><h4>Pengambilan Rapor Semester Genap</h4><div class="cat">🟡 Info · Akademik</div></div>
+            </div>
+            <div class="pengumuman-item">
+              <div class="pengumuman-date"><div class="day">02</div><div class="mon">Jul</div></div>
+              <div><h4>Libur Akhir Tahun Pelajaran 2025/2026</h4><div class="cat">🟢 Umum · Kalender</div></div>
+            </div>
+            <div class="pengumuman-item">
+              <div class="pengumuman-date"><div class="day">25</div><div class="mon">Jun</div></div>
+              <div><h4>Hasil Ujian Kenaikan Kelas Diumumkan</h4><div class="cat">🔵 Akademik</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <div class="widget-header">📅 Agenda Sekolah</div>
+          <div class="widget-body">
+            <div class="agenda-item"><div class="agenda-dot"></div><div><h4>Pembukaan PPDB 2026/2027</h4><div class="tgl">15 Juli 2026</div></div></div>
+            <div class="agenda-item"><div class="agenda-dot"></div><div><h4>Masa Orientasi Siswa Baru</h4><div class="tgl">12–14 Agustus 2026</div></div></div>
+            <div class="agenda-item"><div class="agenda-dot"></div><div><h4>Hari Pertama Masuk Sekolah TA 2026/2027</h4><div class="tgl">18 Agustus 2026</div></div></div>
+            <div class="agenda-item"><div class="agenda-dot"></div><div><h4>Peringatan Maulid Nabi SAW 1448 H</h4><div class="tgl">September 2026</div></div></div>
+            <div class="agenda-item"><div class="agenda-dot"></div><div><h4>Penilaian Tengah Semester Ganjil</h4><div class="tgl">Oktober 2026</div></div></div>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <div class="widget-header">🔗 Tautan Penting</div>
+          <div class="widget-body">
+            <a href="#" class="tautan-item">📊 EMIS Kemenag RI</a>
+            <a href="#" class="tautan-item">📝 Data Pokok Pendidikan (Dapodik)</a>
+            <a href="#" class="tautan-item">🎓 Portal Kemenag Purwakarta</a>
+            <a href="#" class="tautan-item">📋 BAN-S/M Akreditasi</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROFIL ══ -->
+<section class="section profil-bg" id="profil">
+  <div class="section-inner">
+
+    <div class="section-header center reveal">
+      <div class="section-label">Tentang Kami</div>
+      <h2 class="section-title">Profil <span>MTs Nurul Fata Tegalwaru</span></h2>
+      <p class="section-desc">Mengenal lebih dekat madrasah kami — dari visi dan misi yang menjadi landasan, identitas resmi, hingga perjalanan panjang yang membentuk kami hari ini.</p>
+      <div class="divider"></div>
+    </div>
+
+    <!-- Blok 1: Visi & Misi -->
+    <div class="profil-vm-wrap">
+      <div class="profil-vm-intro reveal-left">
+        <div class="section-label">Visi & Misi</div>
+        <h3 class="section-title" style="font-size:clamp(20px,2.5vw,26px);">Landasan <span>Nilai Kami</span></h3>
+        <div class="divider" style="margin:16px 0;"></div>
+        <p>Berlandaskan nilai-nilai Islam Ahlussunnah Wal Jama'ah, kami hadir untuk membentuk generasi yang tidak hanya cerdas secara akademik, tetapi juga kuat secara spiritual dan mulia akhlaknya.</p>
+        <div class="profil-vm-arabic">تَعَلَّمُوا الْعِلْمَ فَإِنَّ تَعَلُّمَهُ لِلَّهِ خَشْيَةٌ</div>
+      </div>
+      <div class="vm-blocks reveal-right">
+        <div class="vm-block">
+          <div class="vm-block-header">
+            <div class="vm-block-icon hijau">🎯</div>
+            <div><h3>Visi Madrasah</h3><span>Arah dan cita-cita jangka panjang</span></div>
+          </div>
+          <div class="vm-block-body">
+            <p>Terwujudnya peserta didik yang beriman, bertakwa, berilmu, berakhlak mulia, mandiri, dan berdaya saing di era global berlandaskan nilai-nilai Islam Ahlussunnah Wal Jama'ah.</p>
+          </div>
+        </div>
+        <div class="vm-block">
+          <div class="vm-block-header">
+            <div class="vm-block-icon emas">🚀</div>
+            <div><h3>Misi Madrasah</h3><span>Langkah nyata mewujudkan visi</span></div>
+          </div>
+          <div class="vm-block-body">
+            <ul class="vm-list">
+              <li><span class="num">1</span><span>Menyelenggarakan pendidikan yang mengintegrasikan ilmu agama dan ilmu pengetahuan umum secara seimbang.</span></li>
+              <li><span class="num">2</span><span>Membina karakter Islami, akhlakul karimah, dan kepribadian yang mandiri pada setiap peserta didik.</span></li>
+              <li><span class="num">3</span><span>Mengembangkan potensi akademik dan non-akademik melalui proses pembelajaran yang inovatif dan bermutu.</span></li>
+              <li><span class="num">4</span><span>Menjalin kerjasama yang sinergis antara madrasah, keluarga, dan masyarakat.</span></li>
+              <li><span class="num">5</span><span>Menciptakan lingkungan madrasah yang bersih, aman, nyaman, dan kondusif untuk belajar.</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="vm-block">
+          <div class="vm-block-header">
+            <div class="vm-block-icon biru">🎓</div>
+            <div><h3>Tujuan Madrasah</h3><span>Target konkret yang ingin dicapai</span></div>
+          </div>
+          <div class="vm-block-body">
+            <ul class="vm-list">
+              <li><span class="num">✓</span><span>Menghasilkan lulusan yang hafal minimal 2 juz Al-Qur'an dan mampu membaca kitab kuning dasar.</span></li>
+              <li><span class="num">✓</span><span>Mencapai nilai rata-rata ujian di atas standar nasional setiap tahunnya.</span></li>
+              <li><span class="num">✓</span><span>Membentuk siswa yang aktif, kreatif, dan berprestasi di bidang akademik maupun non-akademik.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blok 2: Identitas -->
+    <div class="profil-identitas-wrap">
+      <div class="section-header center reveal">
+        <div class="section-label">Data Resmi</div>
+        <h3 class="section-title" style="font-size:clamp(20px,2.5vw,26px);">Identitas <span>Madrasah</span></h3>
+        <p class="section-desc">Informasi resmi dan legalitas MTs Nurul Fata Tegalwaru yang terdaftar pada Kementerian Agama RI.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="identitas-grid">
+        <div class="id-card reveal"><div class="id-card-icon">🏫</div><div class="id-card-body"><div class="label">Nama Madrasah</div><div class="value">MTs Nurul Fata Tegalwaru</div></div></div>
+        <div class="id-card reveal"><div class="id-card-icon">📋</div><div class="id-card-body"><div class="label">NSS</div><div class="value">212320804028</div></div></div>
+        <div class="id-card reveal"><div class="id-card-icon">🔢</div><div class="id-card-body"><div class="label">NPSN</div><div class="value">20278301</div></div></div>
+        <div class="id-card reveal"><div class="id-card-icon">🏅</div><div class="id-card-body"><div class="label">Akreditasi</div><div class="value accent">B — BAN-S/M</div></div></div>
+        <div class="id-card reveal"><div class="id-card-icon">📅</div><div class="id-card-body"><div class="label">Tahun Berdiri</div><div class="value">2004</div></div></div>
+        <div class="id-card reveal"><div class="id-card-icon">🏛️</div><div class="id-card-body"><div class="label">Status</div><div class="value">Swasta — Di bawah Kemenag RI</div></div></div>
+        <div class="id-card reveal"><div class="id-card-icon">👨‍💼</div><div class="id-card-body"><div class="label">Kepala Madrasah</div><div class="value">H. Ahmad Fauzi, S.Pd.I., M.M.</div></div></div>
+        <div class="id-card reveal"><div class="id-card-icon">🌿</div><div class="id-card-body"><div class="label">Yayasan</div><div class="value">Yayasan Nurul Fata Tegalwaru</div></div></div>
+        <div class="id-card reveal"><div class="id-card-icon">📜</div><div class="id-card-body"><div class="label">SK Pendirian</div><div class="value">Kemenag Kab. Purwakarta</div></div></div>
+        <div class="id-card double-span reveal"><div class="id-card-icon">📍</div><div class="id-card-body"><div class="label">Alamat Lengkap</div><div class="value">Jl. Warungjeruk – Cirata, Desa Sukahaji, Kec. Tegalwaru, Kab. Purwakarta, Jawa Barat 41165</div></div></div>
+        <div class="id-card reveal"><div class="id-card-icon">🕐</div><div class="id-card-body"><div class="label">Jam Operasional</div><div class="value">Sen–Kam 07.00–15.30 · Jum 07.00–11.30</div></div></div>
+      </div>
+    </div>
+
+    <!-- Blok 3: Sejarah -->
+    <div class="profil-sejarah-wrap">
+      <div class="section-header center reveal">
+        <div class="section-label">Perjalanan Kami</div>
+        <h3 class="section-title" style="font-size:clamp(20px,2.5vw,26px);">Sejarah <span>Singkat Madrasah</span></h3>
+        <p class="section-desc">Dari sebuah tekad sederhana, kini MTs Nurul Fata tumbuh menjadi madrasah yang dipercaya masyarakat Tegalwaru selama lebih dari dua dekade.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="sejarah-narasi reveal">
+        <p>MTs Nurul Fata Tegalwaru berdiri pada tahun <strong>2004</strong> atas prakarsa tokoh masyarakat dan ulama setempat yang prihatin dengan minimnya lembaga pendidikan Islam tingkat menengah di wilayah Kecamatan Tegalwaru. Bermula dari sebuah bangunan sederhana dengan puluhan siswa dan beberapa tenaga pengajar, madrasah ini tumbuh perlahan namun pasti berkat kepercayaan dan dukungan masyarakat sekitar.</p>
+        <p>Seiring berjalannya waktu, madrasah terus berbenah. Gedung permanen dibangun, fasilitas dilengkapi satu per satu, dan tenaga pendidik yang berkualitas mulai bergabung. Pada tahun <strong>2010</strong>, MTs Nurul Fata resmi mendapatkan akreditasi dari BAN-S/M — sebuah pengakuan formal yang menjadi tonggak kepercayaan diri lembaga. Program Tahfidz Qur'an kemudian diintegrasikan ke dalam kurikulum sebagai wujud komitmen terhadap pendidikan keagamaan yang kuat.</p>
+        <p>Kini, MTs Nurul Fata Tegalwaru telah memiliki lebih dari <strong>400 siswa aktif</strong>, 32 tenaga pendidik dan kependidikan, serta berbagai fasilitas penunjang yang terus dibenahi. Nama <em>"Nurul Fata"</em> — yang berarti <em>cahaya pemuda</em> — menjadi cerminan harapan para pendiri: bahwa setiap siswa yang menimba ilmu di madrasah ini akan menjadi pemuda-pemudi yang bercahaya dengan ilmu, iman, dan akhlak mulia.</p>
+        <div class="sejarah-penutup">
+          نُورُ الفَتَى — Cahaya Pemuda
+          <span>Semangat yang terus kami jaga sejak 2004</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ FASILITAS ══ -->
+<section class="section" id="fasilitas">
+  <div class="section-inner">
+    <div class="section-header center reveal">
+      <div class="section-label">Sarana & Prasarana</div>
+      <h2 class="section-title">Fasilitas <span>Penunjang Belajar</span></h2>
+      <p class="section-desc">Kami terus meningkatkan sarana dan prasarana demi kenyamanan dan efektivitas proses belajar mengajar.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="fasilitas-grid">
+      <div class="fas-card reveal" onclick="openLightbox('🏫','Gedung & Ruang Kelas','12 ruang kelas yang nyaman dan bersih')">
+        <div class="fas-foto"><div class="icon">🏫</div><div class="label">Foto Gedung & Ruang Kelas</div><div class="sub">Klik untuk memperbesar</div></div>
+        <div class="fas-body"><h3>Gedung & Ruang Kelas</h3><p>12 ruang kelas yang nyaman, bersih, dan dilengkapi ventilasi yang baik untuk mendukung konsentrasi belajar siswa setiap harinya.</p></div>
+      </div>
+      <div class="fas-card reveal" onclick="openLightbox('💻','Laboratorium Komputer','30 unit PC dengan koneksi internet')">
+        <div class="fas-foto"><div class="icon">💻</div><div class="label">Foto Lab Komputer</div><div class="sub">Klik untuk memperbesar</div></div>
+        <div class="fas-body"><h3>Laboratorium Komputer</h3><p>Lab komputer dengan 30 unit PC dan koneksi internet, mendukung literasi digital dan praktik mata pelajaran TIK.</p></div>
+      </div>
+      <div class="fas-card reveal" onclick="openLightbox('📚','Perpustakaan','Koleksi lebih dari 3.000 judul buku')">
+        <div class="fas-foto"><div class="icon">📚</div><div class="label">Foto Perpustakaan</div><div class="sub">Klik untuk memperbesar</div></div>
+        <div class="fas-body"><h3>Perpustakaan</h3><p>Koleksi lebih dari 3.000 judul buku, meliputi buku pelajaran, kitab Islam, karya sastra, dan bacaan umum yang terus diperbarui.</p></div>
+      </div>
+      <div class="fas-card reveal" onclick="openLightbox('🕌','Mushola','Pusat kegiatan ibadah seluruh warga madrasah')">
+        <div class="fas-foto"><div class="icon">🕌</div><div class="label">Foto Mushola Sekolah</div><div class="sub">Klik untuk memperbesar</div></div>
+        <div class="fas-body"><h3>Mushola</h3><p>Mushola yang bersih dan nyaman sebagai pusat kegiatan ibadah, shalat berjamaah, dan pembinaan keagamaan seluruh warga madrasah.</p></div>
+      </div>
+      <div class="fas-card reveal" onclick="openLightbox('⚽','Lapangan Olahraga','Lapangan serbaguna untuk kegiatan olahraga')">
+        <div class="fas-foto"><div class="icon">⚽</div><div class="label">Foto Lapangan Olahraga</div><div class="sub">Klik untuk memperbesar</div></div>
+        <div class="fas-body"><h3>Lapangan Olahraga</h3><p>Lapangan serbaguna untuk kegiatan olahraga, upacara bendera, dan berbagai kegiatan luar ruangan siswa.</p></div>
+      </div>
+      <div class="fas-card reveal" onclick="openLightbox('🚽','Kamar Mandi & Sanitasi','Fasilitas sanitasi bersih dan terawat')">
+        <div class="fas-foto"><div class="icon">🚿</div><div class="label">Foto Fasilitas Sanitasi</div><div class="sub">Klik untuk memperbesar</div></div>
+        <div class="fas-body"><h3>Kamar Mandi & Sanitasi</h3><p>Fasilitas sanitasi yang bersih dan terawat, terpisah putra-putri, tersedia di setiap blok gedung madrasah.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRESTASI ══ -->
+<section class="prestasi-section">
+  <div class="prestasi-inner">
+    <div class="prestasi-header reveal">
+      <div class="section-label">Kebanggaan Kami</div>
+      <h2 class="section-title">Prestasi & <span style="color:var(--emas-muda)">Penghargaan</span></h2>
+      <div class="divider" style="margin:16px auto 0"></div>
+    </div>
+    <div class="prestasi-grid">
+      <div class="prestasi-card reveal">
+        <div class="trophy">🥈</div>
+        <h4>Juara II MTQ Tingkat Kabupaten Purwakarta</h4>
+        <p>Cabang Tilawatil Qur'an Putra</p>
+        <span class="prestasi-year">2025</span>
+      </div>
+      <div class="prestasi-card reveal">
+        <div class="trophy">🏅</div>
+        <h4>Juara III Olimpiade IPA Tingkat Kecamatan Tegalwaru</h4>
+        <p>Kompetisi Sains Madrasah (KSM)</p>
+        <span class="prestasi-year">2024</span>
+      </div>
+      <div class="prestasi-card reveal">
+        <div class="trophy">🥇</div>
+        <h4>Juara I Lomba Pramuka Penggalang Tingkat Kabupaten</h4>
+        <p>Jambore Kepanduan Purwakarta</p>
+        <span class="prestasi-year">2024</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EKSKUL ══ -->
+<section class="section ekskul-bg" id="ekskul">
+  <div class="section-inner">
+    <div class="section-header center reveal">
+      <div class="section-label">Pengembangan Diri</div>
+      <h2 class="section-title">Kegiatan <span>Ekstrakurikuler</span></h2>
+      <p class="section-desc">Program pengembangan bakat dan karakter siswa di luar kegiatan akademik formal.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="ekskul-grid">
+      <div class="eks-card reveal"><div class="eks-foto"><div class="icon">⚜️</div><div class="label-foto">Foto Kegiatan Pramuka</div></div><div class="eks-body"><h3>Pramuka</h3><p>Membentuk kemandirian, kepemimpinan, dan jiwa gotong royong melalui kegiatan kepanduan, perkemahan, dan bakti sosial.</p><span class="eks-badge badge-wajib">✓ Wajib</span></div></div>
+      <div class="eks-card reveal"><div class="eks-foto"><div class="icon">🚩</div><div class="label-foto">Foto Latihan Paskibra</div></div><div class="eks-body"><h3>Paskibra</h3><p>Melatih kedisiplinan, kekompakan, dan cinta tanah air melalui baris-berbaris dan tugas pengibaran bendera.</p><span class="eks-badge badge-pilihan">Pilihan</span></div></div>
+      <div class="eks-card reveal"><div class="eks-foto"><div class="icon">🏥</div><div class="label-foto">Foto Kegiatan PMR</div></div><div class="eks-body"><h3>PMR</h3><p>Palang Merah Remaja — melatih siswa dalam pertolongan pertama, kepedulian sosial, dan kesiapsiagaan bencana.</p><span class="eks-badge badge-pilihan">Pilihan</span></div></div>
+      <div class="eks-card reveal"><div class="eks-foto"><div class="icon">💻</div><div class="label-foto">Foto Ekskul Komputer</div></div><div class="eks-body"><h3>Komputer</h3><p>Mengembangkan kemampuan teknologi informasi mulai dari dasar komputer, mengetik, hingga aplikasi perkantoran.</p><span class="eks-badge badge-pilihan">Pilihan</span></div></div>
+      <div class="eks-card reveal"><div class="eks-foto"><div class="icon">📖</div><div class="label-foto">Foto Ekskul Tahfidz</div></div><div class="eks-body"><h3>Tahfidz Qur'an</h3><p>Program hafalan Al-Qur'an terstruktur dengan target minimal 2 juz bagi setiap siswa selama masa belajar.</p><span class="eks-badge badge-wajib">✓ Wajib</span></div></div>
+      <div class="eks-card reveal"><div class="eks-foto"><div class="icon">⚽</div><div class="label-foto">Foto Ekskul Olahraga</div></div><div class="eks-body"><h3>Olahraga</h3><p>Sepak bola, bola voli, dan bulu tangkis — membentuk fisik yang sehat dan semangat sportivitas siswa.</p><span class="eks-badge badge-pilihan">Pilihan</span></div></div>
+      <div class="eks-card reveal"><div class="eks-foto"><div class="icon">🎨</div><div class="label-foto">Foto Ekskul Seni</div></div><div class="eks-body"><h3>Seni & Budaya</h3><p>Seni kaligrafi, marawis, dan hadrah — menumbuhkan kecintaan terhadap budaya Islam dan seni Islami.</p><span class="eks-badge badge-pilihan">Pilihan</span></div></div>
+      <div class="eks-card reveal"><div class="eks-foto"><div class="icon">🗣️</div><div class="label-foto">Foto Ekskul Pidato</div></div><div class="eks-body"><h3>Pidato & Muhadharah</h3><p>Melatih kemampuan berpidato dalam bahasa Indonesia dan bahasa Arab untuk meningkatkan kepercayaan diri.</p><span class="eks-badge badge-pilihan">Pilihan</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ GURU & STAF ══ -->
+<section class="section" id="guru">
+  <div class="section-inner">
+    <div class="section-header center reveal">
+      <div class="section-label">Sumber Daya Manusia</div>
+      <h2 class="section-title">Pimpinan & <span>Tenaga Pendidik</span></h2>
+      <p class="section-desc">Didukung oleh tenaga pendidik berpengalaman dan berdedikasi tinggi dalam mencetak generasi Muslim yang unggul.</p>
+      <div class="divider"></div>
+    </div>
+
+    <!-- Kepala Sekolah — tetap di atas -->
+    <div class="kepala-wrapper reveal">
+      <div class="kepala-card">
+        <div class="kepala-foto">
+          <div class="icon">👨‍💼</div>
+          <div class="label">Kepala Madrasah</div>
+          <div class="kepala-badge">⭐ Pimpinan</div>
+        </div>
+        <div class="kepala-body">
+          <h4>H. Ahmad Fauzi, S.Pd.I., M.M.</h4>
+          <div class="jabatan">Kepala Madrasah</div>
+          <div class="mapel">Manajemen Pendidikan</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Infinite Carousel Dua Baris -->
+    <div class="guru-carousel-section">
+      <div class="guru-track-wrapper">
+
+        <!-- Baris 1: bergerak ke kanan (scrollLeft) -->
+        <div class="guru-track row-left">
+          <!-- set 1 -->
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👩‍🏫</div><div class="label">Wakamad Kurikulum</div></div><div class="guru-body"><h4>Hj. Siti Maryam, S.Ag.</h4><div class="jabatan">Wakamad Kurikulum</div><div class="mapel">Aqidah Akhlak</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👨‍🏫</div><div class="label">Wakamad Kesiswaan</div></div><div class="guru-body"><h4>Drs. Asep Hidayat, M.Pd.</h4><div class="jabatan">Wakamad Kesiswaan</div><div class="mapel">Bahasa Indonesia</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👩‍🏫</div><div class="label">Wakamad Sarana</div></div><div class="guru-body"><h4>Neneng Susilawati, S.Pd.</h4><div class="jabatan">Wakamad Sarana</div><div class="mapel">Matematika</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👨‍🏫</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Ustad Yusuf Hambali, S.Pd.I.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">Al-Qur'an Hadits & Fiqih</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👩‍🔬</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Rini Andriani, S.Si.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">IPA Terpadu</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👨‍🏫</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Andi Purnomo, S.Pd.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">IPS Terpadu</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👩‍🏫</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Dewi Rahayu, S.Pd.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">Bahasa Inggris</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👨‍🏫</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Muhamad Irfan, S.Ag.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">SKI & Bahasa Arab</div></div></div>
+          <!-- set 2 (duplikat untuk seamless loop) -->
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👩‍🏫</div><div class="label">Wakamad Kurikulum</div></div><div class="guru-body"><h4>Hj. Siti Maryam, S.Ag.</h4><div class="jabatan">Wakamad Kurikulum</div><div class="mapel">Aqidah Akhlak</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👨‍🏫</div><div class="label">Wakamad Kesiswaan</div></div><div class="guru-body"><h4>Drs. Asep Hidayat, M.Pd.</h4><div class="jabatan">Wakamad Kesiswaan</div><div class="mapel">Bahasa Indonesia</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👩‍🏫</div><div class="label">Wakamad Sarana</div></div><div class="guru-body"><h4>Neneng Susilawati, S.Pd.</h4><div class="jabatan">Wakamad Sarana</div><div class="mapel">Matematika</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👨‍🏫</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Ustad Yusuf Hambali, S.Pd.I.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">Al-Qur'an Hadits & Fiqih</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👩‍🔬</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Rini Andriani, S.Si.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">IPA Terpadu</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👨‍🏫</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Andi Purnomo, S.Pd.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">IPS Terpadu</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👩‍🏫</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Dewi Rahayu, S.Pd.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">Bahasa Inggris</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👨‍🏫</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Muhamad Irfan, S.Ag.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">SKI & Bahasa Arab</div></div></div>
+        </div>
+
+        <!-- Baris 2: bergerak ke kiri (scrollRight) -->
+        <div class="guru-track row-right">
+          <!-- set 1 -->
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👩‍🏫</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Siti Nurhaliza, S.Pd.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">PKn</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👨‍🏫</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Agus Salim, S.Pd.I.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">Fiqih & BTQ</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👩‍🏫</div><div class="label">Guru BK</div></div><div class="guru-body"><h4>Heni Kusumawati, S.Psi.</h4><div class="jabatan">Guru BK</div><div class="mapel">Bimbingan Konseling</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👨‍🏫</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Dede Sopian, S.Pd.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">Penjaskes</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👩‍💻</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Lia Amalia, S.Kom.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">TIK</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👨‍🏫</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Rahmat Hidayat, S.Pd.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">Matematika</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👩‍🏫</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Neng Tuti Alawiyah, S.Ag.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">Bahasa Arab</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👨‍🎨</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Ridwan Fauzi, S.Pd.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">Seni Budaya</div></div></div>
+          <!-- set 2 (duplikat untuk seamless loop) -->
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👩‍🏫</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Siti Nurhaliza, S.Pd.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">PKn</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👨‍🏫</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Agus Salim, S.Pd.I.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">Fiqih & BTQ</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👩‍🏫</div><div class="label">Guru BK</div></div><div class="guru-body"><h4>Heni Kusumawati, S.Psi.</h4><div class="jabatan">Guru BK</div><div class="mapel">Bimbingan Konseling</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👨‍🏫</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Dede Sopian, S.Pd.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">Penjaskes</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👩‍💻</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Lia Amalia, S.Kom.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">TIK</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👨‍🏫</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Rahmat Hidayat, S.Pd.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">Matematika</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👩‍🏫</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Neng Tuti Alawiyah, S.Ag.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">Bahasa Arab</div></div></div>
+          <div class="guru-card"><div class="guru-foto"><div class="icon">👨‍🎨</div><div class="label">Guru Mapel</div></div><div class="guru-body"><h4>Ridwan Fauzi, S.Pd.</h4><div class="jabatan">Guru Mapel</div><div class="mapel">Seni Budaya</div></div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ══ PPDB ══ -->
+<section class="section ppdb-bg" id="ppdb">
+  <div class="section-inner">
+    <div class="ppdb-grid">
+      <div class="ppdb-text reveal-left">
+        <div class="section-label">Penerimaan Siswa Baru</div>
+        <h2 class="section-title" style="color:white;">PPDB Tahun Ajaran<br><span style="color:var(--emas-muda);">2026 / 2027</span></h2>
+        <p class="section-desc">Kami membuka kesempatan bagi putra-putri terbaik untuk bergabung dan menimba ilmu di MTs Nurul Fata Tegalwaru.</p>
+        <div class="ppdb-steps">
+          <div class="ppdb-step"><div class="step-num">1</div><div class="step-content"><h4>Ambil Formulir</h4><p>Datang langsung ke kantor madrasah atau unduh formulir di website ini.</p></div></div>
+          <div class="ppdb-step"><div class="step-num">2</div><div class="step-content"><h4>Lengkapi Berkas</h4><p>Siapkan seluruh dokumen persyaratan yang dibutuhkan.</p></div></div>
+          <div class="ppdb-step"><div class="step-num">3</div><div class="step-content"><h4>Serahkan Pendaftaran</h4><p>Serahkan formulir beserta berkas ke panitia PPDB pada jam kerja.</p></div></div>
+          <div class="ppdb-step"><div class="step-num">4</div><div class="step-content"><h4>Seleksi & Pengumuman</h4><p>Seleksi berkas dan wawancara, pengumuman hasil diterbitkan secara resmi.</p></div></div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="ppdb-card">
+          <h3>📋 Persyaratan Pendaftaran</h3>
+          <ul class="syarat-list">
+            <li>Fotokopi Ijazah / SKHUN SD/MI yang telah dilegalisir (2 lembar)</li>
+            <li>Fotokopi Akta Kelahiran (2 lembar)</li>
+            <li>Fotokopi Kartu Keluarga (2 lembar)</li>
+            <li>Fotokopi Kartu NISN</li>
+            <li>Pas foto ukuran 3×4 cm (4 lembar, background merah)</li>
+            <li>Surat Keterangan Sehat dari dokter/puskesmas</li>
+            <li>Surat rekomendasi dari kepala sekolah asal (bagi yang berprestasi)</li>
+          </ul>
+
+          <div class="ppdb-countdown">
+            <h5>⏳ Countdown Penutupan PPDB</h5>
+            <div class="countdown-boxes">
+              <div class="countdown-box"><div class="num" id="cd-hari">--</div><div class="lbl">Hari</div></div>
+              <div class="countdown-box"><div class="num" id="cd-jam">--</div><div class="lbl">Jam</div></div>
+              <div class="countdown-box"><div class="num" id="cd-menit">--</div><div class="lbl">Menit</div></div>
+              <div class="countdown-box"><div class="num" id="cd-detik">--</div><div class="lbl">Detik</div></div>
+            </div>
+          </div>
+
+          <div class="ppdb-deadline">
+            <div class="dl-icon">⏰</div>
+            <div>
+              <h4>Batas Pendaftaran</h4>
+              <p>15 Juli – 31 Agustus 2026 · Pukul 08.00–14.00 WIB</p>
+            </div>
+          </div>
+          <a href="https://wa.me/6281234567890?text=Assalamu'alaikum%2C%20saya%20ingin%20informasi%20PPDB%20MTs%20Nurul%20Fata" target="_blank" class="btn-ppdb-daftar">💬 Hubungi Kami untuk Info PPDB →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ GALERI ══ -->
+<section class="section" id="galeri">
+  <div class="section-inner">
+    <div class="section-header center reveal">
+      <div class="section-label">Dokumentasi</div>
+      <h2 class="section-title">Galeri <span>Foto & Kegiatan</span></h2>
+      <p class="section-desc">Momen-momen berharga dari berbagai kegiatan akademik dan non-akademik di MTs Nurul Fata Tegalwaru.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="galeri-grid">
+      <div class="galeri-item wide reveal" onclick="openLightbox('📸','Foto Wisuda / Pelepasan Kelas IX','Foto acara wisuda siswa kelas IX')">
+        <div class="icon">🎓</div>
+        <div class="label">Foto Wisuda / Pelepasan Kelas IX</div>
+        <div class="sub">Foto acara wisuda terbaru</div>
+      </div>
+      <div class="galeri-item reveal" onclick="openLightbox('🚩','Upacara Bendera','Pelaksanaan upacara bendera rutin')">
+        <div class="icon">🚩</div>
+        <div class="label">Upacara Bendera</div>
+        <div class="sub">Foto asli</div>
+      </div>
+      <div class="galeri-item reveal" onclick="openLightbox('⚜️','Kegiatan Pramuka','Kegiatan pramuka dan perkemahan')">
+        <div class="icon">⚜️</div>
+        <div class="label">Kegiatan Pramuka</div>
+        <div class="sub">Foto asli</div>
+      </div>
+      <div class="galeri-item tall reveal" onclick="openLightbox('🌙','Pesantren Kilat Ramadhan','Kegiatan pesantren kilat bulan Ramadhan')">
+        <div class="icon">🌙</div>
+        <div class="label">Kegiatan Pesantren Kilat<br>Ramadhan</div>
+        <div class="sub">Foto asli</div>
+      </div>
+      <div class="galeri-item reveal" onclick="openLightbox('🏆','Lomba MTQ','Perlombaan MTQ tingkat kabupaten')">
+        <div class="icon">🏆</div>
+        <div class="label">Lomba MTQ</div>
+        <div class="sub">Foto asli</div>
+      </div>
+      <div class="galeri-item reveal" onclick="openLightbox('⚽','Kegiatan Olahraga','Kegiatan olahraga dan pertandingan')">
+        <div class="icon">⚽</div>
+        <div class="label">Kegiatan Olahraga</div>
+        <div class="sub">Foto asli</div>
+      </div>
+      <div class="galeri-item reveal" onclick="openLightbox('🎺','Latihan Paskibra','Latihan baris berbaris paskibra')">
+        <div class="icon">🎺</div>
+        <div class="label">Latihan Paskibra</div>
+        <div class="sub">Foto asli</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ KONTAK ══ -->
+<section class="section kontak-bg" id="kontak">
+  <div class="section-inner">
+    <div class="section-header center reveal">
+      <div class="section-label">Hubungi Kami</div>
+      <h2 class="section-title">Informasi <span>Kontak & Lokasi</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="kontak-grid">
+      <div class="reveal-left">
+        <div class="kontak-info" style="margin-bottom:28px;">
+          <div class="kontak-item"><div class="kontak-icon">📍</div><div><h4>Alamat Madrasah</h4><p>Jl. Pesantren No. 12, Desa Tegalwaru,<br>Kec. Tegalwaru, Kab. Purwakarta,<br>Jawa Barat 45655</p></div></div>
+          <div class="kontak-item"><div class="kontak-icon">📞</div><div><h4>Telepon</h4><p>(0232) 123-4567</p></div></div>
+          <div class="kontak-item"><div class="kontak-icon">📱</div><div><h4>WhatsApp</h4><p>0812-3456-7890 (Tata Usaha)</p></div></div>
+          <div class="kontak-item"><div class="kontak-icon">✉️</div><div><h4>Email Resmi</h4><p>info@mtsnurulfatategalwaru.sch.id</p></div></div>
+          <div class="kontak-item"><div class="kontak-icon">🕐</div><div><h4>Jam Layanan</h4><p>Senin – Kamis: 07.00 – 15.30 WIB<br>Jumat: 07.00 – 11.30 WIB<br>Sabtu: 07.00 – 12.30 WIB</p></div></div>
+        </div>
+        <!-- Social Media -->
+        <h4 style="font-size:12px;font-weight:700;color:var(--hijau-muda);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;">Media Sosial</h4>
+        <div class="sosmed-grid">
+          <a href="#" class="sosmed-btn wa">💬 WhatsApp</a>
+          <a href="#" class="sosmed-btn ig">📷 Instagram</a>
+          <a href="#" class="sosmed-btn fb">👍 Facebook</a>
+          <a href="#" class="sosmed-btn yt">▶️ YouTube</a>
+        </div>
+        <div class="kontak-map-embed" style="margin-top:28px;">
+          <div class="icon">
+            <img src="google-maps.png" width="50">
+          </div>
+          <h4>MTs Nurul Fata Tegalwaru</h4>
+          <p>Jl. Warung Jeruk Desa Sukahaji, Tegalwaru, Purwakarta 41165</p>
+          <a href="https://maps.google.com/?q=MTS+NURUL+FATA+TEGALWARU" target="_blank" class="btn-maps">🗺️ Buka di Google Maps ↗</a>
+        </div>
+      </div>
+
+      <div class="kontak-form reveal-right">
+        <h3>📨 Kirim Pesan</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nama Lengkap *</label>
+            <input type="text" id="inputNama" placeholder="Masukkan nama Anda"/>
+          </div>
+          <div class="form-group">
+            <label>No. Telepon / WhatsApp *</label>
+            <input type="tel" id="inputTelp" placeholder="08xx-xxxx-xxxx"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="inputEmail" placeholder="email@contoh.com"/>
+        </div>
+        <div class="form-group">
+          <label>Keperluan *</label>
+          <select id="inputKeperluan">
+            <option value="">-- Pilih Keperluan --</option>
+            <option>Informasi PPDB</option>
+            <option>Informasi Akademik</option>
+            <option>Kerjasama Institusi</option>
+            <option>Pengaduan / Masukan</option>
+            <option>Lainnya</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Pesan *</label>
+          <textarea id="inputPesan" placeholder="Tuliskan pesan atau pertanyaan Anda di sini..."></textarea>
+        </div>
+        <button class="btn-kirim" onclick="kirimPesan()">
+          <span>Kirim Pesan</span> <span>→</span>
+        </button>
+        <div class="form-success" id="formSuccess">
+          <div class="ok-icon">✅</div>
+          <h4>Pesan Terkirim!</h4>
+          <p>Terima kasih, kami akan menghubungi Anda dalam 1×24 jam kerja.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONI ══ -->
+<section class="section testi-bg" id="testimoni">
+  <div class="section-inner">
+    <div class="section-header center reveal">
+      <div class="section-label">Kata Mereka</div>
+      <h2 class="section-title">Testimoni <span>Wali Murid & Alumni</span></h2>
+      <p class="section-desc">Kepercayaan orang tua dan kebanggaan alumni adalah motivasi terbesar kami untuk terus berkembang.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="testi-grid">
+
+      <div class="testi-card reveal">
+        <div class="testi-bintang">⭐⭐⭐⭐⭐</div>
+        <p class="testi-isi">Alhamdulillah, anak saya sangat berkembang sejak masuk MTs Nurul Fata. Bukan hanya nilai akademiknya yang bagus, tapi akhlak dan ibadahnya pun jauh lebih baik. Gurunya sabar dan perhatian, saya sangat puas menitipkan anak di sini.</p>
+        <div class="testi-profil">
+          <div class="testi-avatar">👩</div>
+          <div>
+            <div class="testi-nama">Ibu Sari Dewi</div>
+            <div class="testi-peran">Wali Murid Kelas VIII</div>
+          </div>
+          <span class="testi-badge">Wali Murid</span>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-bintang">⭐⭐⭐⭐⭐</div>
+        <p class="testi-isi">Saya alumni angkatan 2018. Nilai-nilai yang ditanamkan di MTs Nurul Fata — disiplin, jujur, dan cinta Al-Qur'an — masih saya bawa hingga sekarang. Madrasah ini benar-benar membentuk karakter, bukan sekadar mengajar pelajaran.</p>
+        <div class="testi-profil">
+          <div class="testi-avatar">👨</div>
+          <div>
+            <div class="testi-nama">Muhammad Fauzan</div>
+            <div class="testi-peran">Alumni Angkatan 2018</div>
+          </div>
+          <span class="testi-badge">Alumni</span>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-bintang">⭐⭐⭐⭐⭐</div>
+        <p class="testi-isi">Komunikasi antara pihak madrasah dan orang tua sangat baik. Setiap ada kegiatan atau perubahan jadwal selalu diinformasikan lebih awal. Fasilitas juga terus dibenahi. Saya rekomendasikan madrasah ini untuk masyarakat Tegalwaru.</p>
+        <div class="testi-profil">
+          <div class="testi-avatar">👨</div>
+          <div>
+            <div class="testi-nama">Bapak Dedi Kurniawan</div>
+            <div class="testi-peran">Wali Murid Kelas VII</div>
+          </div>
+          <span class="testi-badge">Wali Murid</span>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-bintang">⭐⭐⭐⭐⭐</div>
+        <p class="testi-isi">Program Tahfidz di sini serius tapi menyenangkan. Anak saya sudah hafal satu juz lebih baru setengah tahun masuk. Ustadznya sabar dan menggunakan metode yang mudah dipahami anak-anak. Luar biasa programnya!</p>
+        <div class="testi-profil">
+          <div class="testi-avatar">👩</div>
+          <div>
+            <div class="testi-nama">Ibu Hani Maulida</div>
+            <div class="testi-peran">Wali Murid Kelas VII</div>
+          </div>
+          <span class="testi-badge">Wali Murid</span>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-bintang">⭐⭐⭐⭐⭐</div>
+        <p class="testi-isi">Saya lulus dari sini tahun 2022 dan sekarang sudah di SMA Negeri. Fondasi bahasa Arab dan ilmu agama yang kuat dari MTs Nurul Fata sangat membantu saya di pelajaran Pendidikan Agama. Bangga jadi alumni madrasah ini!</p>
+        <div class="testi-profil">
+          <div class="testi-avatar">👩</div>
+          <div>
+            <div class="testi-nama">Naila Putri Rahayu</div>
+            <div class="testi-peran">Alumni Angkatan 2022</div>
+          </div>
+          <span class="testi-badge">Alumni</span>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-bintang">⭐⭐⭐⭐⭐</div>
+        <p class="testi-isi">Lingkungan madrasahnya sangat kondusif dan Islami. Anak saya betah dan semangat sekolah setiap hari. Teman-temannya baik-baik, guru-gurunya berdedikasi tinggi. Alhamdulillah pilihan yang tepat untuk pendidikan anak kami.</p>
+        <div class="testi-profil">
+          <div class="testi-avatar">👨</div>
+          <div>
+            <div class="testi-nama">Bapak Asep Ruhyat</div>
+            <div class="testi-peran">Wali Murid Kelas IX</div>
+          </div>
+          <span class="testi-badge">Wali Murid</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="section" id="faq">
+  <div class="section-inner">
+    <div class="faq-layout">
+
+      <!-- Sidebar kiri -->
+      <div class="faq-sidebar-text reveal-left">
+        <div class="section-header">
+          <div class="section-label">Pertanyaan Umum</div>
+          <h2 class="section-title">FAQ — <span>Yang Sering Ditanyakan</span></h2>
+          <div class="divider"></div>
+        </div>
+        <p>Kami mengumpulkan pertanyaan yang paling sering diajukan oleh calon siswa baru dan orang tua. Jika pertanyaan Anda belum terjawab di sini, jangan ragu untuk menghubungi kami langsung.</p>
+        <a href="https://wa.me/6281234567890?text=Assalamu'alaikum%2C%20saya%20ingin%20bertanya%20tentang%20MTs%20Nurul%20Fata" target="_blank" class="faq-wa-cta">
+          💬 Tanya via WhatsApp
+        </a>
+      </div>
+
+      <!-- Accordion kanan -->
+      <div class="faq-list reveal-right">
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Berapa biaya SPP per bulan di MTs Nurul Fata?</span>
+            <span class="faq-q-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Biaya SPP MTs Nurul Fata sangat terjangkau dan disesuaikan dengan kondisi ekonomi masyarakat Tegalwaru. Untuk informasi biaya terkini, silakan hubungi bagian Tata Usaha kami karena nominal dapat berubah setiap tahun ajaran. Tersedia juga keringanan biaya bagi siswa yang membutuhkan.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Apakah MTs Nurul Fata memiliki program asrama (pondok pesantren)?</span>
+            <span class="faq-q-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>MTs Nurul Fata beroperasi sebagai madrasah reguler (non-asrama). Namun, madrasah kami bekerja sama erat dengan Pondok Pesantren Nurul Fata di lingkungan yang sama, sehingga nuansa pesantren sangat terasa dalam keseharian kegiatan belajar mengajar.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Apa saja persyaratan masuk PPDB dan kapan pendaftaran dibuka?</span>
+            <span class="faq-q-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Persyaratan utama meliputi: Ijazah/SKHUN SD/MI, Akta Kelahiran, Kartu Keluarga, Kartu NISN, pas foto 3×4, dan Surat Keterangan Sehat. Pendaftaran PPDB Tahun Ajaran 2026/2027 dibuka pada 15 Juli hingga 31 Agustus 2026, pukul 08.00–14.00 WIB. Silakan lihat detail lengkap di section PPDB.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Bagaimana sistem pembelajaran di MTs Nurul Fata?</span>
+            <span class="faq-q-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Pembelajaran mengintegrasikan kurikulum nasional (Kemendikbud/Kemenag) dengan muatan lokal keagamaan. Selain mata pelajaran umum, siswa mendapatkan pelajaran Al-Qur'an Hadits, Fiqih, Aqidah Akhlak, SKI, dan Bahasa Arab. Program Tahfidz Qur'an juga menjadi bagian wajib dari kegiatan belajar siswa.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Apakah ada transportasi antar jemput untuk siswa?</span>
+            <span class="faq-q-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Saat ini madrasah belum menyediakan fasilitas transportasi antar jemput resmi. Sebagian besar siswa kami berasal dari wilayah Tegalwaru dan sekitarnya yang dapat dijangkau secara mandiri. Untuk informasi lebih lanjut tentang aksesibilitas lokasi, hubungi pihak Tata Usaha.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Prestasi apa saja yang pernah diraih MTs Nurul Fata?</span>
+            <span class="faq-q-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>MTs Nurul Fata telah meraih berbagai prestasi, di antaranya: Juara II MTQ Tingkat Kabupaten Purwakarta (2025), Juara III Olimpiade IPA KSM Tingkat Kecamatan (2024), dan Juara I Lomba Pramuka Penggalang Tingkat Kabupaten (2024). Kami terus mendorong siswa untuk berprestasi di berbagai bidang akademik maupun non-akademik.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Bagaimana cara menghubungi pihak madrasah?</span>
+            <span class="faq-q-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Anda dapat menghubungi kami melalui: Telepon (0232) 123-4567, WhatsApp 0812-3456-7890, atau email info@mtsnurulfatategalwaru.sch.id. Jam layanan Senin–Kamis pukul 07.00–15.30 WIB, Jumat 07.00–11.30 WIB, dan Sabtu 07.00–12.30 WIB. Anda juga dapat datang langsung ke madrasah.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-foot">
+          <div class="emblem">🕌</div>
+          <h3>MTs Nurul Fata Tegalwaru <span>Madrasah Tsanawiyah Swasta</span></h3>
+        </div>
+        <p>Madrasah Tsanawiyah yang berkomitmen mencetak generasi Muslim yang beriman, berilmu, dan berakhlak mulia untuk Indonesia yang lebih baik.</p>
+        <div class="arabic-foot">نُورُ الفَتَى — Cahaya Pemuda</div>
+        <div class="footer-sosmed">
+          <a href="#" title="WhatsApp">💬</a>
+          <a href="#" title="Instagram">📷</a>
+          <a href="#" title="Facebook">👍</a>
+          <a href="#" title="YouTube">▶️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <a href="#beranda">Beranda</a>
+        <a href="#profil">Profil Sekolah</a>
+        <a href="#fasilitas">Fasilitas</a>
+        <a href="#ekskul">Ekstrakurikuler</a>
+        <a href="#guru">Guru & Staf</a>
+        <a href="#ppdb">PPDB</a>
+        <a href="#berita">Berita</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Tautan Resmi</h4>
+        <a href="https://kemenag.go.id" target="_blank">Portal Kemenag RI</a>
+        <a href="https://emis.kemenag.go.id" target="_blank">EMIS Kemenag</a>
+        <a href="https://dapodik.kemdikbud.go.id" target="_blank">Dapodik Kemendikbud</a>
+        <a href="https://bansm.kemdikbud.go.id" target="_blank">BAN-S/M</a>
+        <a href="#" target="_blank">Kemenag Purwakarta</a>
+        <a href="#" target="_blank">Dinas Pendidikan Purwakarta</a>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <div class="footer-contact-item"><span class="ico">
+          <img src="google-maps.png" width="20">
+        </span><p>Jl. Warung Jeruk Desa Sukahaji, Tegalwaru, Purwakarta, Jawa Barat 41165</p></div>
+        <div class="footer-contact-item"><span class="ico">📞</span><p>(0232) 123-4567</p></div>
+        <div class="footer-contact-item"><span class="ico">📱</span><p>0812-3456-7890 (WhatsApp)</p></div>
+        <div class="footer-contact-item"><span class="ico">✉️</span><p>info@mtsnurulfatategalwaru.sch.id</p></div>
+        <div class="footer-contact-item"><span class="ico">🕐</span><p>Senin–Sabtu: 07.00–15.30 WIB</p></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MTs Nurul Fata Tegalwaru. Hak Cipta Dilindungi. NSS: 212320804028</span>
+      <span>Dibuat dengan ❤️ untuk kemajuan pendidikan Islam Indonesia</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ══════════════════════════
+   LOADER
+══════════════════════════ */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+  }, 1800);
+});
+
+/* ══════════════════════════
+   MOBILE NAV
+══════════════════════════ */
+function toggleMobileNav() {
+  const nav = document.getElementById('mobileNav');
+  const btn = document.getElementById('hamburgerBtn');
+  nav.classList.toggle('open');
+  btn.classList.toggle('open');
+  document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+}
+function closeMobileNav() {
+  document.getElementById('mobileNav').classList.remove('open');
+  document.getElementById('hamburgerBtn').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* ══════════════════════════
+   BACK TO TOP + HEADER SCROLL
+══════════════════════════ */
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('backToTop');
+  const header = document.getElementById('mainHeader');
+  if (window.scrollY > 300) {
+    btn.classList.add('show');
+    header.classList.add('scrolled');
+  } else {
+    btn.classList.remove('show');
+    header.classList.remove('scrolled');
+  }
+});
+
+/* ══════════════════════════
+   ACTIVE NAV HIGHLIGHT
+══════════════════════════ */
+const sections = document.querySelectorAll('section[id], div[id]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  document.querySelectorAll('nav a').forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+}, { passive: true });
+
+/* ══════════════════════════
+   SCROLL REVEAL
+══════════════════════════ */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, entry.target.dataset.delay || 0);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach((el, i) => {
+  if (el.closest('.guru-track')) return;
+  const siblings = el.parentElement.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  siblings.forEach((sib, idx) => { sib.dataset.delay = idx * 80; });
+  observer.observe(el);
+});
+
+/* ══════════════════════════
+   COUNTER ANIMATION
+══════════════════════════ */
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  const suffix = el.dataset.suffix || '';
+  const mode = el.dataset.mode;
+  if (mode === 'year') { el.textContent = target; return; }
+  let start = 0;
+  const duration = 1800;
+  const step = (timestamp) => {
+    if (!start) start = timestamp;
+    const progress = Math.min((timestamp - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target) + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      counterObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObs.observe(el));
+
+/* ══════════════════════════
+   TAB SWITCHER
+══════════════════════════ */
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* ══════════════════════════
+   LIGHTBOX
+══════════════════════════ */
+function openLightbox(icon, title, sub) {
+  document.getElementById('lbIcon').textContent = icon;
+  document.getElementById('lbTitle').textContent = title;
+  document.getElementById('lbSub').textContent = sub || 'Foto asli akan ditampilkan di sini';
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeLightbox();
+});
+
+/* ══════════════════════════
+   COUNTDOWN TIMER (PPDB)
+══════════════════════════ */
+function updateCountdown() {
+  const target = new Date('2026-08-31T14:00:00+07:00');
+  const now = new Date();
+  const diff = target - now;
+  if (diff <= 0) {
+    document.getElementById('cd-hari').textContent = '00';
+    document.getElementById('cd-jam').textContent = '00';
+    document.getElementById('cd-menit').textContent = '00';
+    document.getElementById('cd-detik').textContent = '00';
+    return;
+  }
+  const hari = Math.floor(diff / (1000*60*60*24));
+  const jam = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+  const menit = Math.floor((diff % (1000*60*60)) / (1000*60));
+  const detik = Math.floor((diff % (1000*60)) / 1000);
+  document.getElementById('cd-hari').textContent = String(hari).padStart(2,'0');
+  document.getElementById('cd-jam').textContent = String(jam).padStart(2,'0');
+  document.getElementById('cd-menit').textContent = String(menit).padStart(2,'0');
+  document.getElementById('cd-detik').textContent = String(detik).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/* ══════════════════════════
+   FORM SUBMIT
+══════════════════════════ */
+function kirimPesan() {
+  const nama = document.getElementById('inputNama').value.trim();
+  const telp = document.getElementById('inputTelp').value.trim();
+  const keperluan = document.getElementById('inputKeperluan').value;
+  const pesan = document.getElementById('inputPesan').value.trim();
+
+  if (!nama || !telp || !keperluan || !pesan) {
+    alert('⚠️ Mohon lengkapi semua kolom yang bertanda *');
+    return;
+  }
+
+  // Simulate form submission
+  const btn = document.querySelector('.btn-kirim');
+  btn.innerHTML = '<span>Mengirim...</span>';
+  btn.disabled = true;
+
+  setTimeout(() => {
+    btn.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+    // Reset
+    ['inputNama','inputTelp','inputEmail','inputPesan'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('inputKeperluan').value = '';
+  }, 1500);
+}
+
+/* ══ DARK MODE ══ */
+function toggleDark() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  const icon = isDark ? '🌙' : '☀️';
+  document.getElementById('darkToggle').textContent = icon;
+  const mob = document.getElementById('darkToggleMobile');
+  if (mob) mob.textContent = (isDark ? '🌙' : '☀️') + ' Ganti Tema Gelap/Terang';
+  localStorage.setItem('nf-theme', isDark ? 'light' : 'dark');
+}
+(function() {
+  const saved = localStorage.getItem('nf-theme');
+  if (saved === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    const btn = document.getElementById('darkToggle');
+    if (btn) btn.textContent = '☀️';
+    const mob = document.getElementById('darkToggleMobile');
+    if (mob) mob.textContent = '☀️ Ganti Tema Gelap/Terang';
+  }
+})();
+
+/* ══ FAQ ACCORDION ══ */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
