@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Berita & Pengumuman — MTs Nurul Fata Tegalwaru</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{--hijau-tua:#0d4f2a;--hijau:#1a6b3c;--hijau-muda:#2d9156;--hijau-terang:#3db870;--emas-tua:#a07830;--emas:#c8a84b;--emas-muda:#e0c068;--krem:#faf7f0;--krem-gelap:#f0ebe0;--putih:#ffffff;--gelap:#0d1f14;--teks:#1e3528;--abu:#5a6e61;--abu-muda:#8fa396;--border:rgba(26,107,60,0.12);--border-solid:#d8e8dc;--shadow-sm:0 2px 8px rgba(0,0,0,0.06);--shadow-md:0 8px 32px rgba(0,0,0,0.10);--shadow-lg:0 20px 60px rgba(0,0,0,0.15);--radius:14px;--transition:all 0.3s cubic-bezier(0.4,0,0.2,1);--ink:#0e1e14;--paper:#faf7f0;}
+[data-theme="dark"]{--hijau-tua:#0a3d20;--hijau:#1d7a45;--hijau-muda:#3aaa68;--hijau-terang:#4dcc80;--emas-tua:#b8943a;--emas:#d4b050;--emas-muda:#e8cc70;--krem:#080d09;--krem-gelap:#0e1a12;--putih:#0a100b;--gelap:#040806;--teks:#d4e8da;--abu:#7aaa88;--abu-muda:#4d7a5a;--border:rgba(61,184,112,0.11);--border-solid:#1e3528;--shadow-sm:0 2px 8px rgba(0,0,0,0.4);--shadow-md:0 8px 32px rgba(0,0,0,0.55);--shadow-lg:0 20px 60px rgba(0,0,0,0.75);--ink:#d4e8da;--paper:#080d09;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;overflow-x:hidden;transition:background .4s,color .4s;}
+
+/* MASTHEAD */
+.masthead{background:var(--gelap);padding:0 32px;border-bottom:3px solid var(--emas);position:sticky;top:0;z-index:200;}
+.masthead-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;height:68px;}
+.masthead-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.ml-icon{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--hijau-tua),var(--hijau-muda));display:flex;align-items:center;justify-content:center;font-size:17px;}
+.ml-text strong{font-size:13px;font-weight:800;color:#fff;display:block;line-height:1.2;}
+.ml-text span{font-size:10px;color:rgba(255,255,255,.45);}
+.masthead-title{text-align:center;}
+.mt-name{font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,28px);font-weight:900;color:#fff;letter-spacing:-.5px;line-height:1;margin-bottom:2px;}
+.mt-tagline{font-size:10px;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase;}
+.masthead-right{display:flex;align-items:center;gap:8px;}
+.btn-back{display:flex;align-items:center;gap:5px;padding:6px 13px;border-radius:7px;font-size:11px;font-weight:600;color:rgba(255,255,255,.5);background:transparent;border:1px solid rgba(255,255,255,.15);cursor:pointer;text-decoration:none;transition:var(--transition);font-family:inherit;}
+.btn-back:hover{color:#fff;border-color:rgba(255,255,255,.4);}
+#darkToggle{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.6);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition);}
+#darkToggle:hover{color:#fff;transform:rotate(20deg);}
+
+/* DATE RIBBON */
+.date-ribbon{background:var(--emas);padding:7px 32px;}
+.date-ribbon-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
+.dr-date{font-size:11px;font-weight:700;color:var(--gelap);letter-spacing:.5px;}
+.dr-edition{font-size:10px;color:rgba(13,31,20,.6);font-style:italic;}
+.dr-tag{font-size:10px;font-weight:800;color:var(--gelap);letter-spacing:1.5px;text-transform:uppercase;}
+
+/* MAIN */
+.main{max-width:1200px;margin:0 auto;padding:48px 32px 96px;}
+
+/* TICKER */
+.ticker{background:var(--hijau-tua);border-radius:10px;overflow:hidden;display:flex;align-items:stretch;margin-bottom:48px;border:1px solid rgba(45,145,86,.2);}
+.ticker-label{background:var(--emas);padding:0 16px;display:flex;align-items:center;font-size:10px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:var(--gelap);white-space:nowrap;flex-shrink:0;}
+.ticker-track{overflow:hidden;flex:1;display:flex;align-items:center;padding:12px 0;}
+.ticker-inner{display:flex;gap:48px;align-items:center;animation:tickerScroll 30s linear infinite;white-space:nowrap;}
+.ticker-inner:hover{animation-play-state:paused;}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-item{font-size:12px;color:rgba(255,255,255,.75);display:inline-flex;align-items:center;gap:8px;flex-shrink:0;}
+.ticker-item::before{content:'◆';color:var(--emas);font-size:8px;}
+
+/* HEADLINE */
+.headline{display:grid;grid-template-columns:1fr 380px;gap:0;border:1px solid var(--border-solid);border-radius:18px;overflow:hidden;margin-bottom:48px;background:var(--putih);box-shadow:var(--shadow-md);transition:var(--transition);cursor:pointer;}
+.headline:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+[data-theme="dark"] .headline{background:#0a100b;}
+.headline-image{background:linear-gradient(160deg,#0d4f2a,#1a6b3c,#0d2a18);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:48px;position:relative;overflow:hidden;min-height:380px;}
+.headline-image::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%,rgba(200,168,75,.18),transparent 65%);}
+.headline-image::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,.025) 39px,rgba(255,255,255,.025) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(255,255,255,.025) 39px,rgba(255,255,255,.025) 40px);}
+.hi-emoji{font-size:80px;position:relative;z-index:1;}
+.hi-caption{font-size:11px;color:rgba(255,255,255,.35);position:relative;z-index:1;text-align:center;font-style:italic;}
+.headline-cat-bar{position:absolute;top:18px;left:18px;z-index:2;display:flex;align-items:center;gap:8px;}
+.hl-cat{background:var(--emas);color:var(--gelap);font-size:9px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:100px;}
+.hl-new{background:var(--hijau-muda);color:#fff;font-size:9px;font-weight:900;letter-spacing:1px;text-transform:uppercase;padding:4px 8px;border-radius:100px;}
+.headline-content{padding:36px;display:flex;flex-direction:column;justify-content:space-between;}
+.hc-meta{display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+.hc-cat{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--hijau-muda);}
+.hc-dot{width:3px;height:3px;border-radius:50%;background:var(--abu-muda);}
+.hc-date{font-size:10px;color:var(--abu-muda);}
+.headline-content h2{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,32px);font-weight:900;color:var(--teks);line-height:1.2;letter-spacing:-.5px;margin-bottom:16px;}
+.headline-content p{font-size:14px;color:var(--abu);line-height:1.8;margin-bottom:24px;flex:1;}
+.hc-footer{display:flex;align-items:center;justify-content:space-between;padding-top:18px;border-top:1px solid var(--border);}
+.hc-author{display:flex;align-items:center;gap:8px;}
+.hc-author-avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--hijau-tua),var(--hijau-muda));display:flex;align-items:center;justify-content:center;font-size:13px;}
+.hc-author-name{font-size:11px;font-weight:700;color:var(--teks);}
+.hc-author-role{font-size:10px;color:var(--abu-muda);}
+.hc-read{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--hijau);background:rgba(45,145,86,.08);padding:7px 14px;border-radius:8px;transition:var(--transition);}
+.headline:hover .hc-read{background:rgba(45,145,86,.15);}
+
+/* SEC DIV */
+.sec-div{display:flex;align-items:center;gap:0;margin:0 0 32px;border-top:2px solid var(--border-solid);padding-top:16px;}
+.sec-div-label{font-family:'Playfair Display',serif;font-size:clamp(16px,2vw,20px);font-weight:700;color:var(--teks);margin-right:16px;white-space:nowrap;}
+.sec-div-line{flex:1;height:1px;background:var(--border);}
+.sec-div-right{display:flex;align-items:center;gap:10px;margin-left:16px;}
+
+/* PILLS */
+.pills{display:flex;gap:7px;flex-wrap:wrap;}
+.pill{padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;border:1.5px solid var(--border);background:transparent;color:var(--abu);cursor:pointer;transition:var(--transition);font-family:inherit;}
+.pill:hover{border-color:var(--hijau-muda);color:var(--hijau);}
+.pill.active{background:var(--hijau-tua);color:#fff;border-color:var(--hijau-tua);box-shadow:0 4px 12px rgba(13,79,42,.3);}
+
+/* NEWS LAYOUT */
+.news-layout{display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:start;}
+
+/* ARTICLE CARDS */
+.articles{display:flex;flex-direction:column;gap:0;}
+.article-card{display:grid;grid-template-columns:160px 1fr;gap:0;border-bottom:1px solid var(--border-solid);cursor:pointer;transition:var(--transition);padding:24px 0;animation:fadeUp .5s ease both;}
+.article-card:first-child{padding-top:0;}
+.article-card:hover .ac-title{color:var(--hijau);}
+.ac-image{border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;min-height:110px;margin-right:20px;flex-shrink:0;position:relative;transition:var(--transition);border:1px solid var(--border);}
+.article-card:hover .ac-image{transform:scale(1.02);box-shadow:var(--shadow-md);}
+.ac-image .em{font-size:32px;}
+.ac-image .ac-img-cat{position:absolute;bottom:6px;left:6px;font-size:8px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:2px 7px;border-radius:100px;}
+.ac-image.cat-pengumuman{background:linear-gradient(135deg,#fff8e8,#f5e8cc);}
+.ac-image.cat-prestasi{background:linear-gradient(135deg,#fceee8,#f8d8cc);}
+.ac-image.cat-kegiatan{background:linear-gradient(135deg,#e8f4ee,#d0edde);}
+.ac-image.cat-akademik{background:linear-gradient(135deg,#e4eff6,#c8e2f0);}
+.ac-image.cat-ppdb{background:linear-gradient(135deg,#f0ede8,#e4dfd4);}
+[data-theme="dark"] .ac-image.cat-pengumuman{background:linear-gradient(135deg,#1a1408,#0e0c06);}
+[data-theme="dark"] .ac-image.cat-prestasi{background:linear-gradient(135deg,#180e08,#0e0804);}
+[data-theme="dark"] .ac-image.cat-kegiatan{background:linear-gradient(135deg,#0d2818,#071510);}
+[data-theme="dark"] .ac-image.cat-akademik{background:linear-gradient(135deg,#08141a,#04080c);}
+[data-theme="dark"] .ac-image.cat-ppdb{background:linear-gradient(135deg,#141210,#0c0a08);}
+.badge-pengumuman{background:rgba(200,168,75,.15);color:var(--emas-tua);}
+.badge-prestasi{background:rgba(180,60,40,.12);color:#b03c28;}
+.badge-kegiatan{background:rgba(45,145,86,.12);color:var(--hijau-muda);}
+.badge-akademik{background:rgba(30,100,160,.1);color:#2d6b9e;}
+.badge-ppdb{background:rgba(100,80,60,.1);color:#7a6050;}
+[data-theme="dark"] .badge-prestasi{color:#e07060;}
+[data-theme="dark"] .badge-akademik{color:#5aacdc;}
+[data-theme="dark"] .badge-ppdb{color:#c8aa88;}
+.ac-content{flex:1;display:flex;flex-direction:column;justify-content:space-between;}
+.ac-meta{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;}
+.ac-cat-badge{font-size:9px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:2px 8px;border-radius:100px;}
+.ac-date{font-size:10px;color:var(--abu-muda);}
+.ac-new{font-size:9px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--hijau-muda);background:rgba(45,145,86,.1);padding:2px 7px;border-radius:100px;}
+.ac-title{font-family:'Playfair Display',serif;font-size:clamp(14px,1.5vw,17px);font-weight:700;color:var(--teks);line-height:1.35;margin-bottom:8px;transition:color .25s;}
+.ac-excerpt{font-size:12px;color:var(--abu);line-height:1.7;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.ac-footer{display:flex;align-items:center;gap:12px;}
+.ac-read-time,.ac-views{font-size:10px;color:var(--abu-muda);}
+.ac-arrow{font-size:11px;font-weight:700;color:var(--hijau);margin-left:auto;opacity:0;transform:translateX(-4px);transition:var(--transition);}
+.article-card:hover .ac-arrow{opacity:1;transform:translateX(0);}
+.article-card:nth-child(1){animation-delay:.05s}.article-card:nth-child(2){animation-delay:.10s}.article-card:nth-child(3){animation-delay:.15s}
+.article-card:nth-child(4){animation-delay:.20s}.article-card:nth-child(5){animation-delay:.25s}.article-card:nth-child(6){animation-delay:.30s}
+.article-card:nth-child(7){animation-delay:.35s}.article-card:nth-child(8){animation-delay:.40s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* SIDEBAR */
+.sidebar{position:sticky;top:88px;display:flex;flex-direction:column;gap:24px;}
+.widget{background:var(--putih);border:1px solid var(--border-solid);border-radius:14px;overflow:hidden;}
+[data-theme="dark"] .widget{background:#0a100b;}
+.widget-header{padding:14px 18px;border-bottom:2px solid var(--emas);display:flex;align-items:center;justify-content:space-between;}
+.widget-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--teks);}
+.popular-item{display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid var(--border);cursor:pointer;transition:var(--transition);}
+.popular-item:last-child{border-bottom:none;}
+.popular-item:hover{background:rgba(45,145,86,.04);}
+.pi-num{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--border-solid);line-height:1;flex-shrink:0;width:28px;}
+.popular-item:hover .pi-num{color:var(--emas);}
+.pi-title{font-size:12px;font-weight:700;color:var(--teks);line-height:1.4;margin-bottom:3px;}
+.pi-meta{font-size:10px;color:var(--abu-muda);}
+.pengumuman-item{padding:14px 18px;border-bottom:1px solid var(--border);cursor:pointer;transition:var(--transition);}
+.pengumuman-item:last-child{border-bottom:none;}
+.pengumuman-item:hover{background:rgba(200,168,75,.04);}
+.pen-badge{font-size:9px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:2px 7px;border-radius:100px;background:rgba(200,168,75,.12);color:var(--emas-tua);margin-bottom:6px;display:inline-block;}
+.pen-title{font-size:12px;font-weight:700;color:var(--teks);line-height:1.4;margin-bottom:4px;}
+.pen-date{font-size:10px;color:var(--abu-muda);}
+.cat-list{padding:8px 0;}
+.cat-item{display:flex;align-items:center;justify-content:space-between;padding:10px 18px;cursor:pointer;transition:var(--transition);}
+.cat-item:hover{background:rgba(45,145,86,.05);}
+.ci-left{display:flex;align-items:center;gap:10px;}
+.ci-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.ci-name{font-size:12px;font-weight:600;color:var(--teks);}
+.ci-count{font-size:11px;font-weight:700;color:var(--abu-muda);background:var(--krem-gelap);padding:2px 8px;border-radius:100px;}
+[data-theme="dark"] .ci-count{background:#172010;}
+.sosmed-widget{background:linear-gradient(160deg,var(--hijau-tua),var(--hijau));border-color:transparent;padding:22px 18px;text-align:center;}
+.sw-icon{font-size:32px;margin-bottom:10px;}
+.sw-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;}
+.sw-desc{font-size:11px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:16px;}
+.sw-btn{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.15);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);color:#fff;padding:9px 18px;border-radius:9px;font-size:12px;font-weight:700;cursor:pointer;transition:var(--transition);font-family:inherit;text-decoration:none;}
+.sw-btn:hover{background:rgba(255,255,255,.25);}
+
+/* LOAD MORE */
+.load-more{text-align:center;margin-top:32px;padding-top:28px;border-top:2px solid var(--border-solid);}
+.btn-more{padding:12px 32px;border-radius:10px;background:transparent;border:2px solid var(--border-solid);font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--abu);cursor:pointer;transition:var(--transition);}
+.btn-more:hover{border-color:var(--hijau-muda);color:var(--hijau);background:rgba(45,145,86,.05);transform:translateY(-2px);}
+
+/* MODAL */
+.modal{position:fixed;inset:0;z-index:500;background:rgba(4,8,6,.95);backdrop-filter:blur(12px);display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .35s;padding:40px 20px;}
+.modal.open{opacity:1;pointer-events:all;}
+.modal-inner{max-width:720px;width:100%;background:var(--putih);border-radius:20px;overflow:hidden;transform:scale(.95) translateY(20px);transition:transform .4s cubic-bezier(.34,1.56,.64,1);box-shadow:0 40px 100px rgba(0,0,0,.7);margin:auto;}
+[data-theme="dark"] .modal-inner{background:#0a100b;}
+.modal.open .modal-inner{transform:scale(1) translateY(0);}
+.modal-hero{min-height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;overflow:hidden;}
+.modal-hero .em{font-size:80px;position:relative;z-index:1;}
+.modal-hero::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,.03) 39px,rgba(255,255,255,.03) 40px);}
+.modal-close{position:absolute;top:14px;right:14px;z-index:10;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition);}
+.modal-close:hover{background:rgba(255,255,255,.28);transform:rotate(90deg);}
+.modal-body{padding:32px 36px 40px;}
+.modal-cat{font-size:10px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:14px;}
+.modal-title{font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,28px);font-weight:900;color:var(--teks);line-height:1.25;margin-bottom:14px;letter-spacing:-.3px;}
+.modal-meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid var(--border-solid);margin-bottom:24px;}
+.mm-item{font-size:11px;color:var(--abu-muda);display:flex;align-items:center;gap:5px;}
+.mm-item strong{color:var(--teks);}
+.modal-content p{font-size:14px;color:var(--abu);line-height:1.9;margin-bottom:16px;}
+.modal-content p:last-child{margin-bottom:0;}
+.modal-content strong{color:var(--teks);}
+.modal-footer{margin-top:28px;padding-top:20px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.mf-tags{display:flex;gap:7px;flex-wrap:wrap;}
+.mf-tag{font-size:10px;font-weight:600;color:var(--abu);background:var(--krem-gelap);padding:3px 10px;border-radius:100px;}
+[data-theme="dark"] .mf-tag{background:#172010;}
+.mf-share{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;color:var(--hijau);}
+
+/* FOOTER */
+footer{background:var(--gelap);border-top:3px solid var(--emas);color:rgba(255,255,255,.4);text-align:center;padding:22px;font-size:12px;margin-top:80px;}
+footer a{color:var(--emas-muda);text-decoration:none;}
+
+/* RESPONSIVE */
+@media(max-width:960px){.news-layout{grid-template-columns:1fr;}.sidebar{position:static;}.date-ribbon{display:none;}}
+@media(max-width:640px){.main{padding:32px 16px 72px;}.headline{grid-template-columns:1fr;}.headline-image{min-height:200px;}.masthead-title{display:none;}.masthead-inner{grid-template-columns:auto auto;}.article-card{grid-template-columns:110px 1fr;}.modal-body{padding:22px 20px 28px;}.sec-div-right{display:none;}}
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <a href="index.html" class="masthead-logo"><div class="ml-icon"><img src="Logo-nf.png" width="40"></div><div class="ml-text"><strong>MTs Nurul Fata</strong><span>Tegalwaru, Purwakarta</span></div></a>
+    <div class="masthead-title"><div class="mt-name">Nurul Fata Gazette</div><div class="mt-tagline">Berita &amp; Pengumuman Resmi Madrasah</div></div>
+    <div class="masthead-right"><a href="index.html" class="btn-back">← Beranda</a><button id="darkToggle" onclick="toggleDark()">🌙</button></div>
+  </div>
+</div>
+
+<div class="date-ribbon">
+  <div class="date-ribbon-inner">
+    <span class="dr-date" id="drDate"></span>
+    <span class="dr-tag">📰 Portal Informasi Resmi</span>
+    <span class="dr-edition">Edisi Digital 2025/2026</span>
+  </div>
+</div>
+
+<main class="main">
+  <div class="ticker">
+    <div class="ticker-label">🔴 Terkini</div>
+    <div class="ticker-track"><div class="ticker-inner">
+      <span class="ticker-item">PPDB 2026/2027 resmi dibuka 15 Juli — kuota terbatas, segera daftarkan putra-putri Anda</span>
+      <span class="ticker-item">MTs Nurul Fata raih Juara II MTQ Tingkat Kabupaten Purwakarta 2025</span>
+      <span class="ticker-item">Khataman Al-Qur'an angkatan IX — 120 siswa capai target hafalan 2 juz</span>
+      <span class="ticker-item">Libur semester genap: 14–20 Juni 2025 · Masuk kembali 23 Juni 2025</span>
+      <span class="ticker-item">Hasil seleksi PPDB Jalur Prestasi diumumkan 5 Agustus 2026</span>
+      <span class="ticker-item">PPDB 2026/2027 resmi dibuka 15 Juli — kuota terbatas, segera daftarkan putra-putri Anda</span>
+      <span class="ticker-item">MTs Nurul Fata raih Juara II MTQ Tingkat Kabupaten Purwakarta 2025</span>
+      <span class="ticker-item">Khataman Al-Qur'an angkatan IX — 120 siswa capai target hafalan 2 juz</span>
+      <span class="ticker-item">Libur semester genap: 14–20 Juni 2025 · Masuk kembali 23 Juni 2025</span>
+      <span class="ticker-item">Hasil seleksi PPDB Jalur Prestasi diumumkan 5 Agustus 2026</span>
+    </div></div>
+  </div>
+
+  <div class="headline" onclick="openModal(0)">
+    <div class="headline-image">
+      <div class="headline-cat-bar"><span class="hl-cat">Utama</span><span class="hl-new">Baru</span></div>
+      <div class="hi-emoji">🎓</div>
+      <div class="hi-caption">Prosesi Wisuda & Pelepasan Kelas IX · Juni 2025</div>
+    </div>
+    <div class="headline-content">
+      <div>
+        <div class="hc-meta"><span class="hc-cat">Akademik</span><span class="hc-dot"></span><span class="hc-date">12 Juni 2025</span></div>
+        <h2>120 Siswa Kelas IX Diwisuda, Seluruh Lulusan Capai Target Hafalan 2 Juz</h2>
+        <p>Suasana haru dan kebanggaan menyelimuti aula utama MTs Nurul Fata saat prosesi wisuda 120 siswa kelas IX digelar. Untuk pertama kalinya, seluruh lulusan berhasil mencapai target hafalan 2 juz Al-Qur'an — pencapaian yang disambut standing ovation dari seluruh wali murid dan tamu undangan.</p>
+      </div>
+      <div class="hc-footer">
+        <div class="hc-author"><div class="hc-author-avatar">✍️</div><div><div class="hc-author-name">Redaksi Nurul Fata</div><div class="hc-author-role">Tim Humas Madrasah</div></div></div>
+        <span class="hc-read">Baca selengkapnya →</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-div">
+    <span class="sec-div-label">Berita Terbaru</span>
+    <div class="sec-div-line"></div>
+    <div class="sec-div-right"><div class="pills">
+      <button class="pill active" onclick="filterNews('semua',this)">Semua</button>
+      <button class="pill" onclick="filterNews('pengumuman',this)">📣 Pengumuman</button>
+      <button class="pill" onclick="filterNews('prestasi',this)">🏆 Prestasi</button>
+      <button class="pill" onclick="filterNews('kegiatan',this)">🌿 Kegiatan</button>
+      <button class="pill" onclick="filterNews('akademik',this)">📚 Akademik</button>
+      <button class="pill" onclick="filterNews('ppdb',this)">📝 PPDB</button>
+    </div></div>
+  </div>
+
+  <div class="news-layout">
+    <div class="articles" id="articleList">
+
+      <div class="article-card" data-cat="ppdb" onclick="openModal(1)">
+        <div class="ac-image cat-ppdb"><div class="em">📝</div><span class="ac-img-cat badge-ppdb">PPDB</span></div>
+        <div class="ac-content"><div><div class="ac-meta"><span class="ac-cat-badge badge-ppdb">PPDB</span><span class="ac-new">Baru</span><span class="ac-date">1 Juli 2025</span></div><div class="ac-title">PPDB 2026/2027 Resmi Dibuka — Tiga Jalur Tersedia untuk Calon Siswa Baru</div><div class="ac-excerpt">Panitia PPDB resmi mengumumkan pembukaan pendaftaran. Tersedia tiga jalur: reguler, boarding, dan pesantren, masing-masing dengan kuota dan persyaratan yang berbeda.</div></div><div class="ac-footer"><span class="ac-read-time">⏱ 3 menit</span><span class="ac-views">👁 412</span><span class="ac-arrow">Baca →</span></div></div>
+      </div>
+
+      <div class="article-card" data-cat="prestasi" onclick="openModal(2)">
+        <div class="ac-image cat-prestasi"><div class="em">🥇</div><span class="ac-img-cat badge-prestasi">Prestasi</span></div>
+        <div class="ac-content"><div><div class="ac-meta"><span class="ac-cat-badge badge-prestasi">Prestasi</span><span class="ac-date">28 Mei 2025</span></div><div class="ac-title">Juara I Lomba Pramuka Penggalang Tingkat Kabupaten Purwakarta</div><div class="ac-excerpt">Kontingen Pramuka MTs Nurul Fata berhasil merebut gelar juara satu dari 47 tim peserta se-Kabupaten Purwakarta. Hasil latihan intensif tiga bulan yang membuahkan hasil.</div></div><div class="ac-footer"><span class="ac-read-time">⏱ 4 menit</span><span class="ac-views">👁 389</span><span class="ac-arrow">Baca →</span></div></div>
+      </div>
+
+      <div class="article-card" data-cat="kegiatan" onclick="openModal(3)">
+        <div class="ac-image cat-kegiatan"><div class="em">📿</div><span class="ac-img-cat badge-kegiatan">Kegiatan</span></div>
+        <div class="ac-content"><div><div class="ac-meta"><span class="ac-cat-badge badge-kegiatan">Kegiatan</span><span class="ac-date">10 Juni 2025</span></div><div class="ac-title">Khataman Al-Qur'an Angkatan IX: 120 Siswa Selesaikan Target Hafalan</div><div class="ac-excerpt">Prosesi khataman di Mushola Al-Ikhlas berjalan khidmat. Satu per satu siswa menyetorkan hafalan terakhir kepada pembimbing Tahfidz, disaksikan orang tua yang tak kuasa menahan haru.</div></div><div class="ac-footer"><span class="ac-read-time">⏱ 5 menit</span><span class="ac-views">👁 501</span><span class="ac-arrow">Baca →</span></div></div>
+      </div>
+
+      <div class="article-card" data-cat="pengumuman" onclick="openModal(4)">
+        <div class="ac-image cat-pengumuman"><div class="em">📣</div><span class="ac-img-cat badge-pengumuman">Pengumuman</span></div>
+        <div class="ac-content"><div><div class="ac-meta"><span class="ac-cat-badge badge-pengumuman">Pengumuman</span><span class="ac-date">5 Juni 2025</span></div><div class="ac-title">Jadwal Libur Semester Genap & Hari Masuk Kembali TA 2024/2025</div><div class="ac-excerpt">Pihak madrasah mengumumkan jadwal resmi libur akhir tahun dan tanggal masuk kembali untuk seluruh siswa kelas VII, VIII, dan IX. Harap diperhatikan seluruh wali murid.</div></div><div class="ac-footer"><span class="ac-read-time">⏱ 2 menit</span><span class="ac-views">👁 677</span><span class="ac-arrow">Baca →</span></div></div>
+      </div>
+
+      <div class="article-card" data-cat="prestasi" onclick="openModal(5)">
+        <div class="ac-image cat-prestasi"><div class="em">📖</div><span class="ac-img-cat badge-prestasi">Prestasi</span></div>
+        <div class="ac-content"><div><div class="ac-meta"><span class="ac-cat-badge badge-prestasi">Prestasi</span><span class="ac-date">20 April 2025</span></div><div class="ac-title">Siswa Nurul Fata Raih Juara II MTQ Kabupaten Purwakarta Kategori Tilawah</div><div class="ac-excerpt">Farhan Maulana, siswa kelas VIII, meraih Juara II MTQ kategori tilawah putra tingkat Kabupaten Purwakarta dalam ajang tahunan yang digelar di Pendopo Bupati.</div></div><div class="ac-footer"><span class="ac-read-time">⏱ 3 menit</span><span class="ac-views">👁 448</span><span class="ac-arrow">Baca →</span></div></div>
+      </div>
+
+      <div class="article-card" data-cat="akademik" onclick="openModal(6)">
+        <div class="ac-image cat-akademik"><div class="em">🔬</div><span class="ac-img-cat badge-akademik">Akademik</span></div>
+        <div class="ac-content"><div><div class="ac-meta"><span class="ac-cat-badge badge-akademik">Akademik</span><span class="ac-date">15 Maret 2025</span></div><div class="ac-title">Program Tahfidz Intensif Diperkuat: Target Hafalan Meningkat Jadi 3 Juz</div><div class="ac-excerpt">Memasuki tahun ajaran baru, MTs Nurul Fata meningkatkan target Tahfidz dari 2 menjadi 3 juz, didukung sesi setoran harian tambahan dan pembimbing baru.</div></div><div class="ac-footer"><span class="ac-read-time">⏱ 4 menit</span><span class="ac-views">👁 323</span><span class="ac-arrow">Baca →</span></div></div>
+      </div>
+
+      <div class="article-card" data-cat="kegiatan" onclick="openModal(7)">
+        <div class="ac-image cat-kegiatan"><div class="em">🏕️</div><span class="ac-img-cat badge-kegiatan">Kegiatan</span></div>
+        <div class="ac-content"><div><div class="ac-meta"><span class="ac-cat-badge badge-kegiatan">Kegiatan</span><span class="ac-date">10 Nov 2024</span></div><div class="ac-title">Perkemahan Pramuka Penggalang: Membangun Karakter di Alam Tegalwaru</div><div class="ac-excerpt">Seluruh anggota Pramuka Penggalang mengikuti Persami dua hari di alam terbuka Tegalwaru. Pionering, wide game, hiking malam, hingga api unggun berlangsung penuh semangat.</div></div><div class="ac-footer"><span class="ac-read-time">⏱ 4 menit</span><span class="ac-views">👁 287</span><span class="ac-arrow">Baca →</span></div></div>
+      </div>
+
+      <div class="article-card" data-cat="pengumuman" onclick="openModal(8)">
+        <div class="ac-image cat-pengumuman"><div class="em">📋</div><span class="ac-img-cat badge-pengumuman">Pengumuman</span></div>
+        <div class="ac-content"><div><div class="ac-meta"><span class="ac-cat-badge badge-pengumuman">Pengumuman</span><span class="ac-date">1 Okt 2024</span></div><div class="ac-title">Jadwal UTS Ganjil Tahun Ajaran 2024/2025</div><div class="ac-excerpt">Panitia ujian mengumumkan jadwal resmi UTS Ganjil untuk seluruh kelas. Siswa diharap mempersiapkan diri dan memperhatikan tata tertib yang berlaku selama ujian.</div></div><div class="ac-footer"><span class="ac-read-time">⏱ 2 menit</span><span class="ac-views">👁 598</span><span class="ac-arrow">Baca →</span></div></div>
+      </div>
+
+    </div>
+
+    <aside class="sidebar">
+      <div class="widget">
+        <div class="widget-header"><span class="widget-title">Terpopuler</span></div>
+        <div class="popular-item" onclick="openModal(4)"><div class="pi-num">01</div><div><div class="pi-title">Jadwal Libur Semester Genap & Masuk Kembali</div><div class="pi-meta">📣 Pengumuman · 677</div></div></div>
+        <div class="popular-item" onclick="openModal(3)"><div class="pi-num">02</div><div><div class="pi-title">Khataman Al-Qur'an Angkatan IX</div><div class="pi-meta">🌿 Kegiatan · 501</div></div></div>
+        <div class="popular-item" onclick="openModal(8)"><div class="pi-num">03</div><div><div class="pi-title">Jadwal UTS Ganjil 2024/2025</div><div class="pi-meta">📣 Pengumuman · 598</div></div></div>
+        <div class="popular-item" onclick="openModal(1)"><div class="pi-num">04</div><div><div class="pi-title">PPDB 2026/2027 Resmi Dibuka</div><div class="pi-meta">📝 PPDB · 412</div></div></div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-header"><span class="widget-title">Pengumuman Penting</span></div>
+        <div class="pengumuman-item"><div class="pen-badge">PPDB</div><div class="pen-title">Pendaftaran PPDB 2026/2027 dibuka 15 Juli – 31 Agustus 2026</div><div class="pen-date">📅 Mulai 15 Juli 2026</div></div>
+        <div class="pengumuman-item"><div class="pen-badge">Akademik</div><div class="pen-title">Pembagian rapor semester genap: Sabtu, 21 Juni 2025</div><div class="pen-date">📅 21 Juni 2025</div></div>
+        <div class="pengumuman-item"><div class="pen-badge">Umum</div><div class="pen-title">Libur Idul Adha: 9–11 Juni 2025</div><div class="pen-date">📅 9–11 Juni 2025</div></div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-header"><span class="widget-title">Kategori</span></div>
+        <div class="cat-list">
+          <div class="cat-item" onclick="filterNews('pengumuman',null)"><div class="ci-left"><div class="ci-dot" style="background:var(--emas)"></div><span class="ci-name">Pengumuman</span></div><span class="ci-count">12</span></div>
+          <div class="cat-item" onclick="filterNews('prestasi',null)"><div class="ci-left"><div class="ci-dot" style="background:#b03c28"></div><span class="ci-name">Prestasi</span></div><span class="ci-count">8</span></div>
+          <div class="cat-item" onclick="filterNews('kegiatan',null)"><div class="ci-left"><div class="ci-dot" style="background:var(--hijau-muda)"></div><span class="ci-name">Kegiatan</span></div><span class="ci-count">15</span></div>
+          <div class="cat-item" onclick="filterNews('akademik',null)"><div class="ci-left"><div class="ci-dot" style="background:#2d6b9e"></div><span class="ci-name">Akademik</span></div><span class="ci-count">9</span></div>
+          <div class="cat-item" onclick="filterNews('ppdb',null)"><div class="ci-left"><div class="ci-dot" style="background:#7a6050"></div><span class="ci-name">PPDB</span></div><span class="ci-count">5</span></div>
+        </div>
+      </div>
+
+      <div class="widget sosmed-widget">
+        <div class="sw-icon">💬</div>
+        <div class="sw-title">Ikuti Info Terbaru</div>
+        <div class="sw-desc">Dapatkan pengumuman terkini langsung di WhatsApp Anda.</div>
+        <a href="https://wa.me/6281234567890" target="_blank" class="sw-btn">Hubungi via WhatsApp</a>
+      </div>
+    </aside>
+  </div>
+
+  <div class="load-more">
+    <button class="btn-more" onclick="this.textContent='Memuat...';setTimeout(()=>this.textContent='✓ Semua berita sudah ditampilkan',1400)">Muat Berita Lainnya</button>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 Nurul Fata Gazette — Portal Berita Resmi MTs Nurul Fata Tegalwaru &nbsp;|&nbsp; <a href="index.html">← Kembali ke Beranda</a></p>
+</footer>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-inner">
+    <div class="modal-hero" id="mHero"><div class="em" id="mEmoji"></div></div>
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-body">
+      <div class="modal-cat" id="mCat"></div>
+      <div class="modal-title" id="mTitle"></div>
+      <div class="modal-meta">
+        <div class="mm-item">📅 <strong id="mDate"></strong></div>
+        <div class="mm-item">✍️ <strong>Redaksi Nurul Fata</strong></div>
+        <div class="mm-item">👁 <strong id="mViews"></strong></div>
+        <div class="mm-item">⏱ <strong id="mReadTime"></strong></div>
+      </div>
+      <div class="modal-content" id="mContent"></div>
+      <div class="modal-footer"><div class="mf-tags" id="mTags"></div><div class="mf-share">📤 Bagikan</div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleDark(){const d=document.documentElement.getAttribute('data-theme')==='dark';document.documentElement.setAttribute('data-theme',d?'light':'dark');document.getElementById('darkToggle').textContent=d?'🌙':'☀️';localStorage.setItem('nf-theme',d?'light':'dark');}
+(function(){if(localStorage.getItem('nf-theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');document.getElementById('darkToggle').textContent='☀️';}})();
+const days=['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'],months=['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'],now=new Date();
+document.getElementById('drDate').textContent=days[now.getDay()]+', '+now.getDate()+' '+months[now.getMonth()]+' '+now.getFullYear();
+const articles=[
+{em:'🎓',cat:'Akademik',bg:'linear-gradient(160deg,#0d4f2a,#1a6b3c)',cc:'rgba(45,145,86,.15)',ct:'var(--hijau-muda)',date:'12 Juni 2025',views:'1.2K dilihat',rt:'5 menit baca',title:'120 Siswa Kelas IX Diwisuda, Seluruh Lulusan Capai Target Hafalan 2 Juz',content:`<p>Suasana haru dan kebanggaan menyelimuti aula utama MTs Nurul Fata Tegalwaru saat prosesi wisuda dan pelepasan 120 siswa kelas IX Tahun Ajaran 2024/2025 digelar pada Kamis, 12 Juni 2025. Untuk pertama kalinya dalam sejarah madrasah, <strong>seluruh lulusan berhasil mencapai target hafalan 2 juz Al-Qur'an</strong> — sebuah pencapaian yang disambut standing ovation dari seluruh wali murid dan tamu undangan yang hadir.</p><p>Kepala Madrasah, H. Ahmad Fauzi, S.Pd.I., M.M., dalam sambutannya menyampaikan rasa syukur yang mendalam. "Ini bukan sekadar wisuda biasa. Ini adalah bukti bahwa tekad, kesabaran, dan doa orang tua bisa mengantarkan anak-anak kita melampaui batas yang kita bayangkan," ujarnya di hadapan ratusan tamu undangan.</p><p>Momen paling mengharukan adalah ketika 15 siswa penghafal Qur'an terbaik tampil membacakan hafalan secara bergantian di hadapan seluruh hadirin. Acara ditutup dengan doa bersama dan foto bersama antara wali murid dan dewan guru. <strong>Seluruh lulusan kelas IX 2025 telah diterima di berbagai SMA/SMK/MA unggulan di Kabupaten Purwakarta.</strong></p>`,tags:['Wisuda','Kelas IX','Tahfidz','Kelulusan']},
+{em:'📝',cat:'PPDB',bg:'linear-gradient(160deg,#3a2a18,#5a4028)',cc:'rgba(100,80,60,.15)',ct:'#7a6050',date:'1 Juli 2025',views:'412 dilihat',rt:'3 menit baca',title:'PPDB 2026/2027 Resmi Dibuka — Tiga Jalur Tersedia',content:`<p>Panitia PPDB MTs Nurul Fata resmi mengumumkan pembukaan pendaftaran Tahun Ajaran 2026/2027 mulai <strong>15 Juli 2026</strong>. Tersedia tiga jalur: Sekolah Reguler (Rp 150.000/bln), Boarding School (Rp 750.000/bln), dan Pesantren (Rp 500.000/bln).</p><p>Persyaratan umum: ijazah/SKHUN SD/MI, akta kelahiran, kartu keluarga, dan surat keterangan sehat. Pendaftaran dilayani Senin–Sabtu pukul 08.00–14.00 WIB di kantor Tata Usaha atau via WhatsApp resmi. <strong>Kuota sangat terbatas — segera daftarkan putra-putri Anda.</strong></p>`,tags:['PPDB','Pendaftaran','2026','Siswa Baru']},
+{em:'🥇',cat:'Prestasi',bg:'linear-gradient(160deg,#3a1a10,#5a2a18)',cc:'rgba(180,60,40,.12)',ct:'#b03c28',date:'28 Mei 2025',views:'389 dilihat',rt:'4 menit baca',title:'Juara I Lomba Pramuka Penggalang Tingkat Kabupaten Purwakarta',content:`<p>Kontingen Pramuka Penggalang MTs Nurul Fata <strong>merebut gelar juara satu</strong> dalam Lomba Pramuka Tingkat Kabupaten Purwakarta 2025 dari 47 tim peserta. Tim putri unggul di pioneering, PPPK, sandi pramuka, dan PBB. Tim putra menyabet juara satu semaphore dan navigasi darat.</p><p>"Ini hasil latihan keras anak-anak selama tiga bulan. Saya sangat bangga dengan dedikasi mereka," ujar Pembina Pramuka, Kak Dede Sopian, S.Pd. <strong>Prestasi ini menjadi yang ketiga kalinya dalam empat tahun terakhir bagi MTs Nurul Fata di ajang ini.</strong></p>`,tags:['Pramuka','Juara I','Kabupaten','Penggalang']},
+{em:'📿',cat:'Kegiatan',bg:'linear-gradient(160deg,#0d4f2a,#082010)',cc:'rgba(45,145,86,.12)',ct:'var(--hijau-muda)',date:'10 Juni 2025',views:'501 dilihat',rt:'5 menit baca',title:"Khataman Al-Qur'an Angkatan IX: 120 Siswa Selesaikan Target Hafalan",content:`<p>Suasana khidmat dan haru menyelimuti Mushola Al-Ikhlas saat prosesi Khataman Al-Qur'an angkatan IX digelar. Dari 120 siswa, <strong>98 berhasil melampaui target</strong> dengan hafalan 3–5 juz, sementara 12 siswa lainnya hafal hingga 7 juz — angkatan dengan capaian terbaik sepanjang sejarah program Tahfidz madrasah.</p><p>Koordinator Tahfidz Ustadz Yusuf Hambali menyampaikan bahwa kunci keberhasilan adalah konsistensi setoran harian dan dukungan penuh orang tua di rumah. Acara diakhiri pemberian syahadah dan doa bersama oleh pimpinan pondok pesantren Nurul Fata.</p>`,tags:['Tahfidz','Khataman','Al-Quran','Kelas IX']},
+{em:'📣',cat:'Pengumuman',bg:'linear-gradient(160deg,#2a2010,#402a10)',cc:'rgba(200,168,75,.15)',ct:'var(--emas-tua)',date:'5 Juni 2025',views:'677 dilihat',rt:'2 menit baca',title:'Jadwal Libur Semester Genap & Hari Masuk Kembali TA 2024/2025',content:`<p><strong>Libur akhir tahun ajaran:</strong> Senin 14 Juni – Jumat 20 Juni 2025.</p><p><strong>Pembagian rapor:</strong> Sabtu 21 Juni 2025, pukul 08.00–11.00 WIB. Wali murid wajib hadir langsung.</p><p><strong>Hari pertama masuk TA 2025/2026:</strong> Senin 14 Juli 2025. Siswa kelas VII baru mengikuti MOS mulai hari tersebut. Untuk pertanyaan lebih lanjut, hubungi Tata Usaha pada jam kerja.</p>`,tags:['Libur','Jadwal','Rapor','Semester Genap']},
+{em:'📖',cat:'Prestasi',bg:'linear-gradient(160deg,#3a1a10,#5a2a18)',cc:'rgba(180,60,40,.12)',ct:'#b03c28',date:'20 April 2025',views:'448 dilihat',rt:'3 menit baca',title:'Siswa Nurul Fata Raih Juara II MTQ Kabupaten Purwakarta',content:`<p>Farhan Maulana (kelas VIII) meraih <strong>Juara II MTQ Kabupaten Purwakarta</strong> kategori tilawah putra dari 60+ peserta se-kabupaten. Nilai yang ia raih menjadi yang tertinggi dalam sejarah keikutsertaan MTs Nurul Fata di ajang MTQ kabupaten.</p><p>Pembimbing Tilawah Ustadz Muhamad Irfan, S.Ag.: "Dia anak yang disiplin dan tidak pernah absen latihan. Hasilnya, Allah tunjukkan hari ini." Ke depan Farhan direncanakan mewakili Kab. Purwakarta di MTQ tingkat Provinsi Jawa Barat.</p>`,tags:['MTQ','Tilawah','Kabupaten','Juara II']},
+{em:'🔬',cat:'Akademik',bg:'linear-gradient(160deg,#0a1a2a,#122040)',cc:'rgba(30,100,160,.12)',ct:'#2d6b9e',date:'15 Maret 2025',views:'323 dilihat',rt:'4 menit baca',title:'Program Tahfidz Diperkuat: Target Hafalan Meningkat Jadi 3 Juz',content:`<p>Mulai TA 2025/2026, MTs Nurul Fata meningkatkan target Tahfidz dari <strong>2 menjadi 3 juz</strong>. Keputusan ini diambil setelah evaluasi yang menunjukkan mayoritas siswa mampu melampaui target sebelumnya.</p><p>Madrasah menambahkan sesi setoran sore hari 15.00–16.00 WIB untuk kelas VII dan VIII, serta dua pembimbing Tahfidz baru. Orang tua juga diminta aktif dalam murojaah di rumah minimal 30 menit per malam menggunakan buku panduan yang disediakan madrasah.</p>`,tags:['Tahfidz','Akademik','Kurikulum','Program Baru']},
+{em:'🏕️',cat:'Kegiatan',bg:'linear-gradient(160deg,#0d4f2a,#082010)',cc:'rgba(45,145,86,.12)',ct:'var(--hijau-muda)',date:'10 Nov 2024',views:'287 dilihat',rt:'4 menit baca',title:'Perkemahan Pramuka Penggalang: Membangun Karakter di Alam Tegalwaru',content:`<p>Seluruh anggota Pramuka Penggalang mengikuti Persami bertema <strong>"Pramuka Berkarakter, Bangsa Bermartabat"</strong> di area alam terbuka Desa Tegalwaru, 9–10 November 2024. Pionering, wide game, hiking malam, pendirian tenda, hingga api unggun berlangsung semangat dan penuh kekompakan.</p><p>Pembina: "Alam adalah guru terbaik. Di sinilah karakter sejati seorang pramuka diuji dan dibentuk." Seluruh peserta juga mengikuti shalat berjamaah dan kegiatan rohani sebagai bagian integral perkemahan.</p>`,tags:['Pramuka','Persami','Karakter','Ekskul']},
+{em:'📋',cat:'Pengumuman',bg:'linear-gradient(160deg,#2a2010,#402a10)',cc:'rgba(200,168,75,.15)',ct:'var(--emas-tua)',date:'1 Okt 2024',views:'598 dilihat',rt:'2 menit baca',title:'Jadwal UTS Ganjil Tahun Ajaran 2024/2025',content:`<p>UTS Ganjil dilaksanakan <strong>14–18 Oktober 2024</strong>, mulai pukul 07.30 WIB. Siswa wajib hadir 15 menit sebelumnya, mengenakan seragam lengkap, dan dilarang membawa handphone ke ruang ujian.</p><p>Jadwal lengkap per mata pelajaran tersedia di kantor Tata Usaha atau dapat ditanyakan kepada wali kelas masing-masing. Orang tua diharapkan mendukung persiapan anak dengan memastikan istirahat cukup dan suasana belajar kondusif di rumah.</p>`,tags:['UTS','Ujian','Jadwal','Ganjil 2024']},
+];
+function openModal(i){const a=articles[i];document.getElementById('mHero').style.background=a.bg;document.getElementById('mEmoji').textContent=a.em;const c=document.getElementById('mCat');c.textContent=a.cat;c.style.background=a.cc;c.style.color=a.ct;document.getElementById('mTitle').textContent=a.title;document.getElementById('mDate').textContent=a.date;document.getElementById('mViews').textContent=a.views;document.getElementById('mReadTime').textContent=a.rt;document.getElementById('mContent').innerHTML=a.content;document.getElementById('mTags').innerHTML=a.tags.map(t=>'<span class="mf-tag">#'+t+'</span>').join('');document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
+function filterNews(cat,btn){if(btn){document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));btn.classList.add('active');}document.querySelectorAll('.article-card').forEach(c=>{c.style.display=(cat==='semua'||c.dataset.cat===cat)?'grid':'none';});}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('modal').classList.contains('open'))closeModal();});
+</script>
+</body>
+</html>

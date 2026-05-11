@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Guru & Staf — MTs Nurul Fata Tegalwaru</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --hijau-tua:#0d4f2a;--hijau:#1a6b3c;--hijau-muda:#2d9156;--hijau-terang:#3db870;
+  --emas-tua:#a07830;--emas:#c8a84b;--emas-muda:#e0c068;
+  --krem:#faf7f0;--krem-gelap:#f0ebe0;--putih:#ffffff;--gelap:#0d1f14;
+  --teks:#1e3528;--abu:#5a6e61;--abu-muda:#8fa396;
+  --border:rgba(26,107,60,0.12);--border-solid:#d8e8dc;
+  --shadow-sm:0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md:0 8px 32px rgba(0,0,0,0.10);
+  --shadow-lg:0 20px 60px rgba(0,0,0,0.15);
+  --radius:14px;--transition:all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+[data-theme="dark"]{
+  --hijau-tua:#0a3d20;--hijau:#1d7a45;--hijau-muda:#3aaa68;--hijau-terang:#4dcc80;
+  --emas-tua:#b8943a;--emas:#d4b050;--emas-muda:#e8cc70;
+  --krem:#080d09;--krem-gelap:#0e1a12;--putih:#0a100b;--gelap:#040806;
+  --teks:#d4e8da;--abu:#7aaa88;--abu-muda:#4d7a5a;
+  --border:rgba(61,184,112,0.11);--border-solid:#1a2e1f;
+  --shadow-sm:0 2px 8px rgba(0,0,0,0.4);
+  --shadow-md:0 8px 32px rgba(0,0,0,0.55);
+  --shadow-lg:0 20px 60px rgba(0,0,0,0.75);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--krem);color:var(--teks);min-height:100vh;overflow-x:hidden;transition:background .4s,color .4s;}
+
+/* ── HEADER ── */
+header{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 32px;background:rgba(250,247,240,0.88);backdrop-filter:blur(20px) saturate(1.8);border-bottom:1px solid var(--border);transition:background .4s;}
+[data-theme="dark"] header{background:rgba(8,13,9,0.92);}
+.header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--hijau-tua),var(--hijau-muda));display:flex;align-items:center;justify-content:center;font-size:17px;}
+.logo-text strong{font-size:13px;font-weight:800;color:var(--teks);display:block;line-height:1.2;}
+.logo-text span{font-size:10px;color:var(--abu);}
+.header-right{display:flex;align-items:center;gap:8px;}
+.btn-back{display:flex;align-items:center;gap:5px;padding:7px 14px;border-radius:8px;font-size:12px;font-weight:600;color:var(--abu);background:transparent;border:1.5px solid var(--border);cursor:pointer;text-decoration:none;transition:var(--transition);font-family:inherit;}
+.btn-back:hover{color:var(--hijau);border-color:var(--hijau-muda);}
+#darkToggle{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--border);background:transparent;color:var(--teks);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition);}
+#darkToggle:hover{background:rgba(26,107,60,0.08);transform:rotate(20deg);}
+
+/* ── HERO ── */
+.hero{
+  padding-top:60px;
+  min-height:420px;
+  background:var(--gelap);
+  position:relative;overflow:hidden;
+  display:flex;align-items:flex-end;
+}
+/* Animated grain texture */
+.hero::before{
+  content:'';position:absolute;inset:0;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  opacity:.6;
+}
+/* Gradient layers */
+.hero-gradient{
+  position:absolute;inset:0;z-index:1;
+  background:
+    radial-gradient(ellipse at 15% 50%,rgba(200,168,75,0.14) 0%,transparent 55%),
+    radial-gradient(ellipse at 85% 20%,rgba(45,145,86,0.12) 0%,transparent 50%),
+    linear-gradient(160deg,#071410 0%,#0d1f14 40%,#091a10 100%);
+}
+/* Grid lines decoration */
+.hero-grid{
+  position:absolute;inset:0;z-index:2;
+  background-image:
+    linear-gradient(rgba(45,145,86,0.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(45,145,86,0.06) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:linear-gradient(to bottom,transparent,rgba(0,0,0,.6) 30%,rgba(0,0,0,.6) 70%,transparent);
+}
+.hero-content{
+  position:relative;z-index:3;
+  width:100%;max-width:1200px;margin:0 auto;
+  padding:0 32px 56px;
+  display:flex;align-items:flex-end;justify-content:space-between;gap:40px;
+}
+.hero-left{}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--emas-muda);margin-bottom:16px;
+}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--emas);opacity:.6;}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(36px,5vw,64px);
+  font-weight:900;color:#fff;
+  line-height:1.05;letter-spacing:-1.5px;
+  margin-bottom:14px;
+}
+.hero h1 em{color:var(--emas-muda);font-style:italic;}
+.hero-desc{font-size:14px;color:rgba(255,255,255,.45);line-height:1.8;max-width:480px;}
+.hero-right{flex-shrink:0;}
+.hero-stats{display:flex;flex-direction:column;gap:12px;}
+.hs-item{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  backdrop-filter:blur(8px);
+  border-radius:12px;padding:14px 20px;
+  display:flex;align-items:center;gap:14px;
+  min-width:180px;transition:var(--transition);
+}
+.hs-item:hover{background:rgba(255,255,255,.1);border-color:rgba(200,168,75,.3);}
+.hs-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--emas-muda);line-height:1;}
+.hs-label{font-size:11px;color:rgba(255,255,255,.5);font-weight:500;line-height:1.4;}
+/* Bottom curve */
+.hero-curve{
+  position:absolute;bottom:-1px;left:0;right:0;height:48px;z-index:4;
+  background:var(--krem);
+  clip-path:ellipse(55% 100% at 50% 100%);
+}
+[data-theme="dark"] .hero-curve{background:var(--krem);}
+
+/* ── MAIN ── */
+.main{max-width:1200px;margin:0 auto;padding:56px 32px 96px;}
+
+/* ── KEPALA SEKOLAH ── */
+.kepala-section{margin-bottom:72px;}
+.sec-header{text-align:center;margin-bottom:44px;}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--hijau-muda);margin-bottom:8px;}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,36px);font-weight:900;color:var(--teks);line-height:1.15;margin-bottom:4px;}
+.sec-title em{color:var(--hijau);font-style:italic;}
+.sec-divider{width:56px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--hijau),var(--emas));margin:16px auto 0;}
+
+/* Kepala card */
+.kepala-card-wrap{display:flex;justify-content:center;}
+.kepala-card{
+  position:relative;
+  background:var(--putih);
+  border:1px solid var(--border-solid);
+  border-radius:24px;
+  overflow:hidden;
+  width:320px;
+  box-shadow:var(--shadow-lg);
+  transition:var(--transition);
+}
+[data-theme="dark"] .kepala-card{background:#0a100b;}
+.kepala-card:hover{transform:translateY(-8px);box-shadow:0 32px 80px rgba(0,0,0,.2);}
+/* Top accent bar */
+.kepala-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:5px;
+  background:linear-gradient(90deg,var(--emas-tua),var(--emas-muda),var(--emas-tua));
+  z-index:2;
+}
+.kepala-photo{
+  height:220px;
+  background:linear-gradient(160deg,#0d4f2a,#1a6b3c,#0a2a14);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;position:relative;overflow:hidden;
+}
+.kepala-photo::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 70%,rgba(200,168,75,.18),transparent 65%);
+}
+.kepala-photo::after{
+  content:'';position:absolute;inset:0;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 29px,rgba(255,255,255,.03) 29px,rgba(255,255,255,.03) 30px);
+}
+.kp-avatar{
+  width:88px;height:88px;border-radius:50%;
+  background:rgba(255,255,255,.12);
+  border:3px solid rgba(200,168,75,.5);
+  display:flex;align-items:center;justify-content:center;
+  font-size:40px;position:relative;z-index:1;
+  box-shadow:0 0 0 6px rgba(200,168,75,.12);
+}
+.kp-placeholder{font-size:11px;color:rgba(255,255,255,.3);position:relative;z-index:1;}
+/* Badge */
+.kepala-badge{
+  position:absolute;top:16px;left:16px;z-index:3;
+  background:linear-gradient(135deg,var(--emas-tua),var(--emas-muda));
+  color:#fff;font-size:9px;font-weight:900;letter-spacing:1px;text-transform:uppercase;
+  padding:4px 10px;border-radius:100px;
+  box-shadow:0 2px 8px rgba(160,120,48,.4);
+}
+.kepala-body{padding:24px;}
+.kb-jabatan{
+  font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;
+  color:var(--emas-tua);margin-bottom:6px;
+}
+.kb-nama{
+  font-family:'Playfair Display',serif;
+  font-size:18px;font-weight:700;color:var(--teks);
+  line-height:1.3;margin-bottom:4px;
+}
+.kb-pendidikan{font-size:12px;color:var(--abu);margin-bottom:16px;}
+.kb-divider{height:1px;background:var(--border);margin-bottom:16px;}
+.kb-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.kb-tag{
+  font-size:10px;font-weight:600;padding:3px 10px;border-radius:100px;
+  background:rgba(26,107,60,.08);color:var(--hijau-muda);
+  border:1px solid rgba(26,107,60,.12);
+}
+/* Connector line to carousel */
+.kepala-connector{
+  display:flex;flex-direction:column;align-items:center;gap:0;
+  margin:32px 0;
+}
+.kc-line{width:2px;height:40px;background:linear-gradient(to bottom,var(--emas),var(--hijau-muda));}
+.kc-node{
+  width:12px;height:12px;border-radius:50%;
+  background:var(--hijau-muda);
+  box-shadow:0 0 0 4px rgba(45,145,86,.2);
+}
+.kc-label{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--abu-muda);margin-top:8px;}
+
+/* ── CAROUSEL SECTION ── */
+.carousel-section{margin-bottom:72px;}
+.carousel-wrap{
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;gap:18px;
+  padding:4px 0;
+}
+/* Fade masks */
+.carousel-wrap::before,.carousel-wrap::after{
+  content:'';position:absolute;top:0;bottom:0;width:100px;z-index:3;pointer-events:none;
+}
+.carousel-wrap::before{left:0;background:linear-gradient(to right,var(--krem) 0%,transparent 100%);}
+.carousel-wrap::after{right:0;background:linear-gradient(to left,var(--krem) 0%,transparent 100%);}
+
+.carousel-track{
+  display:flex;gap:18px;width:max-content;
+}
+.carousel-track.right{animation:scrollRight 40s linear infinite;}
+.carousel-track.left {animation:scrollLeft  40s linear infinite;}
+.carousel-track:hover{animation-play-state:paused;}
+
+@keyframes scrollRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@keyframes scrollLeft {from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Guru card */
+.guru-card{
+  width:200px;flex-shrink:0;
+  background:var(--putih);
+  border:1px solid var(--border-solid);
+  border-radius:16px;overflow:hidden;
+  transition:var(--transition);
+  cursor:pointer;
+  position:relative;
+}
+[data-theme="dark"] .guru-card{background:#0a100b;}
+.guru-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:var(--shadow-lg);z-index:2;border-color:var(--hijau-muda);}
+/* Category color strip */
+.guru-card-strip{height:3px;width:100%;}
+.strip-akademik {background:linear-gradient(90deg,var(--hijau-tua),var(--hijau-muda));}
+.strip-keagamaan{background:linear-gradient(90deg,var(--emas-tua),var(--emas-muda));}
+.strip-ekskul   {background:linear-gradient(90deg,#1a5a8a,#2d8abf);}
+.strip-admin    {background:linear-gradient(90deg,#5a4028,#8a6840);}
+.strip-bk       {background:linear-gradient(90deg,#3a2870,#6a50b0);}
+.guru-photo{
+  height:120px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:6px;position:relative;overflow:hidden;
+}
+.guru-photo .gp-avatar{
+  width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;
+  border:2px solid rgba(255,255,255,.3);
+  position:relative;z-index:1;
+}
+.guru-photo .gp-label{font-size:9px;color:rgba(255,255,255,.4);position:relative;z-index:1;}
+/* photo bg per category */
+.gc-akademik  .guru-photo{background:linear-gradient(160deg,#1a4a28,#0d3018);}
+.gc-keagamaan .guru-photo{background:linear-gradient(160deg,#3a2810,#201408);}
+.gc-ekskul    .guru-photo{background:linear-gradient(160deg,#0e2840,#081828);}
+.gc-admin     .guru-photo{background:linear-gradient(160deg,#281a08,#180e04);}
+.gc-bk        .guru-photo{background:linear-gradient(160deg,#18103a,#100820);}
+.guru-body{padding:14px 16px;}
+.gb-jabatan{font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--abu-muda);margin-bottom:4px;}
+.gb-nama{font-size:13px;font-weight:700;color:var(--teks);line-height:1.3;margin-bottom:4px;}
+.gb-mapel{font-size:11px;color:var(--abu);line-height:1.4;}
+/* hover detail */
+.guru-card-hover{
+  position:absolute;inset:0;z-index:5;
+  background:linear-gradient(to top,rgba(13,79,42,.95) 0%,rgba(13,79,42,.7) 60%,rgba(13,79,42,.3) 100%);
+  opacity:0;transition:opacity .3s;
+  display:flex;flex-direction:column;justify-content:flex-end;padding:16px;
+}
+.guru-card:hover .guru-card-hover{opacity:1;}
+.gch-nama{font-size:13px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:3px;}
+.gch-mapel{font-size:11px;color:var(--emas-muda);margin-bottom:8px;}
+.gch-detail{font-size:10px;color:rgba(255,255,255,.6);line-height:1.5;}
+
+/* ── WAKAMAD SECTION ── */
+.wakamad-section{margin-bottom:72px;}
+.wakamad-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.wakamad-card{
+  background:var(--putih);border:1px solid var(--border-solid);
+  border-radius:18px;overflow:hidden;transition:var(--transition);cursor:pointer;
+}
+[data-theme="dark"] .wakamad-card{background:#0a100b;}
+.wakamad-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);}
+.wakamad-card::before{content:'';display:block;height:4px;background:linear-gradient(90deg,var(--hijau-tua),var(--hijau-muda));}
+.wc-photo{
+  height:140px;
+  background:linear-gradient(160deg,#0d2a18,#1a4a2a);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  position:relative;overflow:hidden;
+}
+.wc-photo::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 70%,rgba(45,145,86,.15),transparent 65%);}
+.wc-avatar{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.12);border:2px solid rgba(45,145,86,.4);display:flex;align-items:center;justify-content:center;font-size:28px;position:relative;z-index:1;}
+.wc-placeholder{font-size:10px;color:rgba(255,255,255,.3);position:relative;z-index:1;}
+.wc-body{padding:18px;}
+.wc-jabatan{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--hijau-muda);margin-bottom:5px;}
+.wc-nama{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--teks);line-height:1.3;margin-bottom:4px;}
+.wc-mapel{font-size:11px;color:var(--abu);margin-bottom:12px;}
+.wc-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.wc-tag{font-size:9px;font-weight:600;padding:2px 8px;border-radius:100px;background:rgba(26,107,60,.08);color:var(--hijau-muda);}
+
+/* ── STAF SECTION ── */
+.staf-section{margin-bottom:72px;}
+.staf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.staf-card{
+  background:var(--putih);border:1px solid var(--border-solid);
+  border-radius:14px;padding:20px 18px;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  transition:var(--transition);cursor:pointer;
+}
+[data-theme="dark"] .staf-card{background:#0a100b;}
+.staf-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--border);}
+.staf-avatar{
+  width:52px;height:52px;border-radius:50%;
+  background:linear-gradient(135deg,var(--krem-gelap),var(--krem));
+  border:2px solid var(--border-solid);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;margin-bottom:10px;transition:var(--transition);
+}
+[data-theme="dark"] .staf-avatar{background:linear-gradient(135deg,#172010,#111c15);}
+.staf-card:hover .staf-avatar{border-color:var(--hijau-muda);box-shadow:0 0 0 4px rgba(45,145,86,.12);}
+.staf-jabatan{font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--abu-muda);margin-bottom:4px;}
+.staf-nama{font-size:13px;font-weight:700;color:var(--teks);line-height:1.3;margin-bottom:3px;}
+.staf-unit{font-size:11px;color:var(--abu);}
+
+/* ── CTA BOTTOM ── */
+.cta-section{
+  background:linear-gradient(160deg,var(--hijau-tua),var(--hijau));
+  border-radius:24px;padding:56px 48px;
+  display:flex;align-items:center;justify-content:space-between;gap:32px;
+  position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 80% 50%,rgba(200,168,75,.14),transparent 55%);
+}
+.cta-section::after{
+  content:'';position:absolute;inset:0;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,.025) 39px,rgba(255,255,255,.025) 40px);
+}
+.cta-left{position:relative;z-index:1;}
+.cta-eyebrow{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--emas-muda);margin-bottom:10px;}
+.cta-title{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,32px);font-weight:900;color:#fff;line-height:1.2;margin-bottom:10px;}
+.cta-desc{font-size:14px;color:rgba(255,255,255,.6);line-height:1.7;max-width:420px;}
+.cta-right{position:relative;z-index:1;display:flex;flex-direction:column;gap:10px;flex-shrink:0;}
+.cta-btn-primary{
+  padding:13px 28px;border-radius:10px;border:none;
+  background:linear-gradient(135deg,var(--emas-tua),var(--emas-muda));
+  color:#fff;font-size:13px;font-weight:700;cursor:pointer;
+  transition:var(--transition);font-family:inherit;
+  box-shadow:0 4px 16px rgba(160,120,48,.4);white-space:nowrap;
+}
+.cta-btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(160,120,48,.55);}
+.cta-btn-secondary{
+  padding:13px 28px;border-radius:10px;
+  border:1.5px solid rgba(255,255,255,.3);
+  background:rgba(255,255,255,.1);backdrop-filter:blur(6px);
+  color:#fff;font-size:13px;font-weight:600;cursor:pointer;
+  transition:var(--transition);font-family:inherit;text-decoration:none;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.cta-btn-secondary:hover{background:rgba(255,255,255,.18);}
+
+/* ── FOOTER ── */
+footer{background:var(--gelap);color:rgba(255,255,255,.4);text-align:center;padding:22px;font-size:12px;margin-top:80px;}
+footer a{color:var(--emas-muda);text-decoration:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){.wakamad-grid{grid-template-columns:repeat(2,1fr);}.staf-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){
+  .main{padding:40px 16px 72px;}
+  .hero-content{flex-direction:column;padding:0 16px 48px;}
+  .hero-right{display:none;}
+  .hero h1{letter-spacing:-.5px;}
+  .wakamad-grid{grid-template-columns:1fr 1fr;}
+  .staf-grid{grid-template-columns:1fr 1fr;}
+  .cta-section{flex-direction:column;padding:36px 24px;}
+  .carousel-wrap::before,.carousel-wrap::after{width:48px;}
+}
+@media(max-width:480px){
+  .wakamad-grid,.staf-grid{grid-template-columns:1fr;}
+  .kepala-card{width:100%;max-width:320px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="">
+        <img src="Logo-nf.png" width="40">
+      </div>
+      <div class="logo-text">
+        <strong>MTs Nurul Fata</strong>
+        <span>Tegalwaru, Purwakarta</span>
+      </div>
+    </a>
+    <div class="header-right">
+      <a href="index.html" class="btn-back">← Beranda</a>
+      <button id="darkToggle" onclick="toggleDark()">🌙</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-gradient"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Sumber Daya Manusia</div>
+      <h1>Orang-orang di<br>Balik <em>Nurul Fata</em></h1>
+      <p class="hero-desc">Mereka bukan sekadar tenaga pengajar. Mereka adalah para pejuang pendidikan yang setiap harinya membentuk karakter, menyalakan semangat, dan mewariskan ilmu kepada generasi penerus bangsa.</p>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stats">
+        <div class="hs-item">
+          <div class="hs-num">32</div>
+          <div class="hs-label">Tenaga Pendidik<br>& Kependidikan</div>
+        </div>
+        <div class="hs-item">
+          <div class="hs-num">18</div>
+          <div class="hs-label">Guru Mata<br>Pelajaran Aktif</div>
+        </div>
+        <div class="hs-item">
+          <div class="hs-num">85%</div>
+          <div class="hs-label">Berpendidikan<br>S1 / S2</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-curve"></div>
+</section>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- KEPALA SEKOLAH -->
+  <section class="kepala-section">
+    <div class="sec-header">
+      <div class="sec-label">Pimpinan Tertinggi</div>
+      <div class="sec-title">Kepala <em>Madrasah</em></div>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="kepala-card-wrap">
+      <div class="kepala-card">
+        <span class="kepala-badge">⭐ Kepala Madrasah</span>
+        <div class="kepala-photo">
+          <div class="kp-avatar">👨‍💼</div>
+          <div class="kp-placeholder">Foto resmi</div>
+        </div>
+        <div class="kepala-body">
+          <div class="kb-jabatan">Kepala Madrasah</div>
+          <div class="kb-nama">H. Ahmad Fauzi, S.Pd.I., M.M.</div>
+          <div class="kb-pendidikan">S2 Manajemen Pendidikan · Aktif sejak 2018</div>
+          <div class="kb-divider"></div>
+          <div class="kb-tags">
+            <span class="kb-tag">Manajemen Pendidikan</span>
+            <span class="kb-tag">Kebijakan Madrasah</span>
+            <span class="kb-tag">Pengembangan SDM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="kepala-connector">
+      <div class="kc-node"></div>
+      <div class="kc-line"></div>
+      <div class="kc-node"></div>
+      <div class="kc-label">Tenaga Pendidik</div>
+    </div>
+  </section>
+
+  <!-- CAROUSEL GURU -->
+  <section class="carousel-section">
+    <div class="sec-header">
+      <div class="sec-label">Tenaga Pendidik</div>
+      <div class="sec-title">Guru-guru <em>Kami</em></div>
+      <div class="sec-divider"></div>
+    </div>
+
+    <div class="carousel-wrap">
+
+      <!-- Baris 1: berjalan ke kanan -->
+      <div class="carousel-track right" id="track1"></div>
+
+      <!-- Baris 2: berjalan ke kiri -->
+      <div class="carousel-track left" id="track2"></div>
+
+    </div>
+  </section>
+
+  <!-- WAKAMAD -->
+  <section class="wakamad-section">
+    <div class="sec-header">
+      <div class="sec-label">Wakil Kepala Madrasah</div>
+      <div class="sec-title">Jajaran <em>Wakamad</em></div>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="wakamad-grid">
+      <div class="wakamad-card">
+        <div class="wc-photo"><div class="wc-avatar">👩‍🏫</div><div class="wc-placeholder">Foto resmi</div></div>
+        <div class="wc-body">
+          <div class="wc-jabatan">Wakamad Kurikulum</div>
+          <div class="wc-nama">Hj. Siti Maryam, S.Ag.</div>
+          <div class="wc-mapel">Aqidah Akhlak · S1 PAI</div>
+          <div class="wc-tags"><span class="wc-tag">Kurikulum</span><span class="wc-tag">Evaluasi Belajar</span><span class="wc-tag">Jadwal Pelajaran</span></div>
+        </div>
+      </div>
+      <div class="wakamad-card">
+        <div class="wc-photo"><div class="wc-avatar">👨‍🏫</div><div class="wc-placeholder">Foto resmi</div></div>
+        <div class="wc-body">
+          <div class="wc-jabatan">Wakamad Kesiswaan</div>
+          <div class="wc-nama">Drs. Asep Hidayat, M.Pd.</div>
+          <div class="wc-mapel">Bahasa Indonesia · S2 Pendidikan</div>
+          <div class="wc-tags"><span class="wc-tag">Kesiswaan</span><span class="wc-tag">Ekskul</span><span class="wc-tag">Kedisiplinan</span></div>
+        </div>
+      </div>
+      <div class="wakamad-card">
+        <div class="wc-photo"><div class="wc-avatar">👩‍🏫</div><div class="wc-placeholder">Foto resmi</div></div>
+        <div class="wc-body">
+          <div class="wc-jabatan">Wakamad Sarana & Prasarana</div>
+          <div class="wc-nama">Neneng Susilawati, S.Pd.</div>
+          <div class="wc-mapel">Matematika · S1 Pendidikan</div>
+          <div class="wc-tags"><span class="wc-tag">Sarana</span><span class="wc-tag">Prasarana</span><span class="wc-tag">Aset Madrasah</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAF -->
+  <section class="staf-section">
+    <div class="sec-header">
+      <div class="sec-label">Tenaga Kependidikan</div>
+      <div class="sec-title">Staf & <em>Tata Usaha</em></div>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="staf-grid">
+      <div class="staf-card"><div class="staf-avatar">🗂️</div><div class="staf-jabatan">Kepala TU</div><div class="staf-nama">Rudi Hermawan, S.Pd.</div><div class="staf-unit">Tata Usaha</div></div>
+      <div class="staf-card"><div class="staf-avatar">💰</div><div class="staf-jabatan">Bendahara</div><div class="staf-nama">Sri Wahyuni, A.Md.</div><div class="staf-unit">Keuangan Madrasah</div></div>
+      <div class="staf-card"><div class="staf-avatar">📚</div><div class="staf-jabatan">Pustakawan</div><div class="staf-nama">Dian Fitriani, S.Pd.</div><div class="staf-unit">Perpustakaan</div></div>
+      <div class="staf-card"><div class="staf-avatar">💻</div><div class="staf-jabatan">Operator Sekolah</div><div class="staf-nama">Ade Gunawan, S.Kom.</div><div class="staf-unit">Data & Sistem Info</div></div>
+      <div class="staf-card"><div class="staf-avatar">🔧</div><div class="staf-jabatan">Teknisi Lab</div><div class="staf-nama">Hendra Susanto</div><div class="staf-unit">Lab Komputer & IPA</div></div>
+      <div class="staf-card"><div class="staf-avatar">🌿</div><div class="staf-jabatan">Kebersihan & Lingkungan</div><div class="staf-nama">Tim Kebersihan</div><div class="staf-unit">3 Personil</div></div>
+      <div class="staf-card"><div class="staf-avatar">🔒</div><div class="staf-jabatan">Keamanan</div><div class="staf-nama">Satpam Madrasah</div><div class="staf-unit">2 Personil</div></div>
+      <div class="staf-card"><div class="staf-avatar">🏥</div><div class="staf-jabatan">UKS</div><div class="staf-nama">Nining Rahayu, Amd.Kep.</div><div class="staf-unit">Unit Kesehatan Siswa</div></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta-left">
+      <div class="cta-eyebrow">Bergabung Bersama Kami</div>
+      <div class="cta-title">Tertarik Menjadi Bagian<br>dari Keluarga Nurul Fata?</div>
+      <div class="cta-desc">Kami selalu membuka peluang bagi tenaga pendidik dan kependidikan yang berdedikasi, profesional, dan berkomitmen terhadap pendidikan Islam berkualitas.</div>
+    </div>
+    <div class="cta-right">
+      <button class="cta-btn-primary" onclick="window.open('https://wa.me/6281234567890?text=Assalamualaikum%2C+saya+ingin+bertanya+tentang+lowongan+tenaga+pendidik+di+MTs+Nurul+Fata.','_blank')">💬 Hubungi via WhatsApp</button>
+      <a href="index.html#kontak" class="cta-btn-secondary">📍 Lihat Kontak Lengkap</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 MTs Nurul Fata Tegalwaru &nbsp;|&nbsp; Profil Guru & Staf &nbsp;|&nbsp; <a href="index.html">← Kembali ke Beranda</a></p>
+</footer>
+
+<script>
+/* DARK MODE */
+function toggleDark(){
+  const d=document.documentElement.getAttribute('data-theme')==='dark';
+  document.documentElement.setAttribute('data-theme',d?'light':'dark');
+  document.getElementById('darkToggle').textContent=d?'🌙':'☀️';
+  localStorage.setItem('nf-theme',d?'light':'dark');
+}
+(function(){
+  if(localStorage.getItem('nf-theme')==='dark'){
+    document.documentElement.setAttribute('data-theme','dark');
+    document.getElementById('darkToggle').textContent='☀️';
+  }
+})();
+
+/* GURU DATA */
+const guruRow1=[
+  {nama:'Ustad Yusuf Hambali, S.Pd.I.',jabatan:'Guru Mapel',mapel:'Al-Qur\'an Hadits & Fiqih',cat:'keagamaan',avatar:'👳',tahun:'2012',pendidikan:'S1 PAI'},
+  {nama:'Rini Andriani, S.Si.',jabatan:'Guru Mapel',mapel:'IPA Terpadu',cat:'akademik',avatar:'👩‍🔬',tahun:'2015',pendidikan:'S1 Biologi'},
+  {nama:'Andi Purnomo, S.Pd.',jabatan:'Guru Mapel',mapel:'IPS Terpadu',cat:'akademik',avatar:'👨‍🏫',tahun:'2014',pendidikan:'S1 IPS'},
+  {nama:'Dewi Rahayu, S.Pd.',jabatan:'Guru Mapel',mapel:'Bahasa Inggris',cat:'akademik',avatar:'👩‍🏫',tahun:'2016',pendidikan:'S1 Bahasa Inggris'},
+  {nama:'Muhamad Irfan, S.Ag.',jabatan:'Guru Mapel',mapel:'SKI & Bahasa Arab',cat:'keagamaan',avatar:'👨‍🎓',tahun:'2013',pendidikan:'S1 Bahasa Arab'},
+  {nama:'Siti Nurhaliza, S.Pd.',jabatan:'Guru Mapel',mapel:'PKn',cat:'akademik',avatar:'👩‍💼',tahun:'2017',pendidikan:'S1 PKn'},
+  {nama:'Rahmat Hidayat, S.Pd.',jabatan:'Guru Mapel',mapel:'Matematika',cat:'akademik',avatar:'👨‍🏫',tahun:'2011',pendidikan:'S1 Matematika'},
+  {nama:'Neng Tuti Alawiyah, S.Ag.',jabatan:'Guru Mapel',mapel:'Bahasa Arab',cat:'keagamaan',avatar:'👩‍🎓',tahun:'2018',pendidikan:'S1 Bahasa Arab'},
+];
+const guruRow2=[
+  {nama:'Heni Kusumawati, S.Psi.',jabatan:'Guru BK',mapel:'Bimbingan Konseling',cat:'bk',avatar:'👩‍⚕️',tahun:'2016',pendidikan:'S1 Psikologi'},
+  {nama:'Agus Salim, S.Pd.I.',jabatan:'Guru Mapel',mapel:'Fiqih & BTQ',cat:'keagamaan',avatar:'👨‍🏫',tahun:'2014',pendidikan:'S1 PAI'},
+  {nama:'Dede Sopian, S.Pd.',jabatan:'Guru Mapel',mapel:'Penjaskes',cat:'ekskul',avatar:'🏃',tahun:'2013',pendidikan:'S1 Penjaskes'},
+  {nama:'Lia Amalia, S.Kom.',jabatan:'Guru Mapel',mapel:'TIK',cat:'akademik',avatar:'👩‍💻',tahun:'2019',pendidikan:'S1 Komputer'},
+  {nama:'Ridwan Fauzi, S.Pd.',jabatan:'Guru Mapel',mapel:'Seni Budaya',cat:'ekskul',avatar:'🎨',tahun:'2015',pendidikan:'S1 Seni'},
+  {nama:'Iis Komariah, S.Pd.',jabatan:'Guru Mapel',mapel:'Bahasa Indonesia',cat:'akademik',avatar:'👩‍🏫',tahun:'2012',pendidikan:'S1 Bahasa Indonesia'},
+  {nama:'Ujang Rohendi, S.Pd.I.',jabatan:'Guru Mapel',mapel:'Aqidah Akhlak',cat:'keagamaan',avatar:'👨‍🕌',tahun:'2010',pendidikan:'S1 PAI'},
+  {nama:'Fitri Handayani, S.Pd.',jabatan:'Guru Mapel',mapel:'IPA Terpadu',cat:'akademik',avatar:'👩‍🔬',tahun:'2020',pendidikan:'S1 IPA'},
+];
+
+function buildCard(g){
+  return `<div class="guru-card gc-${g.cat}">
+    <div class="guru-card-strip strip-${g.cat}"></div>
+    <div class="guru-photo">
+      <div class="gp-avatar">${g.avatar}</div>
+      <div class="gp-label">Tenaga Pendidik</div>
+    </div>
+    <div class="guru-body">
+      <div class="gb-jabatan">${g.jabatan}</div>
+      <div class="gb-nama">${g.nama}</div>
+      <div class="gb-mapel">${g.mapel}</div>
+    </div>
+    <div class="guru-card-hover">
+      <div class="gch-nama">${g.nama}</div>
+      <div class="gch-mapel">${g.mapel}</div>
+      <div class="gch-detail">${g.pendidikan} · Bergabung ${g.tahun}</div>
+    </div>
+  </div>`;
+}
+
+/* Build tracks — duplicate for seamless loop */
+const t1=document.getElementById('track1');
+const t2=document.getElementById('track2');
+const cards1=[...guruRow1,...guruRow1].map(buildCard).join('');
+const cards2=[...guruRow2,...guruRow2].map(buildCard).join('');
+t1.innerHTML=cards1;
+t2.innerHTML=cards2;
+</script>
+</body>
+</html>

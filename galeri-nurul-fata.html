@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Galeri — MTs Nurul Fata Tegalwaru</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --hijau-tua:#0d4f2a; --hijau:#1a6b3c; --hijau-muda:#2d9156; --hijau-terang:#3db870;
+  --emas-tua:#a07830; --emas:#c8a84b; --emas-muda:#e0c068;
+  --krem:#faf7f0; --krem-gelap:#f0ebe0; --putih:#ffffff; --gelap:#0d1f14;
+  --teks:#1e3528; --abu:#5a6e61; --abu-muda:#8fa396;
+  --border:rgba(26,107,60,0.12);
+  --shadow-sm:0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md:0 8px 32px rgba(0,0,0,0.1);
+  --shadow-lg:0 20px 60px rgba(0,0,0,0.15);
+  --radius:14px; --transition:all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+[data-theme="dark"] {
+  --hijau-tua:#0a3d20; --hijau:#1d7a45; --hijau-muda:#3aaa68; --hijau-terang:#4dcc80;
+  --emas-tua:#b8943a; --emas:#d4b050; --emas-muda:#e8cc70;
+  --krem:#0a0f0b; --krem-gelap:#111c15; --putih:#0e1a12; --gelap:#060e09;
+  --teks:#d4e8da; --abu:#7aaa88; --abu-muda:#4d7a5a;
+  --border:rgba(61,184,112,0.12);
+  --shadow-sm:0 2px 8px rgba(0,0,0,0.35);
+  --shadow-md:0 8px 32px rgba(0,0,0,0.5);
+  --shadow-lg:0 20px 60px rgba(0,0,0,0.7);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--krem);color:var(--teks);min-height:100vh;overflow-x:hidden;transition:background .4s,color .4s;}
+
+/* ── HEADER ── */
+header{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 32px;background:rgba(250,247,240,0.88);backdrop-filter:blur(20px) saturate(1.8);border-bottom:1px solid var(--border);transition:background .4s;}
+[data-theme="dark"] header{background:rgba(10,15,11,0.9);}
+.header-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--hijau-tua),var(--hijau-muda));display:flex;align-items:center;justify-content:center;font-size:17px;}
+.logo-text strong{font-size:13px;font-weight:800;color:var(--teks);display:block;line-height:1.2;}
+.logo-text span{font-size:10px;color:var(--abu);}
+.header-right{display:flex;align-items:center;gap:8px;}
+.btn-back{display:flex;align-items:center;gap:5px;padding:7px 14px;border-radius:8px;font-size:12px;font-weight:600;color:var(--abu);background:transparent;border:1.5px solid var(--border);cursor:pointer;text-decoration:none;transition:var(--transition);font-family:inherit;}
+.btn-back:hover{color:var(--hijau);border-color:var(--hijau-muda);}
+#darkToggle{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--border);background:transparent;color:var(--teks);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition);}
+#darkToggle:hover{background:rgba(26,107,60,0.08);transform:rotate(20deg);}
+
+/* ── HERO ── */
+.hero{padding-top:60px;height:100vh;min-height:560px;max-height:780px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:72px;position:relative;overflow:hidden;background:var(--gelap);}
+.hero-mosaic{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr);gap:3px;opacity:.3;filter:blur(1px);transform:scale(1.06);}
+.hm{display:flex;align-items:center;justify-content:center;font-size:60px;}
+.hm:nth-child(1){background:linear-gradient(135deg,#082010,#0d4f2a);}
+.hm:nth-child(2){background:linear-gradient(135deg,#0a1a08,#082010);}
+.hm:nth-child(3){background:linear-gradient(135deg,#0d4f2a,#1a6b3c);}
+.hm:nth-child(4){background:linear-gradient(135deg,#061408,#0a2a12);}
+.hm:nth-child(5){background:linear-gradient(135deg,#0a2a12,#0d4f2a);}
+.hm:nth-child(6){background:linear-gradient(135deg,#082010,#061408);}
+.hm:nth-child(7){background:linear-gradient(135deg,#0d4f2a,#082010);}
+.hm:nth-child(8){background:linear-gradient(135deg,#061408,#0a1a08);}
+.hm:nth-child(9){background:linear-gradient(135deg,#0a2a12,#061408);}
+.hm:nth-child(10){background:linear-gradient(135deg,#082010,#0d4f2a);}
+.hm:nth-child(11){background:linear-gradient(135deg,#0a1a08,#0a2a12);}
+.hm:nth-child(12){background:linear-gradient(135deg,#0d4f2a,#1a6b3c);}
+.hero-vignette{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(13,31,20,.5) 0%,rgba(13,31,20,.05) 35%,rgba(13,31,20,.7) 70%,rgba(13,31,20,.97) 100%);}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:680px;padding:0 24px;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--emas-muda);margin-bottom:18px;}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:32px;height:1px;background:var(--emas);opacity:.5;}
+.hero h1{font-size:clamp(38px,6vw,72px);font-weight:800;color:#fff;line-height:1.05;letter-spacing:-1.5px;margin-bottom:14px;}
+.hero h1 em{font-family:'Amiri',serif;font-style:italic;color:var(--emas-muda);font-weight:400;letter-spacing:0;}
+.hero-sub{font-size:14px;color:rgba(255,255,255,.5);line-height:1.8;margin-bottom:32px;}
+.hero-scroll{display:flex;flex-direction:column;align-items:center;gap:5px;color:rgba(255,255,255,.3);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;animation:scrollbounce 2s ease infinite;}
+.hero-scroll::after{content:'↓';font-size:20px;}
+@keyframes scrollbounce{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+
+/* ── MAIN ── */
+.main{max-width:1280px;margin:0 auto;padding:64px 32px 96px;}
+
+/* ── STATS ── */
+.stats-bar{display:flex;margin-bottom:56px;background:var(--putih);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);}
+[data-theme="dark"] .stats-bar{background:#0e1a12;}
+.stat{flex:1;text-align:center;padding:22px 12px;border-right:1px solid var(--border);}
+.stat:last-child{border-right:none;}
+.stat-n{font-size:26px;font-weight:800;color:var(--hijau);display:block;margin-bottom:3px;line-height:1;}
+.stat-l{font-size:11px;color:var(--abu);font-weight:500;}
+
+/* ── SECTION BREAK ── */
+.sb{display:flex;align-items:center;gap:14px;margin:0 0 28px;}
+.sb-line{flex:1;height:1px;background:var(--border);}
+.sb-dot{width:6px;height:6px;border-radius:50%;background:linear-gradient(135deg,var(--hijau),var(--emas));flex-shrink:0;}
+.sb-text{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--abu-muda);white-space:nowrap;}
+
+/* ── FEATURED BENTO GRID ── */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:220px 220px;gap:14px;margin-bottom:56px;}
+.bento-item{border-radius:16px;overflow:hidden;cursor:pointer;position:relative;border:1px solid var(--border);transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s;animation:fadeUp .5s ease both;}
+.bento-item:hover{transform:scale(1.03);box-shadow:var(--shadow-lg);z-index:3;}
+.bi-1{grid-column:1/3;grid-row:1/3;}
+.bi-2{grid-column:3;grid-row:1;}
+.bi-3{grid-column:4;grid-row:1;}
+.bi-4{grid-column:3;grid-row:2;}
+.bi-5{grid-column:4;grid-row:2;}
+.bento-photo{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:relative;}
+.bento-photo .em{position:relative;z-index:1;}
+.bento-photo .pl{font-size:11px;color:rgba(0,0,0,.4);position:relative;z-index:1;text-align:center;padding:0 14px;line-height:1.5;}
+[data-theme="dark"] .bento-photo .pl{color:rgba(255,255,255,.3);}
+.bp-akademik {background:linear-gradient(160deg,#c8e8d4,#8ecfad,#5ab88a);}
+.bp-keagamaan{background:linear-gradient(160deg,#f0e0b0,#dfc872,#c8a840);}
+.bp-ekskul   {background:linear-gradient(160deg,#b8d8ec,#84c0e0,#58a8d4);}
+.bp-fasilitas{background:linear-gradient(160deg,#ddd8cc,#c4baa8,#aaa08a);}
+.bp-prestasi {background:linear-gradient(160deg,#f0c8b8,#e0a080,#d07060);}
+[data-theme="dark"] .bp-akademik {background:linear-gradient(160deg,#0d2d1a,#071510,#040e0a);}
+[data-theme="dark"] .bp-keagamaan{background:linear-gradient(160deg,#1a1408,#0e0c06,#080602);}
+[data-theme="dark"] .bp-ekskul   {background:linear-gradient(160deg,#080f15,#04080c,#020508);}
+[data-theme="dark"] .bp-fasilitas{background:linear-gradient(160deg,#141210,#0c0a08,#080604);}
+[data-theme="dark"] .bp-prestasi {background:linear-gradient(160deg,#180e08,#0e0804,#080402);}
+.bi-1 .bento-photo .em{font-size:72px;}
+.bi-2 .bento-photo .em,.bi-3 .bento-photo .em,.bi-4 .bento-photo .em,.bi-5 .bento-photo .em{font-size:40px;}
+.bento-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,79,42,.92) 0%,rgba(13,79,42,.15) 55%,transparent 100%);opacity:0;transition:opacity .3s;z-index:4;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;}
+.bento-item:hover .bento-overlay{opacity:1;}
+.bo-title{font-size:14px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:4px;}
+.bo-sub{font-size:10px;color:var(--emas-muda);font-weight:700;text-transform:uppercase;letter-spacing:.8px;}
+.bi-1 .bo-title{font-size:18px;}
+.bento-zoom{position:absolute;top:12px;right:12px;z-index:5;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;transition:transform .2s;}
+.bento-item:hover .bento-zoom{transform:scale(1.15);}
+
+/* ── FILTER ── */
+.filter-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px;flex-wrap:wrap;}
+.pills{display:flex;gap:7px;flex-wrap:wrap;}
+.pill{padding:7px 16px;border-radius:100px;font-size:12px;font-weight:600;border:1.5px solid var(--border);background:transparent;color:var(--abu);cursor:pointer;transition:var(--transition);font-family:inherit;}
+.pill:hover{border-color:var(--hijau-muda);color:var(--hijau);background:rgba(45,145,86,.06);}
+.pill.active{background:var(--hijau-tua);color:#fff;border-color:var(--hijau-tua);box-shadow:0 4px 14px rgba(13,79,42,.3);}
+.view-btns{display:flex;gap:5px;}
+.vb{width:34px;height:34px;border-radius:7px;border:1.5px solid var(--border);background:transparent;color:var(--abu);cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center;transition:var(--transition);}
+.vb.active{background:var(--hijau-tua);color:#fff;border-color:var(--hijau-tua);}
+.vb:hover:not(.active){border-color:var(--hijau-muda);color:var(--hijau);}
+
+/* ── MASONRY ── */
+.masonry{columns:4;column-gap:14px;transition:opacity .3s;}
+.masonry.c2{columns:2;}
+.masonry.c3{columns:3;}
+.masonry.fading{opacity:0;}
+
+.gi{break-inside:avoid;margin-bottom:14px;border-radius:14px;overflow:hidden;cursor:pointer;position:relative;background:var(--putih);border:1px solid var(--border);transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s;animation:fadeUp .5s ease both;}
+.gi:hover{transform:translateY(-6px) scale(1.01);box-shadow:var(--shadow-lg);z-index:2;}
+[data-theme="dark"] .gi{background:#0e1a12;}
+.gi:nth-child(1){animation-delay:.05s} .gi:nth-child(2){animation-delay:.10s} .gi:nth-child(3){animation-delay:.15s}
+.gi:nth-child(4){animation-delay:.20s} .gi:nth-child(5){animation-delay:.25s} .gi:nth-child(6){animation-delay:.30s}
+.gi:nth-child(7){animation-delay:.35s} .gi:nth-child(8){animation-delay:.40s} .gi:nth-child(9){animation-delay:.45s}
+.gi:nth-child(10){animation-delay:.50s}.gi:nth-child(11){animation-delay:.55s}.gi:nth-child(12){animation-delay:.60s}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+.gi-photo{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:160px;position:relative;overflow:hidden;transition:filter .3s;}
+.gi.tall .gi-photo{min-height:280px;}
+.gi.taller .gi-photo{min-height:350px;}
+.gi.short .gi-photo{min-height:120px;}
+.gi-photo .em{font-size:38px;position:relative;z-index:1;}
+.gi-photo .pl{font-size:10px;color:var(--abu-muda);position:relative;z-index:1;text-align:center;padding:0 10px;line-height:1.4;}
+
+/* category tints */
+.gi[data-cat="akademik"]  .gi-photo{background:linear-gradient(160deg,#e8f4ee,#d0edde);}
+.gi[data-cat="keagamaan"] .gi-photo{background:linear-gradient(160deg,#fdf5e6,#f5e6c0);}
+.gi[data-cat="ekskul"]    .gi-photo{background:linear-gradient(160deg,#e4eff6,#c8e2f0);}
+.gi[data-cat="fasilitas"] .gi-photo{background:linear-gradient(160deg,#f0ede8,#e4dfd4);}
+.gi[data-cat="prestasi"]  .gi-photo{background:linear-gradient(160deg,#fceee8,#f8d8cc);}
+[data-theme="dark"] .gi[data-cat="akademik"]  .gi-photo{background:linear-gradient(160deg,#0d2818,#071510);}
+[data-theme="dark"] .gi[data-cat="keagamaan"] .gi-photo{background:linear-gradient(160deg,#1a1408,#0e0c06);}
+[data-theme="dark"] .gi[data-cat="ekskul"]    .gi-photo{background:linear-gradient(160deg,#08141a,#04080c);}
+[data-theme="dark"] .gi[data-cat="fasilitas"] .gi-photo{background:linear-gradient(160deg,#141210,#0c0a08);}
+[data-theme="dark"] .gi[data-cat="prestasi"]  .gi-photo{background:linear-gradient(160deg,#1a0d08,#0e0804);}
+
+.gi-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,79,42,.9) 0%,rgba(13,79,42,.25) 55%,transparent 100%);opacity:0;transition:opacity .3s;z-index:3;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;}
+.gi:hover .gi-overlay{opacity:1;}
+.ov-title{font-size:12px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:3px;}
+.ov-cat{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--emas-muda);}
+.gi-zoom{position:absolute;top:10px;right:10px;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(5px);border:1px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;transition:transform .2s;}
+.gi:hover .gi-zoom{transform:scale(1.15);}
+
+.gi-caption{padding:12px 14px;border-top:1px solid var(--border);}
+.gc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:3px;}
+.gc-title{font-size:11px;font-weight:700;color:var(--teks);line-height:1.3;flex:1;}
+.gc-badge{font-size:9px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:2px 7px;border-radius:100px;white-space:nowrap;flex-shrink:0;}
+.b-akademik {background:rgba(45,145,86,.12); color:var(--hijau-muda);}
+.b-keagamaan{background:rgba(160,120,48,.12);color:var(--emas-tua);}
+.b-ekskul   {background:rgba(30,100,160,.1); color:#2d6b9e;}
+.b-fasilitas{background:rgba(100,80,60,.1);  color:#7a5f44;}
+.b-prestasi {background:rgba(180,60,40,.1);  color:#b03c28;}
+[data-theme="dark"] .b-ekskul   {color:#5aacdc;}
+[data-theme="dark"] .b-fasilitas{color:#c8aa88;}
+[data-theme="dark"] .b-prestasi {color:#e07060;}
+.gc-date{font-size:10px;color:var(--abu-muda);}
+
+/* ── LIGHTBOX ── */
+.lightbox{position:fixed;inset:0;z-index:1000;background:rgba(6,14,9,.97);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;padding:20px;}
+.lightbox.open{opacity:1;pointer-events:all;}
+.lb-inner{max-width:680px;width:100%;background:var(--putih);border-radius:20px;overflow:hidden;transform:scale(.93) translateY(18px);transition:transform .35s cubic-bezier(.34,1.56,.64,1);box-shadow:0 40px 100px rgba(0,0,0,.65);}
+[data-theme="dark"] .lb-inner{background:#0e1a12;}
+.lightbox.open .lb-inner{transform:scale(1) translateY(0);}
+.lb-photo{width:100%;height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;overflow:hidden;}
+.lb-photo .em{font-size:72px;}
+.lb-photo .lb-ph{font-size:12px;color:rgba(255,255,255,.35);}
+.lb-info{padding:22px 26px 26px;}
+.lb-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:100px;margin-bottom:10px;}
+.lb-title{font-size:18px;font-weight:800;color:var(--teks);margin-bottom:8px;line-height:1.3;}
+.lb-desc{font-size:13px;color:var(--abu);line-height:1.8;margin-bottom:16px;}
+.lb-meta{display:flex;gap:20px;flex-wrap:wrap;padding-top:14px;border-top:1px solid var(--border);}
+.lm{font-size:11px;color:var(--abu-muda);}
+.lm strong{color:var(--teks);font-size:12px;display:block;margin-bottom:1px;}
+.lb-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition);z-index:10;}
+.lb-close:hover{background:rgba(255,255,255,.28);transform:rotate(90deg);}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition);z-index:10;}
+.lb-nav:hover{background:rgba(255,255,255,.22);}
+.lb-nav.prev{left:12px;} .lb-nav.next{right:12px;}
+
+/* ── LOAD MORE ── */
+.load-more{text-align:center;margin-top:44px;}
+.btn-more{padding:13px 34px;border-radius:12px;background:transparent;border:2px solid var(--border);font-family:inherit;font-size:13px;font-weight:700;color:var(--abu);cursor:pointer;transition:var(--transition);}
+.btn-more:hover{border-color:var(--hijau-muda);color:var(--hijau);background:rgba(45,145,86,.06);transform:translateY(-2px);}
+
+/* ── FOOTER ── */
+footer{background:var(--gelap);color:rgba(255,255,255,.4);text-align:center;padding:22px;font-size:12px;margin-top:80px;}
+footer a{color:var(--emas-muda);text-decoration:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){.bento{grid-template-columns:repeat(2,1fr);grid-template-rows:200px 200px 200px;}.bi-1{grid-column:1/3;grid-row:1;}.bi-2{grid-column:1;grid-row:2;}.bi-3{grid-column:2;grid-row:2;}.bi-4{grid-column:1;grid-row:3;}.bi-5{grid-column:2;grid-row:3;}.masonry{columns:3;}}
+@media(max-width:720px){.main{padding:48px 16px 72px;}.masonry{columns:2;}.hero h1{letter-spacing:-.5px;}.view-btns{display:none;}.stats-bar{flex-wrap:wrap;}.stat{min-width:50%;border-bottom:1px solid var(--border);}.stat:nth-child(3),.stat:nth-child(4){border-bottom:none;}}
+@media(max-width:480px){.masonry{columns:1;}.bento{grid-template-columns:1fr;grid-template-rows:auto;}.bento-item{height:180px;}.bi-1,.bi-2,.bi-3,.bi-4,.bi-5{grid-column:1;grid-row:auto;}.lb-photo{height:220px;}.lb-photo .em{font-size:56px;}.lb-info{padding:16px 18px 20px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="">
+        <img src="Logo-nf.png" width="40">
+      </div>
+      <div class="logo-text">
+        <strong>MTs Nurul Fata</strong>
+        <span>Tegalwaru, Purwakarta</span>
+      </div>
+    </a>
+    <div class="header-right">
+      <a href="index.html" class="btn-back">← Beranda</a>
+      <button id="darkToggle" onclick="toggleDark()">🌙</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-mosaic">
+    <div class="hm">🏫</div><div class="hm">📚</div><div class="hm">🕌</div><div class="hm">⚽</div>
+    <div class="hm">🌿</div><div class="hm">🎓</div><div class="hm">📖</div><div class="hm">🏆</div>
+    <div class="hm">🎨</div><div class="hm">💻</div><div class="hm">🌙</div><div class="hm">✨</div>
+  </div>
+  <div class="hero-vignette"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Galeri Foto</div>
+    <h1>Setiap Momen<br>adalah <em>Kenangan</em></h1>
+    <p class="hero-sub">Cuplikan kehidupan nyata di MTs Nurul Fata — dari ruang kelas, lapangan, hingga momen-momen tak terlupakan bersama.</p>
+    <div class="hero-scroll">Gulir ke bawah</div>
+  </div>
+</section>
+
+<main class="main">
+
+  <div class="stats-bar">
+    <div class="stat"><span class="stat-n">120+</span><span class="stat-l">Total Foto</span></div>
+    <div class="stat"><span class="stat-n">5</span><span class="stat-l">Kategori</span></div>
+    <div class="stat"><span class="stat-n">2024–25</span><span class="stat-l">Tahun Ajaran</span></div>
+    <div class="stat"><span class="stat-n">∞</span><span class="stat-l">Kenangan</span></div>
+  </div>
+
+  <div class="sb"><div class="sb-line"></div><div class="sb-dot"></div><div class="sb-text">Foto Pilihan</div><div class="sb-dot"></div><div class="sb-line"></div></div>
+
+  <!-- BENTO FEATURED -->
+  <div class="bento">
+    <div class="bento-item bi-1" onclick="openLb(0)">
+      <div class="bento-photo bp-akademik"><div class="em">🎓</div><div class="pl">Wisuda Kelas IX 2024/2025</div></div>
+      <div class="bento-overlay"><div class="bo-title">Wisuda & Pelepasan Kelas IX Tahun Ajaran 2024/2025</div><div class="bo-sub">Akademik · Juni 2025</div></div>
+      <div class="bento-zoom">⊕</div>
+    </div>
+    <div class="bento-item bi-2" onclick="openLb(1)">
+      <div class="bento-photo bp-keagamaan"><div class="em">📖</div><div class="pl">Juara II MTQ Kab. Purwakarta</div></div>
+      <div class="bento-overlay"><div class="bo-title">Juara II MTQ Tingkat Kabupaten</div><div class="bo-sub">Keagamaan · 2025</div></div>
+      <div class="bento-zoom">⊕</div>
+    </div>
+    <div class="bento-item bi-3" onclick="openLb(2)">
+      <div class="bento-photo bp-ekskul"><div class="em">⚽</div><div class="pl">Turnamen Futsal Antar Kelas</div></div>
+      <div class="bento-overlay"><div class="bo-title">Turnamen Futsal Antar Kelas 2025</div><div class="bo-sub">Ekskul · Maret 2025</div></div>
+      <div class="bento-zoom">⊕</div>
+    </div>
+    <div class="bento-item bi-4" onclick="openLb(3)">
+      <div class="bento-photo bp-prestasi"><div class="em">🏆</div><div class="pl">Olimpiade KSM Kecamatan</div></div>
+      <div class="bento-overlay"><div class="bo-title">Juara III KSM Kecamatan</div><div class="bo-sub">Prestasi · 2024</div></div>
+      <div class="bento-zoom">⊕</div>
+    </div>
+    <div class="bento-item bi-5" onclick="openLb(4)">
+      <div class="bento-photo bp-fasilitas"><div class="em">🏫</div><div class="pl">Gedung Utama Madrasah</div></div>
+      <div class="bento-overlay"><div class="bo-title">Gedung Utama MTs Nurul Fata</div><div class="bo-sub">Fasilitas · 2025</div></div>
+      <div class="bento-zoom">⊕</div>
+    </div>
+  </div>
+
+  <div class="sb"><div class="sb-line"></div><div class="sb-dot"></div><div class="sb-text">Semua Foto</div><div class="sb-dot"></div><div class="sb-line"></div></div>
+
+  <div class="filter-bar">
+    <div class="pills">
+      <button class="pill active" onclick="doFilter('semua',this)">Semua</button>
+      <button class="pill" onclick="doFilter('akademik',this)">🎓 Akademik</button>
+      <button class="pill" onclick="doFilter('keagamaan',this)">🕌 Keagamaan</button>
+      <button class="pill" onclick="doFilter('ekskul',this)">⚽ Ekskul</button>
+      <button class="pill" onclick="doFilter('fasilitas',this)">🏫 Fasilitas</button>
+      <button class="pill" onclick="doFilter('prestasi',this)">🏆 Prestasi</button>
+    </div>
+    <div class="view-btns">
+      <button class="vb" onclick="setView(2,this)" title="2 kolom">▦</button>
+      <button class="vb" onclick="setView(3,this)" title="3 kolom">⊞</button>
+      <button class="vb active" onclick="setView(4,this)" title="4 kolom">⊟</button>
+    </div>
+  </div>
+
+  <div class="masonry" id="gallery">
+    <div class="gi tall" data-cat="akademik" onclick="openLb(5)"><div class="gi-photo"><div class="em">📚</div><div class="pl">Kegiatan Belajar Mengajar</div></div><div class="gi-overlay"><div class="ov-title">Suasana KBM Kelas VII</div><div class="ov-cat">Akademik</div></div><div class="gi-zoom">⊕</div><div class="gi-caption"><div class="gc-top"><div class="gc-title">Suasana KBM Kelas VII</div><span class="gc-badge b-akademik">Akademik</span></div><div class="gc-date">Semester Ganjil 2024</div></div></div>
+
+    <div class="gi" data-cat="keagamaan" onclick="openLb(6)"><div class="gi-photo"><div class="em">🌙</div><div class="pl">Shalat Subuh Berjamaah</div></div><div class="gi-overlay"><div class="ov-title">Shalat Subuh Berjamaah</div><div class="ov-cat">Keagamaan</div></div><div class="gi-zoom">⊕</div><div class="gi-caption"><div class="gc-top"><div class="gc-title">Shalat Subuh Berjamaah</div><span class="gc-badge b-keagamaan">Keagamaan</span></div><div class="gc-date">Program Harian</div></div></div>
+
+    <div class="gi taller" data-cat="ekskul" onclick="openLb(7)"><div class="gi-photo"><div class="em">🥁</div><div class="pl">Penampilan Hadroh</div></div><div class="gi-overlay"><div class="ov-title">Ekskul Hadroh — Pentas Seni</div><div class="ov-cat">Ekskul</div></div><div class="gi-zoom">⊕</div><div class="gi-caption"><div class="gc-top"><div class="gc-title">Ekskul Hadroh — Pentas Seni</div><span class="gc-badge b-ekskul">Ekskul</span></div><div class="gc-date">Desember 2024</div></div></div>
+
+    <div class="gi" data-cat="fasilitas" onclick="openLb(8)"><div class="gi-photo"><div class="em">💻</div><div class="pl">Laboratorium Komputer</div></div><div class="gi-overlay"><div class="ov-title">Laboratorium Komputer</div><div class="ov-cat">Fasilitas</div></div><div class="gi-zoom">⊕</div><div class="gi-caption"><div class="gc-top"><div class="gc-title">Laboratorium Komputer</div><span class="gc-badge b-fasilitas">Fasilitas</span></div><div class="gc-date">30 Unit PC</div></div></div>
+
+    <div class="gi tall" data-cat="prestasi" onclick="openLb(9)"><div class="gi-photo"><div class="em">🥇</div><div class="pl">Juara Pramuka Kab. Purwakarta</div></div><div class="gi-overlay"><div class="ov-title">Juara I Pramuka Penggalang Kab.</div><div class="ov-cat">Prestasi</div></div><div class="gi-zoom">⊕</div><div class="gi-caption"><div class="gc-top"><div class="gc-title">Juara I Pramuka Penggalang</div><span class="gc-badge b-prestasi">Prestasi</span></div><div class="gc-date">2024</div></div></div>
+
+    <div class="gi" data-cat="akademik" onclick="openLb(10)"><div class="gi-photo"><div class="em">✏️</div><div class="pl">Ujian Tengah Semester</div></div><div class="gi-overlay"><div class="ov-title">UTS Ganjil 2024</div><div class="ov-cat">Akademik</div></div><div class="gi-zoom">⊕</div><div class="gi-caption"><div class="gc-top"><div class="gc-title">Pelaksanaan UTS Ganjil 2024</div><span class="gc-badge b-akademik">Akademik</span></div><div class="gc-date">Oktober 2024</div></div></div>
+
+    <div class="gi short" data-cat="fasilitas" onclick="openLb(11)"><div class="gi-photo"><div class="em">🕌</div><div class="pl">Mushola Al-Ikhlas</div></div><div class="gi-overlay"><div class="ov-title">Mushola Al-Ikhlas</div><div class="ov-cat">Fasilitas</div></div><div class="gi-zoom">⊕</div><div class="gi-caption"><div class="gc-top"><div class="gc-title">Mushola Al-Ikhlas</div><span class="gc-badge b-fasilitas">Fasilitas</span></div><div class="gc-date">Kapasitas 200 orang</div></div></div>
+
+    <div class="gi taller" data-cat="keagamaan" onclick="openLb(12)"><div class="gi-photo"><div class="em">📿</div><div class="pl">Khataman Al-Qur'an</div></div><div class="gi-overlay"><div class="ov-title">Khataman Al-Qur'an Akhir Tahun</div><div class="ov-cat">Keagamaan</div></div><div class="gi-zoom">⊕</div><div class="gi-caption"><div class="gc-top"><div class="gc-title">Khataman Al-Qur'an Akhir Tahun</div><span class="gc-badge b-keagamaan">Keagamaan</span></div><div class="gc-date">Juni 2025</div></div></div>
+
+    <div class="gi" data-cat="ekskul" onclick="openLb(13)"><div class="gi-photo"><div class="em">🏕️</div><div class="pl">Perkemahan Pramuka</div></div><div class="gi-overlay"><div class="ov-title">Perkemahan Sabtu-Minggu Pramuka</div><div class="ov-cat">Ekskul</div></div><div class="gi-zoom">⊕</div><div class="gi-caption"><div class="gc-top"><div class="gc-title">Perkemahan Pramuka</div><span class="gc-badge b-ekskul">Ekskul</span></div><div class="gc-date">November 2024</div></div></div>
+
+    <div class="gi tall" data-cat="akademik" onclick="openLb(14)"><div class="gi-photo"><div class="em">🔬</div><div class="pl">Praktikum IPA</div></div><div class="gi-overlay"><div class="ov-title">Praktikum IPA — Lab Sains</div><div class="ov-cat">Akademik</div></div><div class="gi-zoom">⊕</div><div class="gi-caption"><div class="gc-top"><div class="gc-title">Praktikum IPA — Lab Sains</div><span class="gc-badge b-akademik">Akademik</span></div><div class="gc-date">Semester Genap 2025</div></div></div>
+
+    <div class="gi" data-cat="prestasi" onclick="openLb(15)"><div class="gi-photo"><div class="em">🎖️</div><div class="pl">Penyerahan Piala Dinas</div></div><div class="gi-overlay"><div class="ov-title">Penyerahan Piala Kepala Dinas</div><div class="ov-cat">Prestasi</div></div><div class="gi-zoom">⊕</div><div class="gi-caption"><div class="gc-top"><div class="gc-title">Penyerahan Piala dari Dinas</div><span class="gc-badge b-prestasi">Prestasi</span></div><div class="gc-date">2024</div></div></div>
+
+    <div class="gi" data-cat="fasilitas" onclick="openLb(16)"><div class="gi-photo"><div class="em">📚</div><div class="pl">Perpustakaan Madrasah</div></div><div class="gi-overlay"><div class="ov-title">Perpustakaan Nurul Fata</div><div class="ov-cat">Fasilitas</div></div><div class="gi-zoom">⊕</div><div class="gi-caption"><div class="gc-top"><div class="gc-title">Perpustakaan Nurul Fata</div><span class="gc-badge b-fasilitas">Fasilitas</span></div><div class="gc-date">2.000+ koleksi buku</div></div></div>
+  </div>
+
+  <div class="load-more">
+    <button class="btn-more" onclick="this.textContent='Memuat...';setTimeout(()=>this.textContent='✓ Semua foto sudah ditampilkan',1200)">↓ &nbsp;Muat Lebih Banyak</button>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 MTs Nurul Fata Tegalwaru &nbsp;|&nbsp; Galeri Foto Resmi &nbsp;|&nbsp; <a href="index.html">← Kembali ke Beranda</a></p>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lb" onclick="if(event.target===this)closeLb()">
+  <button class="lb-nav prev" onclick="event.stopPropagation();navLb(-1)">‹</button>
+  <div class="lb-inner">
+    <div class="lb-photo" id="lbPhoto"><div class="em" id="lbEm"></div><div class="lb-ph">Foto akan ditampilkan di sini</div></div>
+    <div class="lb-info">
+      <div class="lb-badge" id="lbBadge"></div>
+      <div class="lb-title" id="lbTitle"></div>
+      <div class="lb-desc" id="lbDesc"></div>
+      <div class="lb-meta">
+        <div class="lm"><strong id="lbCat"></strong>Kategori</div>
+        <div class="lm"><strong id="lbDate"></strong>Tanggal</div>
+        <div class="lm"><strong id="lbIdx"></strong>No. Foto</div>
+      </div>
+    </div>
+  </div>
+  <button class="lb-nav next" onclick="event.stopPropagation();navLb(1)">›</button>
+  <button class="lb-close" onclick="closeLb()">✕</button>
+</div>
+
+<script>
+/* DARK MODE */
+function toggleDark(){
+  const d=document.documentElement.getAttribute('data-theme')==='dark';
+  document.documentElement.setAttribute('data-theme',d?'light':'dark');
+  document.getElementById('darkToggle').textContent=d?'🌙':'☀️';
+  localStorage.setItem('nf-theme',d?'light':'dark');
+}
+(function(){
+  if(localStorage.getItem('nf-theme')==='dark'){
+    document.documentElement.setAttribute('data-theme','dark');
+    document.getElementById('darkToggle').textContent='☀️';
+  }
+})();
+
+/* DATA */
+const photos=[
+  {em:'🎓',cat:'Akademik',bg:'akademik',title:'Wisuda & Pelepasan Kelas IX TA 2024/2025',desc:'Momen penuh haru dan kebanggaan saat 120 siswa kelas IX resmi menyelesaikan pendidikan mereka di MTs Nurul Fata. Prosesi wisuda dipimpin langsung oleh Kepala Madrasah dan dihadiri seluruh wali murid.',date:'Juni 2025'},
+  {em:'📖',cat:'Keagamaan',bg:'keagamaan',title:'Juara II MTQ Tingkat Kabupaten Purwakarta',desc:'Siswa MTs Nurul Fata meraih Juara II Musabaqah Tilawatil Qur\'an tingkat Kabupaten Purwakarta — pencapaian yang menjadi kebanggaan seluruh warga madrasah.',date:'2025'},
+  {em:'⚽',cat:'Ekskul',bg:'ekskul',title:'Turnamen Futsal Antar Kelas 2025',desc:'Turnamen mempertemukan 12 tim dari kelas VII, VIII, dan IX. Ajang sportivitas sekaligus mempererat persaudaraan antar siswa.',date:'Maret 2025'},
+  {em:'🏆',cat:'Prestasi',bg:'prestasi',title:'Juara III Olimpiade IPA KSM Kecamatan',desc:'Tim KSM Bidang IPA meraih Juara III dalam Kompetisi Sains Madrasah tingkat Kecamatan Tegalwaru, membuktikan kemampuan akademik yang terus berkembang.',date:'2024'},
+  {em:'🏫',cat:'Fasilitas',bg:'fasilitas',title:'Gedung Utama MTs Nurul Fata Tegalwaru',desc:'Tampak depan gedung utama di Jl. Warungjeruk–Cirata, Desa Sukahaji, Kecamatan Tegalwaru. Gedung ini telah direnovasi besar pada tahun 2020.',date:'2025'},
+  {em:'📚',cat:'Akademik',bg:'akademik',title:'Suasana KBM Kelas VII',desc:'Kegiatan belajar mengajar berlangsung kondusif. Guru menggunakan metode pembelajaran aktif yang melibatkan seluruh siswa secara langsung.',date:'Ganjil 2024'},
+  {em:'🌙',cat:'Keagamaan',bg:'keagamaan',title:'Shalat Subuh Berjamaah',desc:'Program shalat subuh berjamaah diikuti seluruh siswa boarding setiap hari, menjadi fondasi karakter Islami yang tertanam sejak dini.',date:'Program Harian'},
+  {em:'🥁',cat:'Ekskul',bg:'ekskul',title:'Ekskul Hadroh — Pentas Seni Akhir Tahun',desc:'Penampilan grup hadroh yang memukau dalam pentas seni akhir tahun. Ekskul hadroh sudah aktif 8 tahun dan tampil di berbagai acara kecamatan.',date:'Desember 2024'},
+  {em:'💻',cat:'Fasilitas',bg:'fasilitas',title:'Laboratorium Komputer',desc:'Lab komputer dilengkapi 30 unit PC dengan koneksi internet, digunakan untuk pelajaran TIK dan digital literacy siswa setiap minggu.',date:'30 Unit PC'},
+  {em:'🥇',cat:'Prestasi',bg:'prestasi',title:'Juara I Lomba Pramuka Penggalang Kab. Purwakarta',desc:'Kontingen Pramuka meraih Juara I dalam Lomba Pramuka Penggalang tingkat Kabupaten Purwakarta, hasil latihan intensif tiga bulan penuh.',date:'2024'},
+  {em:'✏️',cat:'Akademik',bg:'akademik',title:'Pelaksanaan UTS Ganjil 2024',desc:'Suasana tertib dan tenang saat UTS Ganjil 2024 berlangsung. Seluruh siswa mengerjakan soal di bawah pengawasan guru piket.',date:'Oktober 2024'},
+  {em:'🕌',cat:'Fasilitas',bg:'fasilitas',title:'Mushola Al-Ikhlas',desc:'Mushola Al-Ikhlas jadi pusat kegiatan keagamaan dengan kapasitas 200 orang. Direnovasi 2022 dengan fasilitas lebih lengkap dan nyaman.',date:'Kapasitas 200 orang'},
+  {em:'📿',cat:'Keagamaan',bg:'keagamaan',title:'Khataman Al-Qur\'an Akhir Tahun Ajaran',desc:'Prosesi khataman yang mengharukan saat para siswa Tahfidz menyelesaikan target hafalan mereka di penghujung tahun ajaran.',date:'Juni 2025'},
+  {em:'🏕️',cat:'Ekskul',bg:'ekskul',title:'Perkemahan Sabtu-Minggu Pramuka',desc:'Perkemahan dua hari satu malam di area alam terbuka Tegalwaru, melatih kemandirian dan kerja sama tim seluruh anggota Pramuka.',date:'November 2024'},
+  {em:'🔬',cat:'Akademik',bg:'akademik',title:'Praktikum IPA — Laboratorium Sains',desc:'Siswa kelas VIII melakukan praktikum fotosintesis. Kegiatan praktikum dilaksanakan dua minggu sekali untuk memperkuat pemahaman konsep IPA.',date:'Genap 2025'},
+  {em:'🎖️',cat:'Prestasi',bg:'prestasi',title:'Penyerahan Piala dari Kepala Dinas Pendidikan',desc:'Kepala Madrasah menerima piala dari Kadisdik Kab. Purwakarta atas prestasi siswa dalam berbagai kompetisi tingkat kabupaten.',date:'2024'},
+  {em:'📚',cat:'Fasilitas',bg:'fasilitas',title:'Perpustakaan Nurul Fata',desc:'Perpustakaan dengan 2.000+ koleksi buku — pelajaran, kitab Islam, dan bacaan umum. Dibuka setiap hari untuk seluruh civitas madrasah.',date:'2.000+ koleksi'},
+];
+
+const catColor={Akademik:'#0d4f2a',Keagamaan:'#a07830',Ekskul:'#1a5a8a',Fasilitas:'#7a6050',Prestasi:'#b03c28'};
+const bgLight={akademik:'linear-gradient(160deg,#c8e8d4,#8ecfad)',keagamaan:'linear-gradient(160deg,#f0e0b0,#dfc872)',ekskul:'linear-gradient(160deg,#b8d8ec,#84c0e0)',fasilitas:'linear-gradient(160deg,#ddd8cc,#c4baa8)',prestasi:'linear-gradient(160deg,#f0c8b8,#e0a080)'};
+const bgDark ={akademik:'linear-gradient(160deg,#0d2d1a,#040e0a)',keagamaan:'linear-gradient(160deg,#1a1408,#080602)',ekskul:'linear-gradient(160deg,#080f15,#020508)',fasilitas:'linear-gradient(160deg,#141210,#080604)',prestasi:'linear-gradient(160deg,#180e08,#080402)'};
+
+let cur=0;
+function openLb(i){cur=i;renderLb();document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden';}
+function closeLb(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
+function navLb(d){cur=(cur+d+photos.length)%photos.length;renderLb();}
+function renderLb(){
+  const p=photos[cur],dark=document.documentElement.getAttribute('data-theme')==='dark';
+  document.getElementById('lbPhoto').style.background=dark?bgDark[p.bg]:bgLight[p.bg];
+  document.getElementById('lbEm').textContent=p.em;
+  const b=document.getElementById('lbBadge');
+  b.textContent=p.cat;b.style.background=catColor[p.cat]+'18';b.style.color=catColor[p.cat];
+  document.getElementById('lbTitle').textContent=p.title;
+  document.getElementById('lbDesc').textContent=p.desc;
+  document.getElementById('lbCat').textContent=p.cat;
+  document.getElementById('lbDate').textContent=p.date;
+  document.getElementById('lbIdx').textContent=`${cur+1} / ${photos.length}`;
+}
+
+function doFilter(cat,btn){
+  document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  const g=document.getElementById('gallery');
+  g.classList.add('fading');
+  setTimeout(()=>{
+    document.querySelectorAll('.gi').forEach(el=>{
+      el.style.display=(cat==='semua'||el.dataset.cat===cat)?'block':'none';
+    });
+    g.classList.remove('fading');
+  },220);
+}
+
+function setView(cols,btn){
+  document.querySelectorAll('.vb').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const g=document.getElementById('gallery');
+  g.className='masonry';
+  if(cols===2)g.classList.add('c2');
+  if(cols===3)g.classList.add('c3');
+}
+
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('lb').classList.contains('open'))return;
+  if(e.key==='ArrowRight')navLb(1);
+  if(e.key==='ArrowLeft')navLb(-1);
+  if(e.key==='Escape')closeLb();
+});
+</script>
+</body>
+</html>
